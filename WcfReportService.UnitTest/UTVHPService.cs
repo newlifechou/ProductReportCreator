@@ -36,7 +36,7 @@ namespace WcfReportService.UnitTest
         public void TestVHPCount()
         {
             int count = service.GetVHPCount();
-            Assert.IsTrue(count > 0);
+            Assert.IsTrue(count >= 0);
         }
 
 

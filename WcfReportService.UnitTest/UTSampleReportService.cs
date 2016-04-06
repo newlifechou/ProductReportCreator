@@ -59,7 +59,7 @@ namespace WcfReportService.UnitTest
         public void TestSampleCount()
         {
             int count = service.GetSampleCount();
-            Assert.IsTrue(count > 0);
+            Assert.IsTrue(count >= 0);
         }
 
 
