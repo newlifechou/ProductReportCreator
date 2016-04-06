@@ -33,14 +33,14 @@ namespace WcfReportService
             return service.DeleteSample(sample.Id);
         }
 
-        public List<Sample> GetSamples()
+        public List<Sample> GetSamples(int skip, int take)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<ReportServiceLib.Model.Sample, Sample>());
             var mapper = config.CreateMapper();
 
-            List<Sample> samples = mapper.Map<List<ReportServiceLib.Model.Sample>, List<Sample>>(service.GetSamples());
+            List<Sample> samples = mapper.Map<List<ReportServiceLib.Model.Sample>, List<Sample>>(service.GetSamples(skip,take));
 
-            return samples;
+            return samples.ToList();
         }
 
         public bool UpdateSample(Sample sample)

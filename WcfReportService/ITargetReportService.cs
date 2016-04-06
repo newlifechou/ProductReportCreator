@@ -13,7 +13,7 @@ namespace WcfReportService
     public interface ITargetReportService
     {
         [OperationContract]
-        List<Target> GetTargets();
+        List<Target> GetTargets(int skip, int take);
 
         [OperationContract]
         bool AddTarget(Target product);

@@ -18,9 +18,9 @@ namespace ReportServiceLib
         {
             db = new ProductsContext();
         }
-        public List<Target> GetTargets()
+        public List<Target> GetTargets(int skip, int take)
         {
-            return db.Products.ToList();
+            return db.Products.OrderByDescending(t=>t.Lot).Skip(skip).Take(take).ToList();
         }
 
         public bool AddTarget(Target target)

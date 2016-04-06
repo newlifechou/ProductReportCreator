@@ -19,7 +19,7 @@ namespace WcfReportService.UnitTest
         [TestMethod]
         public void TestGetTargets()
         {
-            var targets=service.GetTargets();
+            var targets=service.GetTargets(0,10);
 
             Assert.IsNotNull(targets);
         }

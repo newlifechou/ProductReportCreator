@@ -12,7 +12,7 @@ namespace WcfReportService
     public interface ISampleReportService
     {
         [OperationContract]
-        List<Sample> GetSamples();
+        List<Sample> GetSamples(int skip,int take);
 
         [OperationContract]
         bool AddSample(Sample sample);

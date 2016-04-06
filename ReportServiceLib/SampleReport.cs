@@ -18,9 +18,9 @@ namespace ReportServiceLib
         {
             db = new ProductsContext();
         }
-        public List<Sample> GetSamples()
+        public List<Sample> GetSamples(int skip, int take)
         {
-            return db.Samples.ToList();
+            return db.Samples.OrderByDescending(s=>s.Lot).Skip(skip).Take(take).ToList();
         }
 
         public bool AddSample(Sample sample)

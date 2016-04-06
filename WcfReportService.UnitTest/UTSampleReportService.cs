@@ -23,7 +23,7 @@ namespace WcfReportService.UnitTest
         [TestMethod]
         public void TestGetSamples()
         {
-            var result = service.GetSamples();
+            var result = service.GetSamples(0,10);
             Assert.IsNotNull(result);
         }
 

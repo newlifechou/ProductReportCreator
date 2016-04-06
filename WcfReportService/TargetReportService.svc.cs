@@ -37,13 +37,13 @@ namespace WcfReportService
             return service.DeleteTarget(target.Id);
         }
 
-        public List<Target> GetTargets()
+        public List<Target> GetTargets(int skip, int take)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<ReportServiceLib.Model.Target, Target>());
             var mapper = config.CreateMapper();
-            List<Target> targets=mapper.Map<List<ReportServiceLib.Model.Target>,List< Target >> (service.GetTargets());
+            List<Target> targets=mapper.Map<List<ReportServiceLib.Model.Target>,List< Target >> (service.GetTargets(skip, take));
 
-            return targets;
+            return targets.ToList();
         }
 
         public bool UpdateTarget(Target target)
