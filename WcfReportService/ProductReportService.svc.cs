@@ -23,12 +23,23 @@ namespace WcfReportService
 
         public bool AddProduct(Product product)
         {
-            throw new NotImplementedException();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Product, ReportServiceLib.Model.Product>());
+            var mapper = config.CreateMapper();
+
+            ReportServiceLib.Model.Product p = mapper.Map<Product, ReportServiceLib.Model.Product>(product);
+
+            return service.AddProduct(p);
+
         }
 
         public bool DeleteProduct(Product product)
         {
-            throw new NotImplementedException();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Product, ReportServiceLib.Model.Product>());
+            var mapper = config.CreateMapper();
+
+            ReportServiceLib.Model.Product p = mapper.Map<Product, ReportServiceLib.Model.Product>(product);
+
+            return service.DeleteProduct(p.Id);
         }
 
         public List<Product> GetProducts()
@@ -42,7 +53,12 @@ namespace WcfReportService
 
         public bool UpdateProduct(Product product)
         {
-            throw new NotImplementedException();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Product, ReportServiceLib.Model.Product>());
+            var mapper = config.CreateMapper();
+
+            ReportServiceLib.Model.Product p = mapper.Map<Product, ReportServiceLib.Model.Product>(product);
+
+            return service.UpdateProduct(p);
         }
     }
 }
