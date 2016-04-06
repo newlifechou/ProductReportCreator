@@ -11,7 +11,7 @@ namespace WcfReportService
     [ServiceContract(Namespace ="http://www.newlifechou.com")]
     public interface IProductReport
     {
-
+        List<Product> GetProducts();
 
 
     }

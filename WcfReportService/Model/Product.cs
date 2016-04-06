@@ -29,5 +29,11 @@ namespace WcfReportService.Model
         public string Resistance { get; set; }
         [DataMember]
         public string Composition { get; set; }
+
+
+        [DataMember]
+        public bool IsSend { get; set; }
+        [DataMember]
+        public DateTime SendDate { get; set; }
     }
 }
