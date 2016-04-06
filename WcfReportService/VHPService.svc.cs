@@ -7,15 +7,20 @@ using System.ServiceModel;
 using System.Text;
 using ReportServiceLib.Model;
 using WcfReportService.Model;
+using AutoMapper;
 
 namespace WcfReportService
 {
     public class VHPService : IVHPService
     {
-        public List<Model.VHP> GetVHPs()
+        public List<Model.VHP> GetVHPs(int skip, int take)
         {
-            Common.IVHPReport service;
-            throw new NotImplementedException();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Common.Model.VHP,VHP>());
+            var mapper = config.CreateMapper();
+
+            Common.IVHPReport service = new OldVHP.VHPReport();
+            List<VHP> results = mapper.Map<List<Common.Model.VHP>, List<VHP>>(service.GetVHPs(skip,take));
+            return results;
         }
     }
 }

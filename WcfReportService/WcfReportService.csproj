@@ -115,6 +115,10 @@
       <Project>{b5413e5f-f52e-4214-bb22-33a3eede9b80}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OldVHP\OldVHP.csproj">
+      <Project>{7e5752ef-dd61-45cd-82b9-91e094776d74}</Project>
+      <Name>OldVHP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportServiceLib\ReportServiceLib.csproj">
       <Project>{5587bb84-c442-413b-8b91-0a31da021776}</Project>
       <Name>ReportServiceLib</Name>

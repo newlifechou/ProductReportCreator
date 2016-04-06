@@ -14,7 +14,7 @@ namespace OldVHP
 {
     public class VHPReport : IVHPReport
     {
-        public List<VHP> GetVHPs()
+        public List<VHP> GetVHPs(int skip,int take)
         {
             DBNew db = new DBNew();
             List<VHP> vhps = new List<VHP>();
@@ -33,7 +33,7 @@ namespace OldVHP
                             PMIWorkingNumber=o.PMIWorkNumber,
                             Dimension=o.Dimension
                         };
-            return query.ToList();        
+            return query.Skip(skip).Take(take).ToList(); 
         }
     }
 }

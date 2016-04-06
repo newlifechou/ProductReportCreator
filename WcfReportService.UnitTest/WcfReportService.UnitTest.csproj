@@ -64,6 +64,7 @@
     <Compile Include="UTSampleReportService.cs" />
     <Compile Include="UTTargetReportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UTVHPService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WcfReportService\WcfReportService.csproj">

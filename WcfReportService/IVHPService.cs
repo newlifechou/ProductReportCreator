@@ -13,6 +13,6 @@ namespace WcfReportService
     public interface IVHPService
     {
         [OperationContract]
-        List<VHP> GetVHPs();
+        List<VHP> GetVHPs(int skip,int take);
     }
 }
