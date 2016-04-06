@@ -2,6 +2,8 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WcfReportService;
+using WcfReportService.Model;
 
 namespace WcfReportService.UnitTest
 {
@@ -11,59 +13,50 @@ namespace WcfReportService.UnitTest
     [TestClass]
     public class UTSampleReportService
     {
-        public UTSampleReportService()
+        private SampleReportService service;
+        [TestInitialize]
+        public void Intial()
         {
-            //
-            //TODO:  在此处添加构造函数逻辑
-            //
+            service = new SampleReportService();
         }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///获取或设置测试上下文，该上下文提供
-        ///有关当前测试运行及其功能的信息。
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region 附加测试特性
-        //
-        // 编写测试时，可以使用以下附加特性: 
-        //
-        // 在运行类中的第一个测试之前使用 ClassInitialize 运行代码
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // 在类中的所有测试都已运行之后使用 ClassCleanup 运行代码
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // 在运行每个测试之前，使用 TestInitialize 来运行代码
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // 在每个测试运行完之后，使用 TestCleanup 来运行代码
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestGetSamples()
         {
-            //
-            // TODO:  在此处添加测试逻辑
-            //
+            var result = service.GetSamples();
+            Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void TestAddUpdateDeleteSample()
+        {
+            Sample s = new Sample()
+            {
+                Id = Guid.NewGuid(),
+                Composition = "CIGS",
+                Customer = "Midsummer",
+                Lot = "160332-M-1",
+                PO = "21323",
+                Weight1 = "12",
+                Weight2="45",
+                Weight3="232",
+                IsSend=true,
+                SendDate=DateTime.Now
+            };
+
+            bool result1 = service.AddSample(s);
+            Assert.IsTrue(result1);
+
+            s.Customer = "xs.zhou";
+            bool result2 = service.UpdateSample(s);
+            Assert.IsTrue(result2);
+
+            bool result3 = service.DeleteSample(s);
+            Assert.IsTrue(result3);
+        }
+
+
+
+
     }
 }

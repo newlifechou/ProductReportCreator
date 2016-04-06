@@ -33,7 +33,6 @@ namespace ReportServiceLib
         {
             Sample tmp = db.Samples.Find(sample.Id);
             CloneSample(sample, tmp);
-            db.Samples.Add(tmp);
             return db.SaveChanges() > 0;
         }
 
