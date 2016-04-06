@@ -19,7 +19,7 @@ namespace ReportServiceLib
 
         }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Target> Products { get; set; }
         public DbSet<Sample> Samples { get; set; }
 
 

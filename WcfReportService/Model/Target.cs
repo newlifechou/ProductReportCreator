@@ -4,23 +4,36 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace ReportServiceLib.Model
+namespace WcfReportService.Model
 {
-    public class Product
+    [DataContract(Namespace ="Http://www.newlifechou.com")]
+    public class Target
     {
+        [DataMember]
         public Guid Id { get; set;}
+        [DataMember]
         public string Material { get; set; }
+        [DataMember]
         public string Lot { get; set; }
+        [DataMember]
         public string Size { get; set; }
+        [DataMember]
         public string Customer { get; set; }
+        [DataMember]
         public string PO { get; set; }
+        [DataMember]
         public string Density { get; set; }
+        [DataMember]
         public string Weight { get; set; }
+        [DataMember]
         public string Resistance { get; set; }
+        [DataMember]
         public string Composition { get; set; }
 
 
+        [DataMember]
         public bool IsSend { get; set; }
+        [DataMember]
         public DateTime SendDate { get; set; }
     }
 }

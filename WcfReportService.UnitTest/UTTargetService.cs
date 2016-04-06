@@ -6,28 +6,28 @@ using WcfReportService.Model;
 namespace WcfReportService.UnitTest
 {
     [TestClass]
-    public class UTProductService
+    public class UTTargetService
     {
-        private ProductReportService service;
+        private TargetReportService service;
 
         [TestInitialize]
         public void Initial()
         {
-            service = new ProductReportService();
+            service = new TargetReportService();
         }
 
         [TestMethod]
-        public void TestGetProducts()
+        public void TestGetTargets()
         {
-            var products=service.GetProducts();
+            var targets=service.GetTargets();
 
-            Assert.IsNotNull(products);
+            Assert.IsNotNull(targets);
         }
 
         [TestMethod]
-        public void TestAddDeleteProduct()
+        public void TestAddUpdateDeleteTarget()
         {
-            Product p = new Product()
+            Target p = new Target()
             {
                 Id = Guid.NewGuid(),
                 Material = "Te",
@@ -43,15 +43,16 @@ namespace WcfReportService.UnitTest
                 SendDate = new DateTime(2016, 3, 8)
             };
 
-            bool result1 = service.AddProduct(p);
+            bool result1 = service.AddTarget(p);
             Assert.IsTrue(result1);
-            bool result2=service.DeleteProduct(p);
-            Assert.IsTrue(result2);
-        }
-        [TestMethod]
-        public void TestUpdateProduct()
-        {
 
+            p.Customer = "xs.zhou";
+            bool result2 = service.UpdateTarget(p);
+
+            Assert.IsTrue(result2);
+
+            bool result3=service.DeleteTarget(p);
+            Assert.IsTrue(result3);
         }
 
 

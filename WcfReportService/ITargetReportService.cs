@@ -10,16 +10,16 @@ using WcfReportService.Model;
 namespace WcfReportService
 {
     [ServiceContract(Namespace ="http://www.newlifechou.com")]
-    public interface IProductReportService
+    public interface ITargetReportService
     {
         [OperationContract]
-        List<Product> GetProducts();
+        List<Target> GetTargets();
 
         [OperationContract]
-        bool AddProduct(Product product);
+        bool AddTarget(Target product);
         [OperationContract]
-        bool UpdateProduct(Product product);
+        bool UpdateTarget(Target product);
         [OperationContract]
-        bool DeleteProduct(Product product);
+        bool DeleteTarget(Target product);
     }
 }

@@ -11,44 +11,44 @@ using System.Threading.Tasks;
 */
 namespace ReportServiceLib
 {
-    public class ReportService
+    public class TargetReport
     {
         private ProductsContext db;
-        public ReportService()
+        public TargetReport()
         {
             db = new ProductsContext();
         }
-        public List<Product> GetProducts()
+        public List<Target> GetTargets()
         {
             return db.Products.ToList();
         }
 
-        public bool AddProduct(Product product)
+        public bool AddTarget(Target target)
         {
-            db.Products.Add(product);
+            db.Products.Add(target);
             int result=db.SaveChanges();
             return result > 0;
         }
 
-        public bool UpdateProduct(Product product)
+        public bool UpdateTarget(Target target)
         {
-            Product tmp = db.Products.FirstOrDefault(p => p.Id == product.Id);
+            Target tmp = db.Products.FirstOrDefault(p => p.Id == target.Id);
             //赋值
-            CloneProduct(product, tmp);
+            CloneProduct(target, tmp);
             int result = db.SaveChanges();
             return result > 0;
         }
 
-        public bool DeleteProduct(Guid id)
+        public bool DeleteTarget(Guid id)
         {
-            Product tmp = db.Products.Find(id);
+            Target tmp = db.Products.Find(id);
             db.Products.Remove(tmp);
 
             int result = db.SaveChanges();
             return result > 0;
         }
 
-        private void CloneProduct(Product source,Product destination)
+        private void CloneProduct(Target source,Target destination)
         {
             destination.Id = source.Id;
             destination.Material = source.Material;
