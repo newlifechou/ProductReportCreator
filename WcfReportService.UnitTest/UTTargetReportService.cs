@@ -6,7 +6,7 @@ using WcfReportService.Model;
 namespace WcfReportService.UnitTest
 {
     [TestClass]
-    public class UTTargetService
+    public class UTTargetReportService
     {
         private TargetReportService service;
 

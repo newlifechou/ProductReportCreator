@@ -34,12 +34,7 @@ namespace WcfReportService
 
         public bool DeleteTarget(Target target)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<Target, ReportServiceLib.Model.Target>());
-            var mapper = config.CreateMapper();
-
-            ReportServiceLib.Model.Target p = mapper.Map<Target, ReportServiceLib.Model.Target>(target);
-
-            return service.DeleteTarget(p.Id);
+            return service.DeleteTarget(target.Id);
         }
 
         public List<Target> GetTargets()
