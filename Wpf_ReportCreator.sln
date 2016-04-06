@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfReportService", "WcfRepo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfReportService.UnitTest", "WcfReportService.UnitTest\WcfReportService.UnitTest.csproj", "{CBDF065B-D732-47CA-BCA1-55A2E9214823}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B5413E5F-F52E-4214-BB22-33A3EEDE9B80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldVHP", "OldVHP\OldVHP.csproj", "{7E5752EF-DD61-45CD-82B9-91E094776D74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{CBDF065B-D732-47CA-BCA1-55A2E9214823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBDF065B-D732-47CA-BCA1-55A2E9214823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBDF065B-D732-47CA-BCA1-55A2E9214823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5413E5F-F52E-4214-BB22-33A3EEDE9B80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5413E5F-F52E-4214-BB22-33A3EEDE9B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5413E5F-F52E-4214-BB22-33A3EEDE9B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5413E5F-F52E-4214-BB22-33A3EEDE9B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5752EF-DD61-45CD-82B9-91E094776D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E5752EF-DD61-45CD-82B9-91E094776D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E5752EF-DD61-45CD-82B9-91E094776D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E5752EF-DD61-45CD-82B9-91E094776D74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

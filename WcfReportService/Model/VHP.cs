@@ -15,7 +15,7 @@ namespace WcfReportService.Model
     public class VHP
     {
         [DataMember]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [DataMember]
         public DateTime VHPDate { get; set; }
         [DataMember]

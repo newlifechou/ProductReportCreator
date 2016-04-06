@@ -8,11 +8,11 @@ using System.Threading.Tasks;
     Developer:xs.zhou@outlook.com
     CreateTime:2016/4/6 14:52:44
 */
-namespace ReportServiceLib.Model
+namespace Common.Model
 {
     public class VHP
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime VHPDate { get; set; }
         public string VHPDevice { get; set; }
         public string Customer { get; set; }

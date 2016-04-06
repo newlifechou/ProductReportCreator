@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5587BB84-C442-413B-8B91-0A31DA021776}</ProjectGuid>
+    <ProjectGuid>{7E5752EF-DD61-45CD-82B9-91E094776D74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReportServiceLib</RootNamespace>
-    <AssemblyName>ReportServiceLib</AssemblyName>
+    <RootNamespace>OldVHP</RootNamespace>
+    <AssemblyName>OldVHP</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,14 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Target.cs" />
-    <Compile Include="Model\Sample.cs" />
-    <Compile Include="ProductsContext.cs" />
+    <Compile Include="DBNew.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TargetReport.cs" />
-    <Compile Include="SampleReport.cs" />
+    <Compile Include="tb_Order.cs" />
+    <Compile Include="tb_Plan.cs" />
+    <Compile Include="VHPReport.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{b5413e5f-f52e-4214-bb22-33a3eede9b80}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

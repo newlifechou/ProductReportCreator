@@ -14,6 +14,7 @@ namespace WcfReportService
     {
         public List<Model.VHP> GetVHPs()
         {
+            Common.IVHPReport service;
             throw new NotImplementedException();
         }
     }

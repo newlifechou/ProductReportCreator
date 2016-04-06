@@ -111,6 +111,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{b5413e5f-f52e-4214-bb22-33a3eede9b80}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportServiceLib\ReportServiceLib.csproj">
       <Project>{5587bb84-c442-413b-8b91-0a31da021776}</Project>
       <Name>ReportServiceLib</Name>
