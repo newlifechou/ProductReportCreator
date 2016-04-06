@@ -13,6 +13,8 @@ namespace WcfReportService
     {
         [OperationContract]
         List<Sample> GetSamples(int skip,int take);
+        [OperationContract]
+        int GetSampleCount();
 
         [OperationContract]
         bool AddSample(Sample sample);

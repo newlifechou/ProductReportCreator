@@ -37,6 +37,11 @@ namespace WcfReportService
             return service.DeleteTarget(target.Id);
         }
 
+        public int GetTargetCount()
+        {
+            return service.TargetCount();
+        }
+
         public List<Target> GetTargets(int skip, int take)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<ReportServiceLib.Model.Target, Target>());

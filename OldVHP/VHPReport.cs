@@ -35,5 +35,17 @@ namespace OldVHP
                         };
             return query.Skip(skip).Take(take).ToList(); 
         }
+
+        public int VHPCount()
+        {
+            DBNew db = new DBNew();
+            var query = from o in db.tb_Order
+                        join p in db.tb_Plan
+                        on o.OrderID equals p.OrderID
+                        orderby p.VHPTimePlan descending
+                        select p;
+
+            return query.Count();
+        }
     }
 }

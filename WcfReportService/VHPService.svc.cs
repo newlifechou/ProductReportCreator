@@ -13,6 +13,12 @@ namespace WcfReportService
 {
     public class VHPService : IVHPService
     {
+        private Common.IVHPReport service;
+        public VHPService()
+        {
+
+            service = new OldVHP.VHPReport();
+        }
         public List<Model.VHP> GetVHPs(int skip, int take)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Common.Model.VHP,VHP>());
@@ -21,6 +27,11 @@ namespace WcfReportService
             Common.IVHPReport service = new OldVHP.VHPReport();
             List<VHP> results = mapper.Map<List<Common.Model.VHP>, List<VHP>>(service.GetVHPs(skip,take));
             return results;
+        }
+
+        public int VHPCount()
+        {
+            return service.VHPCount();
         }
     }
 }

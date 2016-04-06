@@ -10,5 +10,6 @@ namespace Common
    public  interface IVHPReport
     {
         List<VHP> GetVHPs(int skip,int take);
+        int VHPCount();
     }
 }

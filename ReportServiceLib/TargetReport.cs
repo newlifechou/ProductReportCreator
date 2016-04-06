@@ -23,6 +23,11 @@ namespace ReportServiceLib
             return db.Products.OrderByDescending(t=>t.Lot).Skip(skip).Take(take).ToList();
         }
 
+        public int TargetCount()
+        {
+            return db.Products.Count();
+        }
+
         public bool AddTarget(Target target)
         {
             db.Products.Add(target);

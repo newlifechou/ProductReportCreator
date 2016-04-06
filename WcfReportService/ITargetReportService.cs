@@ -14,6 +14,8 @@ namespace WcfReportService
     {
         [OperationContract]
         List<Target> GetTargets(int skip, int take);
+        [OperationContract]
+        int GetTargetCount();
 
         [OperationContract]
         bool AddTarget(Target product);
