@@ -5,17 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*
-    Developer:xs.zhou@outlook.com
-    CreateTime:2016/4/6 14:52:19
-*/
 namespace ReportServiceLib
 {
-    public class VHPReport
+   public  interface IVHPReport
     {
-        public List<VHP> GetVHPs()
-        {
-
-        }
+        List<VHP> GetVHPs();
     }
 }
