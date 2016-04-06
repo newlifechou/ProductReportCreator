@@ -7,7 +7,7 @@ using System.Web;
 namespace WcfReportService.Model
 {
     [DataContract(Namespace ="Http://www.newlifechou.com")]
-    public class ProductReport
+    public class Product
     {
         [DataMember]
         public Guid Id { get; set;}
