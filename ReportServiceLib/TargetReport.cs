@@ -32,7 +32,7 @@ namespace ReportServiceLib
 
         public bool UpdateTarget(Target target)
         {
-            Target tmp = db.Products.FirstOrDefault(p => p.Id == target.Id);
+            Target tmp = db.Products.Find(target.Id);
             //赋值
             CloneProduct(target, tmp);
             int result = db.SaveChanges();
