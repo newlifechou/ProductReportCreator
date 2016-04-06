@@ -36,7 +36,7 @@ namespace OldVHP
             return query.Skip(skip).Take(take).ToList(); 
         }
 
-        public int VHPCount()
+        public int GetVHPCount()
         {
             DBNew db = new DBNew();
             var query = from o in db.tb_Order

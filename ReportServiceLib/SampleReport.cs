@@ -23,7 +23,7 @@ namespace ReportServiceLib
             return db.Samples.OrderByDescending(s=>s.Lot).Skip(skip).Take(take).ToList();
         }
 
-        public int SampleCount()
+        public int GetSampleCount()
         {
             return db.Samples.Count();
         }

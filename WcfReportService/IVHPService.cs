@@ -15,6 +15,6 @@ namespace WcfReportService
         [OperationContract]
         List<VHP> GetVHPs(int skip,int take);
         [OperationContract]
-        int VHPCount();
+        int GetVHPCount();
     }
 }

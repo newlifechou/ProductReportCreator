@@ -35,7 +35,7 @@ namespace WcfReportService
 
         public int GetSampleCount()
         {
-            return service.SampleCount();
+            return service.GetSampleCount();
         }
 
         public List<Sample> GetSamples(int skip, int take)

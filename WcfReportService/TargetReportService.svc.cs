@@ -39,7 +39,7 @@ namespace WcfReportService
 
         public int GetTargetCount()
         {
-            return service.TargetCount();
+            return service.GetTargetCount();
         }
 
         public List<Target> GetTargets(int skip, int take)

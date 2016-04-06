@@ -55,6 +55,11 @@ namespace WcfReportService.UnitTest
             Assert.IsTrue(result3);
         }
 
-
+        [TestMethod]
+        public void TestTargetAcount()
+        {
+            int count = service.GetTargetCount();
+            Assert.IsTrue(count > 0);
+        }
     }
 }

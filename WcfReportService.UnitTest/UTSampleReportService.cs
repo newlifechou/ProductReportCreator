@@ -55,7 +55,12 @@ namespace WcfReportService.UnitTest
             Assert.IsTrue(result3);
         }
 
-
+        [TestMethod]
+        public void TestSampleCount()
+        {
+            int count = service.GetSampleCount();
+            Assert.IsTrue(count > 0);
+        }
 
 
     }

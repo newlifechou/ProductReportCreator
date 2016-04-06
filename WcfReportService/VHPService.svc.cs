@@ -29,9 +29,9 @@ namespace WcfReportService
             return results;
         }
 
-        public int VHPCount()
+        public int GetVHPCount()
         {
-            return service.VHPCount();
+            return service.GetVHPCount();
         }
     }
 }
