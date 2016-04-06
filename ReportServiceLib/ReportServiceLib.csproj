@@ -51,10 +51,12 @@
   <ItemGroup>
     <Compile Include="Model\Target.cs" />
     <Compile Include="Model\Sample.cs" />
+    <Compile Include="Model\VHP.cs" />
     <Compile Include="ProductsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TargetReport.cs" />
     <Compile Include="SampleReport.cs" />
+    <Compile Include="VHPReport.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
