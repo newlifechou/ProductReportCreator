@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_ReportCreator", "Wpf_ReportCreator\Wpf_ReportCreator.csproj", "{61DCCFB4-BE2E-45E3-AEBC-E73880CA0CAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfReportCreator", "Wpf_ReportCreator\WpfReportCreator.csproj", "{61DCCFB4-BE2E-45E3-AEBC-E73880CA0CAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportServiceLib", "ReportServiceLib\ReportServiceLib.csproj", "{5587BB84-C442-413B-8B91-0A31DA021776}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B5413E5F-F52E-4214-BB22-33A3EEDE9B80}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldVHP", "OldVHP\OldVHP.csproj", "{7E5752EF-DD61-45CD-82B9-91E094776D74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{4393F834-22E7-438C-B374-6DBEF458E9A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{6E5AF502-324B-474E-9027-F7160DD88A11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,5 +52,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61DCCFB4-BE2E-45E3-AEBC-E73880CA0CAA} = {6E5AF502-324B-474E-9027-F7160DD88A11}
+		{5587BB84-C442-413B-8B91-0A31DA021776} = {4393F834-22E7-438C-B374-6DBEF458E9A6}
+		{3E162DDB-15AC-4C5C-8A25-B4806BE95FBC} = {4393F834-22E7-438C-B374-6DBEF458E9A6}
+		{CBDF065B-D732-47CA-BCA1-55A2E9214823} = {4393F834-22E7-438C-B374-6DBEF458E9A6}
+		{B5413E5F-F52E-4214-BB22-33A3EEDE9B80} = {4393F834-22E7-438C-B374-6DBEF458E9A6}
+		{7E5752EF-DD61-45CD-82B9-91E094776D74} = {4393F834-22E7-438C-B374-6DBEF458E9A6}
 	EndGlobalSection
 EndGlobal

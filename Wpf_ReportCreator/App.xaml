@@ -1,7 +1,7 @@
-﻿<Application x:Class="Wpf_ReportCreator.App"
+﻿<Application x:Class="WpfReportCreator.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Wpf_ReportCreator"
+             xmlns:local="clr-namespace:WpfReportCreator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
