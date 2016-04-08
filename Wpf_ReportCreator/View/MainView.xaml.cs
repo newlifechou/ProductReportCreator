@@ -24,10 +24,17 @@ namespace WpfReportCreator.View
         {
             InitializeComponent();
             ucTargetView = new UCTargetView();
+            ucSampleView = new UCSampleView();
+
+
             mainContent.Content = ucTargetView;
         }
+        #region 内容控件
         private UCTargetView ucTargetView;
-        
+        private UCSampleView ucSampleView;
+        #endregion
+
+
         private void btnProductView_Click(object sender, RoutedEventArgs e)
         {
             mainContent.Content = ucTargetView;
@@ -35,7 +42,7 @@ namespace WpfReportCreator.View
 
         private void btnSampleView_Click(object sender, RoutedEventArgs e)
         {
-            mainContent.Content = null;
+            mainContent.Content = ucSampleView;
         }
     }
 }
