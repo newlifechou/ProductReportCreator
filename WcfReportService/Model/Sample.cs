@@ -27,6 +27,8 @@ namespace WcfReportService.Model
         public string Weight3 { get; set; }
         [DataMember]
         public string Weight4{ get; set; }
+        [DataMember]
+        public string ForTarget { get; set; }
 
         [DataMember]
         public bool IsSend { get; set; }

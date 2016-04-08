@@ -18,6 +18,7 @@ namespace ReportServiceLib.Model
         public string Weight2 { get; set; }
         public string Weight3 { get; set; }
         public string Weight4{ get; set; }
+        public string ForTarget { get; set; }
 
         public bool IsSend { get; set; }
         public DateTime SendDate { get; set; }

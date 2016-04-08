@@ -49,6 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201604060545204_InitialCreate.cs" />
+    <Compile Include="Migrations\201604060545204_InitialCreate.Designer.cs">
+      <DependentUpon>201604060545204_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604080505145_addsamplefortarget.cs" />
+    <Compile Include="Migrations\201604080505145_addsamplefortarget.Designer.cs">
+      <DependentUpon>201604080505145_addsamplefortarget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Target.cs" />
     <Compile Include="Model\Sample.cs" />
     <Compile Include="ProductsContext.cs" />
@@ -56,7 +65,14 @@
     <Compile Include="TargetReport.cs" />
     <Compile Include="SampleReport.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604060545204_InitialCreate.resx">
+      <DependentUpon>201604060545204_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604080505145_addsamplefortarget.resx">
+      <DependentUpon>201604080505145_addsamplefortarget.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
