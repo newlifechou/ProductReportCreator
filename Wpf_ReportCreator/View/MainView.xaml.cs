@@ -23,15 +23,20 @@ namespace WpfReportCreator.View
         public MainView()
         {
             InitializeComponent();
-            ucTargetView = new UCTargetView();
-            ucSampleView = new UCSampleView();
-
+            InitialView();
 
             mainContent.Content = ucTargetView;
+        }
+
+        private void InitialView()
+        {
+            ucTargetView = new UCTargetView();
+            ucSampleView = new UCSampleView();
         }
         #region 内容控件
         private UCTargetView ucTargetView;
         private UCSampleView ucSampleView;
+        private LogInView logInView;
         #endregion
 
 
@@ -43,6 +48,12 @@ namespace WpfReportCreator.View
         private void btnSampleView_Click(object sender, RoutedEventArgs e)
         {
             mainContent.Content = ucSampleView;
+        }
+
+        private void LogIn_Click(object sender, RoutedEventArgs e)
+        {
+            logInView = new LogInView();
+            logInView.ShowDialog();
         }
     }
 }

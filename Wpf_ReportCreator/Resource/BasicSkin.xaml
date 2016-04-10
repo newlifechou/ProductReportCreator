@@ -9,12 +9,14 @@
     </Style>
     <!--TextBlock-->
     <Style TargetType="TextBlock">
+        <Setter Property="Margin" Value="0 3 0 3"/>
+        <Setter Property="Padding" Value="5 0 5 0"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
     <!--TextBox-->
     <Style TargetType="TextBox" x:Key="txtNormal">
         <Setter Property="Margin" Value="3"/>
-        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Padding" Value="2 5 2 5"/>
         <Setter Property="MinWidth" Value="120"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -28,7 +30,7 @@
     </Style>
     <Style TargetType="Button" x:Key="btnNormal">
         <Setter Property="Margin" Value="3"/>
-        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Padding" Value="2 5 2 5"/>
         <Setter Property="MinWidth" Value="100"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>

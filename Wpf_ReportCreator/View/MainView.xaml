@@ -18,7 +18,7 @@
                     Click="btnProductView_Click"/>
                 <Button x:Name="btnSampleView" Content="Sample View"   Style="{StaticResource btnMenu}"
                     Click="btnSampleView_Click"/>
-                <Button x:Name="LogIn" Content="Log To Edit" Style="{StaticResource btnMenu}"/>
+                <Button x:Name="LogIn" Content="Log In To Edit" Style="{StaticResource btnMenu}" Click="LogIn_Click"/>
             </StackPanel>
         </Border>
 

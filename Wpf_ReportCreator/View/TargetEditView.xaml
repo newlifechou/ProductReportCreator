@@ -9,7 +9,7 @@
         Title="TargetEdit" Height="300" Width="300" Style="{StaticResource win}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
