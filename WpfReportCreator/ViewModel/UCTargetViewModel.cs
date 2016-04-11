@@ -19,11 +19,11 @@ namespace WpfReportCreator.ViewModel
         /// </summary>
         public UCTargetViewModel()
         {
-            FillTargets(0,20);
+            FillTargets(0, 20);
             AddCommand = new RelayCommand(ActionAdd, CanAdd);
         }
 
-        private void FillTargets(int skip,int take)
+        private void FillTargets(int skip, int take)
         {
             TargetReportServiceClient client = new TargetReportServiceClient();
             Targets = new ObservableCollection<Target>(client.GetTargets(skip, take));
@@ -32,15 +32,21 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanAdd()
         {
-            return Service.Access.AccessState==Service.LogState.Pass;
+            return Service.Access.AccessState == Service.LogState.Pass;
         }
 
         private void ActionAdd()
         {
             throw new NotImplementedException();
         }
+        #region 命令区域
+        public RelayCommand AddCommand { get; private set; }
+        public RelayCommand EditCommand { get; private set; }
+        public RelayCommand DeleteCommand { get; private set; }
+        public RelayCommand DetailsCommand { get; private set; }
+        public RelayCommand RefreshCommand { get; private set; }
+        #endregion
 
-        public RelayCommand AddCommand { get; set; }
 
         private ObservableCollection<Target> targets;
         public ObservableCollection<Target> Targets
