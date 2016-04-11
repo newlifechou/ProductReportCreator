@@ -48,6 +48,7 @@ namespace WpfReportCreator.ViewModel
         #endregion
 
 
+        #region 属性区域
         private ObservableCollection<Target> targets;
         public ObservableCollection<Target> Targets
         {
@@ -61,6 +62,33 @@ namespace WpfReportCreator.ViewModel
             }
         }
 
+        private string searchLot;
+        public string SearchLot
+        {
+            get { return searchLot; }
+            set
+            {
+                if (searchLot == value)
+                    return;
+                searchLot = value;
+                RaisePropertyChanged(() => SearchLot);
+            }
+        }
+
+        private string searchCustomer;
+        public string SearchCustomer
+        {
+            get { return searchCustomer; }
+            set
+            {
+                if (searchCustomer == value)
+                    return;
+                searchCustomer = value;
+                RaisePropertyChanged(() => SearchCustomer);
+            }
+        }
+
+        #endregion
 
     }
 }
