@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.newlifechou.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3622/SampleReportService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="GetSamples">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSamplesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.newlifechou.com" minOccurs="0" name="GetSamplesResult" nillable="true" type="q1:ArrayOfSample" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfSample">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://www.newlifechou.com" minOccurs="0" maxOccurs="unbounded" name="Sample" nillable="true" type="q2:Sample" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q3="http://www.newlifechou.com" name="ArrayOfSample" nillable="true" type="q3:ArrayOfSample" />
+  <xs:complexType name="Sample">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ForTarget" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsSend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Weight1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight4" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q4="http://www.newlifechou.com" name="Sample" nillable="true" type="q4:Sample" />
+  <xs:element name="GetSampleCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSampleCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSampleCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSample">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q5:Sample" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSampleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddSampleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSample">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q6:Sample" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSampleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateSampleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSample">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q7:Sample" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSampleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSampleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -20,6 +20,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfReportCreator.UnitTest", "WpfReportCreator.UnitTest\WpfReportCreator.UnitTest.csproj", "{DD521B12-45A7-4394-8F34-B0E7F331CE75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfReportCreator", "WpfReportCreator\WpfReportCreator.csproj", "{61DCCFB4-BE2E-45E3-AEBC-E73880CA0CAA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E162DDB-15AC-4C5C-8A25-B4806BE95FBC} = {3E162DDB-15AC-4C5C-8A25-B4806BE95FBC}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

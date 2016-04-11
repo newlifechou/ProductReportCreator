@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a88d36a9-8fae-4033-b557-7d807393abe2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3622/SampleReportService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SampleReportService.wsdl" MetadataType="Wsdl" ID="5741926b-c331-4e84-9fe9-617b36d865b5" SourceId="1" SourceUrl="http://localhost:3622/SampleReportService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SampleReportService.xsd" MetadataType="Schema" ID="bbb17ee9-ec6a-4274-ad8a-e887f6ac1760" SourceId="1" SourceUrl="http://localhost:3622/SampleReportService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SampleReportService1.wsdl" MetadataType="Wsdl" ID="73817f39-0e61-424b-ad2f-5c2d98f64299" SourceId="1" SourceUrl="http://localhost:3622/SampleReportService.svc?wsdl" />
+    <MetadataFile FileName="SampleReportService.disco" MetadataType="Disco" ID="883a59e2-b061-469d-86c9-eb77bf3047a5" SourceId="1" SourceUrl="http://localhost:3622/SampleReportService.svc?disco" />
+    <MetadataFile FileName="SampleReportService1.xsd" MetadataType="Schema" ID="3e6e5772-2f5f-4a01-9c18-523a0ea5c7d6" SourceId="1" SourceUrl="http://localhost:3622/SampleReportService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
