@@ -15,8 +15,8 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Target Information"  Style="{StaticResource txtPageTitle}"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <Button Content="Add" Style="{StaticResource btnNormal}" Command="{Binding AddCommand}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Stretch" Background="Orange">
+            <Button Content="Add" Style="{StaticResource btnNormal}" Command="{Binding AddCommand}" />
             <TextBlock Text="Lot" />
             <TextBox Text="123456" Style="{StaticResource txtNormal}"/>
             <TextBlock Text="Customer"/>
@@ -95,7 +95,13 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
+                <DataGridTemplateColumn Header="Details">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Details"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
 
 
 
