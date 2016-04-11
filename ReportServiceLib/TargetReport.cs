@@ -64,7 +64,7 @@ namespace ReportServiceLib
             destination.Density = source.Density;
             destination.Weight = source.Weight;
             destination.Resistance = source.Resistance;
-            destination.Composition = source.Composition;
+            destination.CreateDate = source.CreateDate;
         }
 
     }

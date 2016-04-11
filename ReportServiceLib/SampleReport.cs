@@ -50,7 +50,7 @@ namespace ReportServiceLib
         private void CloneSample(Sample source,Sample destination)
         {
             destination.Id = source.Id;
-            destination.Composition = source.Composition;
+            destination.Material = source.Material;
             destination.Customer = source.Customer;
             destination.Lot = source.Lot;
             destination.PO = source.PO;
@@ -58,8 +58,7 @@ namespace ReportServiceLib
             destination.Weight2 = source.Weight2;
             destination.Weight3 = source.Weight3;
             destination.Weight4 = source.Weight4;
-            destination.IsSend = source.IsSend;
-            destination.SendDate = source.SendDate;
+            destination.CreateDate = source.CreateDate;
 
         }
     }

@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201604080505145_addsamplefortarget.Designer.cs">
       <DependentUpon>201604080505145_addsamplefortarget.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604110318091_changecolumns.cs" />
+    <Compile Include="Migrations\201604110318091_changecolumns.Designer.cs">
+      <DependentUpon>201604110318091_changecolumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Target.cs" />
     <Compile Include="Model\Sample.cs" />
@@ -71,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604080505145_addsamplefortarget.resx">
       <DependentUpon>201604080505145_addsamplefortarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604110318091_changecolumns.resx">
+      <DependentUpon>201604110318091_changecolumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

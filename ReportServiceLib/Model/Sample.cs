@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -10,9 +11,12 @@ namespace ReportServiceLib.Model
     {
 
         public Guid Id { get; set; }
-        public string Composition { get; set; }
-        public string Customer { get; set; }
+        [Required]
+        public string Material { get; set; }
+        [Required]
         public string Lot { get; set; }
+
+        public string Customer { get; set; }
         public string PO { get; set; }
         public string Weight1 { get; set; }
         public string Weight2 { get; set; }
@@ -20,8 +24,7 @@ namespace ReportServiceLib.Model
         public string Weight4{ get; set; }
         public string ForTarget { get; set; }
 
-        public bool IsSend { get; set; }
-        public DateTime SendDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
     }
 }
