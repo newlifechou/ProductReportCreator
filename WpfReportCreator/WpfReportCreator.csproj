@@ -79,6 +79,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Service\Access.cs" />
+    <Compile Include="Service\IReport.cs" />
     <Compile Include="ViewModel\UCSampleViewModel.cs" />
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
