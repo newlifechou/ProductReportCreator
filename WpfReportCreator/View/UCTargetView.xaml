@@ -77,7 +77,7 @@
                 <DataGridTemplateColumn Header="Create Date">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding CreateDate}"/>
+                            <TextBlock Text="{Binding CreateDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

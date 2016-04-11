@@ -37,10 +37,8 @@ namespace WcfReportService.UnitTest
                 PO = "27839",
                 Density = "5.91",
                 Weight = "439.2",
-                Composition = "",
                 Resistance = "0.2",
-                IsSend = true,
-                SendDate = new DateTime(2016, 3, 8)
+                CreateDate = new DateTime(2016, 3, 8)
             };
 
             bool result1 = service.AddTarget(p);

@@ -33,15 +33,14 @@ namespace WcfReportService.UnitTest
             Sample s = new Sample()
             {
                 Id = Guid.NewGuid(),
-                Composition = "CIGS",
+                Material = "CIGS",
                 Customer = "Midsummer",
                 Lot = "160332-M-1",
                 PO = "21323",
                 Weight1 = "12",
                 Weight2="45",
                 Weight3="232",
-                IsSend=true,
-                SendDate=DateTime.Now
+                CreateDate=DateTime.Now
             };
 
             bool result1 = service.AddSample(s);
