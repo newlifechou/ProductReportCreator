@@ -21,6 +21,12 @@ namespace WpfReportCreator.Service
     public static  class Access
     {
         public static LogState AccessState { get; set; }
+
+        static Access()
+        {
+            AccessState = LogState.NotPass;
+        }
+
         public static  void Login(string pwd)
         {
             if (pwd=="newlifechou")
@@ -34,10 +40,7 @@ namespace WpfReportCreator.Service
             AccessState = LogState.NotPass;
         }
 
-        static Access()
-        {
-            AccessState = LogState.NotPass;
-        }
+
 
 
     }

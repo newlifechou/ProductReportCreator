@@ -14,7 +14,7 @@
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Sample Information" FontSize="18"  Margin="3"/>
+        <TextBlock Text="Sample Information" Style="{StaticResource txtPageTitle}"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <Button Content="Add" Style="{StaticResource btnNormal}" Click="btnAdd_Click"/>
             <TextBlock Text="Lot" />
