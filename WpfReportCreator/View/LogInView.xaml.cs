@@ -23,5 +23,15 @@ namespace WpfReportCreator.View
         {
             InitializeComponent();
         }
+
+        private void LogIn_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Service.Access.Login(txtPassCode.Text.Trim()))
+            {
+                MessageBox.Show("Wrong PassCode");
+                return;
+            }
+            this.Close();
+        }
     }
 }

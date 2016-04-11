@@ -12,13 +12,13 @@
             <ColumnDefinition Width="250"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Border Grid.Row="0" Margin="3" Padding="3" CornerRadius="3" BorderThickness="2" BorderBrush="Orange">
+        <Border Grid.Row="0" Margin="3" Padding="3" CornerRadius="2" BorderThickness="2" BorderBrush="Orange">
             <StackPanel >
                 <Button x:Name="btnProductView" Content="Product View"  Style="{StaticResource btnMenu}"
                     Click="btnProductView_Click"/>
                 <Button x:Name="btnSampleView" Content="Sample View"   Style="{StaticResource btnMenu}"
                     Click="btnSampleView_Click"/>
-                <Button x:Name="LogIn" Content="Log In To Edit" Style="{StaticResource btnMenu}" Click="LogIn_Click"/>
+                <Button x:Name="LogIn" Content="Log In" Style="{StaticResource btnMenu}" Click="LogIn_Click"/>
             </StackPanel>
         </Border>
 

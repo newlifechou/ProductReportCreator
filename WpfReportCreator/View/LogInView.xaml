@@ -20,7 +20,7 @@
         <TextBlock Text="Log In When you want to edit the data"
                    Grid.Row="0" Grid.ColumnSpan="2" Foreground="Red"/>
         <TextBlock Text="Pass Code" Grid.Row="1" Grid.Column="0"/>
-        <TextBox Text="" Grid.Row="1" Grid.Column="1" Style="{StaticResource txtNormal}"/>
-        <Button Content="Log In" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource btnNormal}"/>
+        <TextBox x:Name="txtPassCode" Text="" Grid.Row="1" Grid.Column="1" Style="{StaticResource txtNormal}"/>
+        <Button Content="Log In" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource btnNormal}" Click="LogIn_Click"/>
     </Grid>
 </Window>

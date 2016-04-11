@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 /*
     Developer:xs.zhou@outlook.com
@@ -27,12 +28,14 @@ namespace WpfReportCreator.Service
             AccessState = LogState.NotPass;
         }
 
-        public static  void Login(string pwd)
+        public static  bool Login(string pwd)
         {
             if (pwd=="newlifechou")
             {
                 AccessState = LogState.Pass;
+                return true;
             }
+            return false;
         }
 
         public static void LogOut()
