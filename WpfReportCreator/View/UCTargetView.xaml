@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfReportCreator.View"
              xmlns:control="clr-namespace:XSWPFControls;assembly=XSWPFControls"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="800" DataContext="{Binding UCTarget,Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Target Information"  Style="{StaticResource txtPageTitle}"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <Button Content="Add" Style="{StaticResource btnNormal}" Click="btnAdd_Click"/>
+            <Button Content="Add" Style="{StaticResource btnNormal}" Command="{Binding AddCommand}"/>
             <TextBlock Text="Lot" />
             <TextBox Text="123456" Style="{StaticResource txtNormal}"/>
             <TextBlock Text="Customer"/>

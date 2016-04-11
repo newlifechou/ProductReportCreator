@@ -43,6 +43,10 @@ namespace WpfReportCreator.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<UCTargetViewModel>();
+            SimpleIoc.Default.Register<UCSampleViewModel>();
+
+
         }
 
         public MainViewModel Main
@@ -52,7 +56,27 @@ namespace WpfReportCreator.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
+
+        public UCTargetViewModel UCTarget
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<UCTargetViewModel>();
+            }
+        }
+
+        public UCSampleViewModel UCSample
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<UCSampleViewModel>();
+            }
+        } 
         
+        
+        
+        
+                  
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

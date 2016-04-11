@@ -1,4 +1,6 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -15,7 +17,21 @@ namespace WpfReportCreator.ViewModel
         /// </summary>
         public UCTargetViewModel()
         {
-
+            AddCommand = new RelayCommand(ActionAdd, CanAdd);
         }
+
+        private bool CanAdd()
+        {
+            return Service.Access.AccessState==Service.LogState.Pass;
+        }
+
+        private void ActionAdd()
+        {
+            throw new NotImplementedException();
+        }
+
+        public RelayCommand AddCommand { get; set; }
+
+
     }
 }
