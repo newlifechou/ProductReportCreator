@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using WpfReportCreator.ServiceReferenceTargetReport;
+using System.Linq;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -40,7 +41,7 @@ namespace WpfReportCreator.ViewModel
         private void FillTargets(int skip, int take)
         {
             TargetReportServiceClient client = new TargetReportServiceClient();
-            Targets = new ObservableCollection<Target>(client.GetTargets(skip, take));
+            Targets = new ObservableCollection<Target>(client.GetTargets(skip, take).OrderByDescending(t=>t.CreateDate));
             client.Close();
         }
 
