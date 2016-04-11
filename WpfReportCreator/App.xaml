@@ -11,7 +11,7 @@
                            xmlns:vm="clr-namespace:WpfReportCreator.ViewModel" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resource/BasicSkin.xaml"/>
-                <ResourceDictionary Source="Languge/zh-cn.xaml"/>
+                <ResourceDictionary Source="Languge/us-en.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
