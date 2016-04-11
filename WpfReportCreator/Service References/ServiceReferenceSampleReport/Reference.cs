@@ -23,7 +23,7 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositionField;
+        private System.DateTime CreateDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CustomerField;
@@ -35,16 +35,13 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsSendField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string POField;
+        private string MaterialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime SendDateField;
+        private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Weight1Field;
@@ -69,14 +66,14 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Composition {
+        public System.DateTime CreateDate {
             get {
-                return this.CompositionField;
+                return this.CreateDateField;
             }
             set {
-                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
-                    this.CompositionField = value;
-                    this.RaisePropertyChanged("Composition");
+                if ((this.CreateDateField.Equals(value) != true)) {
+                    this.CreateDateField = value;
+                    this.RaisePropertyChanged("CreateDate");
                 }
             }
         }
@@ -121,19 +118,6 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsSend {
-            get {
-                return this.IsSendField;
-            }
-            set {
-                if ((this.IsSendField.Equals(value) != true)) {
-                    this.IsSendField = value;
-                    this.RaisePropertyChanged("IsSend");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Lot {
             get {
                 return this.LotField;
@@ -147,6 +131,19 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Material {
+            get {
+                return this.MaterialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialField, value) != true)) {
+                    this.MaterialField = value;
+                    this.RaisePropertyChanged("Material");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PO {
             get {
                 return this.POField;
@@ -155,19 +152,6 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime SendDate {
-            get {
-                return this.SendDateField;
-            }
-            set {
-                if ((this.SendDateField.Equals(value) != true)) {
-                    this.SendDateField = value;
-                    this.RaisePropertyChanged("SendDate");
                 }
             }
         }

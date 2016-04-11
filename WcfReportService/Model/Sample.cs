@@ -12,7 +12,7 @@ namespace WcfReportService.Model
         [DataMember]
         public Guid Id { get; set; }
         [DataMember]
-        public string Composition { get; set; }
+        public string Material { get; set; }
         [DataMember]
         public string Customer { get; set; }
         [DataMember]
@@ -31,9 +31,7 @@ namespace WcfReportService.Model
         public string ForTarget { get; set; }
 
         [DataMember]
-        public bool IsSend { get; set; }
-        [DataMember]
-        public DateTime SendDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
     }
 }

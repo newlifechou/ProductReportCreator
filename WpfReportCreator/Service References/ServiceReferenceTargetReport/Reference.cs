@@ -23,7 +23,7 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositionField;
+        private System.DateTime CreateDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CustomerField;
@@ -33,9 +33,6 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsSendField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LotField;
@@ -48,9 +45,6 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ResistanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime SendDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SizeField;
@@ -69,14 +63,14 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Composition {
+        public System.DateTime CreateDate {
             get {
-                return this.CompositionField;
+                return this.CreateDateField;
             }
             set {
-                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
-                    this.CompositionField = value;
-                    this.RaisePropertyChanged("Composition");
+                if ((this.CreateDateField.Equals(value) != true)) {
+                    this.CreateDateField = value;
+                    this.RaisePropertyChanged("CreateDate");
                 }
             }
         }
@@ -116,19 +110,6 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsSend {
-            get {
-                return this.IsSendField;
-            }
-            set {
-                if ((this.IsSendField.Equals(value) != true)) {
-                    this.IsSendField = value;
-                    this.RaisePropertyChanged("IsSend");
                 }
             }
         }
@@ -181,19 +162,6 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
                 if ((object.ReferenceEquals(this.ResistanceField, value) != true)) {
                     this.ResistanceField = value;
                     this.RaisePropertyChanged("Resistance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime SendDate {
-            get {
-                return this.SendDateField;
-            }
-            set {
-                if ((this.SendDateField.Equals(value) != true)) {
-                    this.SendDateField = value;
-                    this.RaisePropertyChanged("SendDate");
                 }
             }
         }

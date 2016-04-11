@@ -9,16 +9,14 @@
   <xs:element name="ArrayOfTarget" nillable="true" type="tns:ArrayOfTarget" />
   <xs:complexType name="Target">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Density" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
-      <xs:element minOccurs="0" name="IsSend" type="xs:boolean" />
       <xs:element minOccurs="0" name="Lot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Material" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Resistance" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SendDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>

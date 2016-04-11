@@ -27,13 +27,9 @@ namespace WcfReportService.Model
         public string Weight { get; set; }
         [DataMember]
         public string Resistance { get; set; }
-        [DataMember]
-        public string Composition { get; set; }
 
 
         [DataMember]
-        public bool IsSend { get; set; }
-        [DataMember]
-        public DateTime SendDate { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

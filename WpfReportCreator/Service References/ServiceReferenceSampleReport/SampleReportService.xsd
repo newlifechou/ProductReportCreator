@@ -24,14 +24,13 @@
   <xs:element xmlns:q3="http://www.newlifechou.com" name="ArrayOfSample" nillable="true" type="q3:ArrayOfSample" />
   <xs:complexType name="Sample">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ForTarget" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
-      <xs:element minOccurs="0" name="IsSend" type="xs:boolean" />
       <xs:element minOccurs="0" name="Lot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Material" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SendDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Weight1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight3" nillable="true" type="xs:string" />
