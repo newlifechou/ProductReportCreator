@@ -30,8 +30,8 @@ namespace WpfReportCreator.ViewModel
 
         private void InitialProperties()
         {
-            SearchLot = "";
-            SearchCustomer = "";
+            SearchLot = "Initial Lot";
+            SearchCustomer = "Inital Customer";
             FillTargets(0, 20);
         }
         #endregion
