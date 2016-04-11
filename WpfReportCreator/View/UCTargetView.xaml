@@ -23,8 +23,8 @@
             <TextBox Text="12355"  Style="{StaticResource txtNormal}"/>
             <Button Content="Search" Style="{StaticResource btnNormal}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2">
-
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Targets}">
+                
         </DataGrid>
         <control:SimplePager Grid.Row="3"/>
     </Grid>

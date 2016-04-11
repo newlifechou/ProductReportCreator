@@ -39,4 +39,18 @@
         <Setter Property="MinWidth" Value="100"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
+    <!--DataGrid-->
+    <Style TargetType="DataGrid">
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="CanUserSortColumns" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="Wheat"/>
+        <Setter Property="CanUserResizeColumns" Value="False"/>
+        <Setter Property="CanUserResizeRows" Value="False"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+    </Style>
+    
+    
+    
+    
 </ResourceDictionary>

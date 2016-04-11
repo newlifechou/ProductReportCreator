@@ -1,6 +1,8 @@
 ﻿using System;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using System.Collections.ObjectModel;
+using WpfReportCreator.ServiceReferenceTargetReport;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -17,7 +19,15 @@ namespace WpfReportCreator.ViewModel
         /// </summary>
         public UCTargetViewModel()
         {
+            FillTargets(0,20);
             AddCommand = new RelayCommand(ActionAdd, CanAdd);
+        }
+
+        private void FillTargets(int skip,int take)
+        {
+            TargetReportServiceClient client = new TargetReportServiceClient();
+            Targets = new ObservableCollection<Target>(client.GetTargets(skip, take));
+            client.Close();
         }
 
         private bool CanAdd()
@@ -31,6 +41,19 @@ namespace WpfReportCreator.ViewModel
         }
 
         public RelayCommand AddCommand { get; set; }
+
+        private ObservableCollection<Target> targets;
+        public ObservableCollection<Target> Targets
+        {
+            get { return targets; }
+            set
+            {
+                if (targets == value)
+                    return;
+                targets = value;
+                RaisePropertyChanged(() => Targets);
+            }
+        }
 
 
     }
