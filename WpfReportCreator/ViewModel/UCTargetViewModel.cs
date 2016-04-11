@@ -19,9 +19,23 @@ namespace WpfReportCreator.ViewModel
         /// </summary>
         public UCTargetViewModel()
         {
-            FillTargets(0, 20);
+            InitialProperties();
+            IntialCommands();
+        }
+        #region 初始化区域
+        private void IntialCommands()
+        {
             AddCommand = new RelayCommand(ActionAdd, CanAdd);
         }
+
+        private void InitialProperties()
+        {
+            SearchLot = "";
+            SearchCustomer = "";
+            FillTargets(0, 20);
+        }
+        #endregion
+
 
         private void FillTargets(int skip, int take)
         {
@@ -39,6 +53,10 @@ namespace WpfReportCreator.ViewModel
         {
             throw new NotImplementedException();
         }
+
+
+
+
         #region 命令区域
         public RelayCommand AddCommand { get; private set; }
         public RelayCommand EditCommand { get; private set; }
