@@ -85,6 +85,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceReferenceTargetReport\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceVHP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service\Access.cs" />
     <Compile Include="Service\IReport.cs" />
     <Compile Include="ViewModel\UCSampleViewModel.cs" />
@@ -179,6 +189,33 @@
     <None Include="Service References\ServiceReferenceSampleReport\WpfReportCreator.ServiceReferenceSampleReport.Sample.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReferenceTargetReport\TargetReportService.wsdl" />
+    <None Include="Service References\ServiceReferenceTargetReport\TargetReportService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceTargetReport\TargetReportService1.wsdl" />
+    <None Include="Service References\ServiceReferenceTargetReport\TargetReportService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceTargetReport\TargetReportService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceTargetReport\WpfReportCreator.ServiceReferenceTargetReport.Target.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceVHP\VHPService.wsdl" />
+    <None Include="Service References\ServiceReferenceVHP\VHPService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceVHP\VHPService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceVHP\VHPService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceVHP\WpfReportCreator.ServiceReferenceVHP.VHP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -191,6 +228,8 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReferenceSampleReport\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceTargetReport\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceVHP\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReferenceSampleReport\SampleReportService.disco" />
@@ -203,6 +242,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReferenceSampleReport\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTargetReport\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTargetReport\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTargetReport\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceVHP\VHPService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceVHP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceVHP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceVHP\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ea875120-9c24-4f38-af66-34c5ac8e89a9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://xs-laptop:8001/TargetReportService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TargetReportService.wsdl" MetadataType="Wsdl" ID="5da66e7d-268d-4956-af81-0b95e5dcee9a" SourceId="1" SourceUrl="http://xs-laptop:8001/TargetReportService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TargetReportService.xsd" MetadataType="Schema" ID="ff1d54f3-52d1-499a-a161-7597c1b78c78" SourceId="1" SourceUrl="http://xs-laptop:8001/TargetReportService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TargetReportService1.xsd" MetadataType="Schema" ID="fd9efc23-76cf-4b9c-8c44-cdd0a9ab838e" SourceId="1" SourceUrl="http://xs-laptop:8001/TargetReportService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TargetReportService2.xsd" MetadataType="Schema" ID="cc9f2ca3-dfd6-4026-bf59-64cf16a112f6" SourceId="1" SourceUrl="http://xs-laptop:8001/TargetReportService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TargetReportService1.wsdl" MetadataType="Wsdl" ID="f66a3f38-dac3-4202-8221-b5522620cec3" SourceId="1" SourceUrl="http://xs-laptop:8001/TargetReportService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

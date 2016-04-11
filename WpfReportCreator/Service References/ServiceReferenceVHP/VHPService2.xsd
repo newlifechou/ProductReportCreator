@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://www.newlifechou.com" elementFormDefault="qualified" targetNamespace="http://www.newlifechou.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3622/VHPService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfVHP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VHP" nillable="true" type="tns:VHP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVHP" nillable="true" type="tns:ArrayOfVHP" />
+  <xs:complexType name="VHP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="PMIWorkingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VHPDevice" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VHP" nillable="true" type="tns:VHP" />
+</xs:schema>

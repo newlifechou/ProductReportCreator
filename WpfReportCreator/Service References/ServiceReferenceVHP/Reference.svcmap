@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c893bf83-43aa-442c-a13b-cd968a6cfb51" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:3622/VHPService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VHPService.disco" MetadataType="Disco" ID="84f31d25-dc84-429c-9c15-19541aa933cc" SourceId="1" SourceUrl="http://localhost:3622/VHPService.svc?disco" />
+    <MetadataFile FileName="VHPService.xsd" MetadataType="Schema" ID="8b4ce2ea-ec65-46d2-9cc6-1c213b218e13" SourceId="1" SourceUrl="http://localhost:3622/VHPService.svc?xsd=xsd1" />
+    <MetadataFile FileName="VHPService.wsdl" MetadataType="Wsdl" ID="c9c811ff-04ea-4750-aed4-1203e15cf6b6" SourceId="1" SourceUrl="http://localhost:3622/VHPService.svc?wsdl" />
+    <MetadataFile FileName="VHPService1.xsd" MetadataType="Schema" ID="c3f30abd-b4f3-4d0b-8a58-1e9f95e4ed8a" SourceId="1" SourceUrl="http://localhost:3622/VHPService.svc?xsd=xsd0" />
+    <MetadataFile FileName="VHPService2.xsd" MetadataType="Schema" ID="7bb2e4a8-bd33-490e-bf9d-b2525a82bb39" SourceId="1" SourceUrl="http://localhost:3622/VHPService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

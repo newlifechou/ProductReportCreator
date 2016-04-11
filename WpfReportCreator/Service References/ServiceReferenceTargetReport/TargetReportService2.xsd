@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="Http://www.newlifechou.com" elementFormDefault="qualified" targetNamespace="Http://www.newlifechou.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://xs-laptop:8001/TargetReportService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfTarget">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Target" nillable="true" type="tns:Target" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTarget" nillable="true" type="tns:ArrayOfTarget" />
+  <xs:complexType name="Target">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Density" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsSend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Lot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Material" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Resistance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Target" nillable="true" type="tns:Target" />
+</xs:schema>
