@@ -20,8 +20,16 @@ namespace ReportServiceLib
         }
         public List<Sample> GetSamples(int skip, int take)
         {
-            return db.Samples.OrderByDescending(s=>s.Lot).Skip(skip).Take(take).ToList();
+            return db.Samples.OrderByDescending(s => s.Lot).Skip(skip).Take(take).ToList();
         }
+
+        public List<Sample> GetSamples(string lot, string customer, int skip, int take)
+        {
+            return db.Samples.Where(p => p.Lot.Contains(lot) && p.Customer.Contains(customer))
+                .OrderByDescending(p => p.CreateDate).Skip(skip).Take(take).ToList(); ;
+        }
+
+
 
         public int GetSampleCount()
         {
@@ -30,7 +38,7 @@ namespace ReportServiceLib
         public bool AddSample(Sample sample)
         {
             db.Samples.Add(sample);
-            return db.SaveChanges()>0;
+            return db.SaveChanges() > 0;
         }
 
         public bool UpdateSample(Sample sample)
@@ -47,7 +55,7 @@ namespace ReportServiceLib
             return db.SaveChanges() > 0;
         }
 
-        private void CloneSample(Sample source,Sample destination)
+        private void CloneSample(Sample source, Sample destination)
         {
             destination.Id = source.Id;
             destination.Material = source.Material;

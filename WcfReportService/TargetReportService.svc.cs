@@ -51,6 +51,17 @@ namespace WcfReportService
             return targets.ToList();
         }
 
+        public List<Target> GetTargetsByCondition(string lot, string customer, int take, int skip)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ReportServiceLib.Model.Target, Target>());
+            var mapper = config.CreateMapper();
+            List<Target> targets = 
+                mapper.Map<List<ReportServiceLib.Model.Target>, List<Target>>(service.GetTargets(lot,customer,skip, take));
+
+            return targets.ToList();
+
+        }
+
         public bool UpdateTarget(Target target)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Target, ReportServiceLib.Model.Target>());

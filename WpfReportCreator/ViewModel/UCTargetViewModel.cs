@@ -41,7 +41,7 @@ namespace WpfReportCreator.ViewModel
         private void FillTargets(int skip, int take)
         {
             TargetReportServiceClient client = new TargetReportServiceClient();
-            Targets = new ObservableCollection<Target>(client.GetTargets(skip, take).OrderByDescending(t=>t.CreateDate));
+            Targets = new ObservableCollection<Target>(client.GetTargets(skip, take));
             client.Close();
         }
 

@@ -15,6 +15,9 @@ namespace WcfReportService
         [OperationContract]
         List<Target> GetTargets(int skip, int take);
         [OperationContract]
+        List<Target> GetTargetsByCondition(string lot, string customer, int take, int skip);
+
+        [OperationContract]
         int GetTargetCount();
 
         [OperationContract]

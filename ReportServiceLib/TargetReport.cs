@@ -18,9 +18,16 @@ namespace ReportServiceLib
         {
             db = new ProductsContext();
         }
+
         public List<Target> GetTargets(int skip, int take)
         {
-            return db.Products.OrderByDescending(t=>t.Lot).Skip(skip).Take(take).ToList();
+            return db.Products.OrderByDescending(t=>t.CreateDate).Skip(skip).Take(take).ToList();
+        }
+
+        public List<Target> GetTargets(string lot,string customer,int skip,int take)
+        {
+            return db.Products.Where(p => p.Lot.Contains(lot) && p.Customer.Contains(customer))
+                .OrderByDescending(p => p.CreateDate).Skip(skip).Take(take).ToList();
         }
 
         public int GetTargetCount()
