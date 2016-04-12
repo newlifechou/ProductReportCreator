@@ -48,6 +48,16 @@ namespace WcfReportService
             return samples.ToList();
         }
 
+        public List<Sample> GetSamplesByCondition(string lot, string customer, int skip, int take)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ReportServiceLib.Model.Sample, Sample>());
+            var mapper = config.CreateMapper();
+
+            List<Sample> samples = mapper.Map<List<ReportServiceLib.Model.Sample>, List<Sample>>(service.GetSamples(lot,customer,skip, take));
+
+            return samples.ToList();
+        }
+
         public bool UpdateSample(Sample sample)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Sample, ReportServiceLib.Model.Sample>());

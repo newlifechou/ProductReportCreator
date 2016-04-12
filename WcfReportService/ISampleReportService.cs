@@ -14,6 +14,9 @@ namespace WcfReportService
         [OperationContract]
         List<Sample> GetSamples(int skip,int take);
         [OperationContract]
+        List<Sample> GetSamplesByCondition(string lot, string customer, int skip, int take);
+
+        [OperationContract]
         int GetSampleCount();
 
         [OperationContract]
