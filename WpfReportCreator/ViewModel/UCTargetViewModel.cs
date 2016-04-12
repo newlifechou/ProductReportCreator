@@ -37,6 +37,28 @@ namespace WpfReportCreator.ViewModel
             AddCommand = new RelayCommand(ActionAdd, CanAdd);
             SearchCommand = new RelayCommand(ActionSearch, CanSearch);
             GetAllCommand = new RelayCommand(ActionGetAll);
+            EditCommand = new RelayCommand(ActionEdit, CanEdit);
+            DeleteCommand = new RelayCommand(ActionDelete, CanDelete);
+        }
+
+        private bool CanDelete()
+        {
+            return CheckAuth();
+        }
+
+        private void ActionDelete()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CanEdit()
+        {
+            return CheckAuth();
+        }
+
+        private void ActionEdit()
+        {
+            throw new NotImplementedException();
         }
 
         private void ActionGetAll()
@@ -70,6 +92,11 @@ namespace WpfReportCreator.ViewModel
         }
 
         private bool CanAdd()
+        {
+            return CheckAuth();
+        }
+
+        private bool CheckAuth()
         {
             return Service.Access.AccessState == Service.LogState.Pass;
         }
