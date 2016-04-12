@@ -12,6 +12,12 @@
   <wsdl:message name="ISampleReportService_GetSamples_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSamplesResponse" />
   </wsdl:message>
+  <wsdl:message name="ISampleReportService_GetSamplesByCondition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSamplesByCondition" />
+  </wsdl:message>
+  <wsdl:message name="ISampleReportService_GetSamplesByCondition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSamplesByConditionResponse" />
+  </wsdl:message>
   <wsdl:message name="ISampleReportService_GetSampleCount_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSampleCount" />
   </wsdl:message>
@@ -40,6 +46,10 @@
     <wsdl:operation name="GetSamples">
       <wsdl:input wsaw:Action="http://www.newlifechou.com/ISampleReportService/GetSamples" message="tns:ISampleReportService_GetSamples_InputMessage" />
       <wsdl:output wsaw:Action="http://www.newlifechou.com/ISampleReportService/GetSamplesResponse" message="tns:ISampleReportService_GetSamples_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplesByCondition">
+      <wsdl:input wsaw:Action="http://www.newlifechou.com/ISampleReportService/GetSamplesByCondition" message="tns:ISampleReportService_GetSamplesByCondition_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.newlifechou.com/ISampleReportService/GetSamplesByConditionResponse" message="tns:ISampleReportService_GetSamplesByCondition_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetSampleCount">
       <wsdl:input wsaw:Action="http://www.newlifechou.com/ISampleReportService/GetSampleCount" message="tns:ISampleReportService_GetSampleCount_InputMessage" />

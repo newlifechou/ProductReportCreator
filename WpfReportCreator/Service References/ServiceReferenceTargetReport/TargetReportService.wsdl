@@ -13,6 +13,12 @@
   <wsdl:message name="ITargetReportService_GetTargets_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTargetsResponse" />
   </wsdl:message>
+  <wsdl:message name="ITargetReportService_GetTargetsByCondition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTargetsByCondition" />
+  </wsdl:message>
+  <wsdl:message name="ITargetReportService_GetTargetsByCondition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTargetsByConditionResponse" />
+  </wsdl:message>
   <wsdl:message name="ITargetReportService_GetTargetCount_InputMessage">
     <wsdl:part name="parameters" element="tns:GetTargetCount" />
   </wsdl:message>
@@ -41,6 +47,10 @@
     <wsdl:operation name="GetTargets">
       <wsdl:input wsaw:Action="http://www.newlifechou.com/ITargetReportService/GetTargets" message="tns:ITargetReportService_GetTargets_InputMessage" />
       <wsdl:output wsaw:Action="http://www.newlifechou.com/ITargetReportService/GetTargetsResponse" message="tns:ITargetReportService_GetTargets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTargetsByCondition">
+      <wsdl:input wsaw:Action="http://www.newlifechou.com/ITargetReportService/GetTargetsByCondition" message="tns:ITargetReportService_GetTargetsByCondition_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.newlifechou.com/ITargetReportService/GetTargetsByConditionResponse" message="tns:ITargetReportService_GetTargetsByCondition_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetTargetCount">
       <wsdl:input wsaw:Action="http://www.newlifechou.com/ITargetReportService/GetTargetCount" message="tns:ITargetReportService_GetTargetCount_InputMessage" />

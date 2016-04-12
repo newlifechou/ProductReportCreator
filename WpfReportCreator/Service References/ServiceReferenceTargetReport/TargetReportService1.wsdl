@@ -13,6 +13,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTargetsByCondition">
+      <soap:operation soapAction="http://www.newlifechou.com/ITargetReportService/GetTargetsByCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetTargetCount">
       <soap:operation soapAction="http://www.newlifechou.com/ITargetReportService/GetTargetCount" style="document" />
       <wsdl:input>

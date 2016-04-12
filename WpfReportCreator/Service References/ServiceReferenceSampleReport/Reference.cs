@@ -228,6 +228,12 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ISampleReportService/GetSamples", ReplyAction="http://www.newlifechou.com/ISampleReportService/GetSamplesResponse")]
         System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceSampleReport.Sample[]> GetSamplesAsync(int skip, int take);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ISampleReportService/GetSamplesByCondition", ReplyAction="http://www.newlifechou.com/ISampleReportService/GetSamplesByConditionResponse")]
+        WpfReportCreator.ServiceReferenceSampleReport.Sample[] GetSamplesByCondition(string lot, string customer, int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ISampleReportService/GetSamplesByCondition", ReplyAction="http://www.newlifechou.com/ISampleReportService/GetSamplesByConditionResponse")]
+        System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceSampleReport.Sample[]> GetSamplesByConditionAsync(string lot, string customer, int skip, int take);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ISampleReportService/GetSampleCount", ReplyAction="http://www.newlifechou.com/ISampleReportService/GetSampleCountResponse")]
         int GetSampleCount();
         
@@ -286,6 +292,14 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         
         public System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceSampleReport.Sample[]> GetSamplesAsync(int skip, int take) {
             return base.Channel.GetSamplesAsync(skip, take);
+        }
+        
+        public WpfReportCreator.ServiceReferenceSampleReport.Sample[] GetSamplesByCondition(string lot, string customer, int skip, int take) {
+            return base.Channel.GetSamplesByCondition(lot, customer, skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceSampleReport.Sample[]> GetSamplesByConditionAsync(string lot, string customer, int skip, int take) {
+            return base.Channel.GetSamplesByConditionAsync(lot, customer, skip, take);
         }
         
         public int GetSampleCount() {

@@ -212,6 +212,12 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ITargetReportService/GetTargets", ReplyAction="http://www.newlifechou.com/ITargetReportService/GetTargetsResponse")]
         System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceTargetReport.Target[]> GetTargetsAsync(int skip, int take);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ITargetReportService/GetTargetsByCondition", ReplyAction="http://www.newlifechou.com/ITargetReportService/GetTargetsByConditionResponse")]
+        WpfReportCreator.ServiceReferenceTargetReport.Target[] GetTargetsByCondition(string lot, string customer, int take, int skip);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ITargetReportService/GetTargetsByCondition", ReplyAction="http://www.newlifechou.com/ITargetReportService/GetTargetsByConditionResponse")]
+        System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceTargetReport.Target[]> GetTargetsByConditionAsync(string lot, string customer, int take, int skip);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ITargetReportService/GetTargetCount", ReplyAction="http://www.newlifechou.com/ITargetReportService/GetTargetCountResponse")]
         int GetTargetCount();
         
@@ -270,6 +276,14 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         
         public System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceTargetReport.Target[]> GetTargetsAsync(int skip, int take) {
             return base.Channel.GetTargetsAsync(skip, take);
+        }
+        
+        public WpfReportCreator.ServiceReferenceTargetReport.Target[] GetTargetsByCondition(string lot, string customer, int take, int skip) {
+            return base.Channel.GetTargetsByCondition(lot, customer, take, skip);
+        }
+        
+        public System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceTargetReport.Target[]> GetTargetsByConditionAsync(string lot, string customer, int take, int skip) {
+            return base.Channel.GetTargetsByConditionAsync(lot, customer, take, skip);
         }
         
         public int GetTargetCount() {

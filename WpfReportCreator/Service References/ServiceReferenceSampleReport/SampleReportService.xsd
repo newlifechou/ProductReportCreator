@@ -38,6 +38,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element xmlns:q4="http://www.newlifechou.com" name="Sample" nillable="true" type="q4:Sample" />
+  <xs:element name="GetSamplesByCondition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSamplesByConditionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.newlifechou.com" minOccurs="0" name="GetSamplesByConditionResult" nillable="true" type="q5:ArrayOfSample" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetSampleCount">
     <xs:complexType>
       <xs:sequence />
@@ -53,7 +70,7 @@
   <xs:element name="AddSample">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q5:Sample" />
+        <xs:element xmlns:q6="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q6:Sample" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -67,7 +84,7 @@
   <xs:element name="UpdateSample">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q6:Sample" />
+        <xs:element xmlns:q7="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q7:Sample" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -81,7 +98,7 @@
   <xs:element name="DeleteSample">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q7:Sample" />
+        <xs:element xmlns:q8="http://www.newlifechou.com" minOccurs="0" name="sample" nillable="true" type="q8:Sample" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

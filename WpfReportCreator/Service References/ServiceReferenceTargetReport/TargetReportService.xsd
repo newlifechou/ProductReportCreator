@@ -16,6 +16,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetTargetsByCondition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTargetsByConditionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="Http://www.newlifechou.com" minOccurs="0" name="GetTargetsByConditionResult" nillable="true" type="q2:ArrayOfTarget" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetTargetCount">
     <xs:complexType>
       <xs:sequence />
@@ -31,7 +48,7 @@
   <xs:element name="AddTarget">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="Http://www.newlifechou.com" minOccurs="0" name="product" nillable="true" type="q2:Target" />
+        <xs:element xmlns:q3="Http://www.newlifechou.com" minOccurs="0" name="product" nillable="true" type="q3:Target" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +62,7 @@
   <xs:element name="UpdateTarget">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="Http://www.newlifechou.com" minOccurs="0" name="product" nillable="true" type="q3:Target" />
+        <xs:element xmlns:q4="Http://www.newlifechou.com" minOccurs="0" name="product" nillable="true" type="q4:Target" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -59,7 +76,7 @@
   <xs:element name="DeleteTarget">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="Http://www.newlifechou.com" minOccurs="0" name="product" nillable="true" type="q4:Target" />
+        <xs:element xmlns:q5="Http://www.newlifechou.com" minOccurs="0" name="product" nillable="true" type="q5:Target" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
