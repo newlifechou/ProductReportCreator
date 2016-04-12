@@ -42,7 +42,7 @@ namespace WcfReportService
             return service.GetTargetCount();
         }
 
-        public List<Target> GetTargets(int skip, int take)
+        public List<Target> GetTargets(int skip, int take=20)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<ReportServiceLib.Model.Target, Target>());
             var mapper = config.CreateMapper();
@@ -51,7 +51,7 @@ namespace WcfReportService
             return targets.ToList();
         }
 
-        public List<Target> GetTargetsByCondition(string lot, string customer, int take, int skip)
+        public List<Target> GetTargetsByCondition(string lot, string customer, int skip, int take=20)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<ReportServiceLib.Model.Target, Target>());
             var mapper = config.CreateMapper();

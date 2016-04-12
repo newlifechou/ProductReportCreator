@@ -25,6 +25,18 @@ namespace WcfReportService.UnitTest
         }
 
         [TestMethod]
+        public void TestGetTargetsByConditions()
+        {
+            string lot = "1";
+            string customer = "M";
+            int skip = 0;
+            int take = 20;
+            var targets = service.GetTargetsByCondition(lot, customer, skip, take);
+            Assert.IsTrue(targets.Count > 0);
+        }
+
+
+        [TestMethod]
         public void TestAddUpdateDeleteTarget()
         {
             Target p = new Target()

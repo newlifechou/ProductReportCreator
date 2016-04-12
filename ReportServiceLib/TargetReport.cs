@@ -26,7 +26,7 @@ namespace ReportServiceLib
 
         public List<Target> GetTargets(string lot,string customer,int skip,int take)
         {
-            return db.Products.Where(p => p.Lot.Contains(lot) && p.Customer.Contains(customer))
+            return db.Products.Where(p => p.Lot.Contains(lot)&&p.Customer.Contains(customer))
                 .OrderByDescending(p => p.CreateDate).Skip(skip).Take(take).ToList();
         }
 

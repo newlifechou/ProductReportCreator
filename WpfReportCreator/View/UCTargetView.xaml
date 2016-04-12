@@ -18,10 +18,11 @@
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Stretch" Background="Orange">
             <Button Content="Add" Style="{StaticResource btnNormal}" Command="{Binding AddCommand}" />
             <TextBlock Text="Lot" />
-            <TextBox Text="{Binding SearchLot}" Style="{StaticResource txtNormal}"/>
+            <TextBox Text="{Binding SearchLot,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource txtNormal}"/>
             <TextBlock Text="Customer"/>
-            <TextBox Text="{Binding SearchCustomer}"  Style="{StaticResource txtNormal}"/>
-            <Button Content="Search" Style="{StaticResource btnNormal}"/>
+            <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource txtNormal}"/>
+            <Button Content="Search" Style="{StaticResource btnNormal}" Command="{Binding SearchCommand}"/>
+            <Button Content="GetAll" Style="{StaticResource btnNormal}" Command="{Binding GetAllCommand}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" ItemsSource="{Binding Targets}">
             <DataGrid.Columns>

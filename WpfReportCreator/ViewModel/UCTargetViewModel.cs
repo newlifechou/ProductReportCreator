@@ -24,24 +24,48 @@ namespace WpfReportCreator.ViewModel
             IntialCommands();
         }
         #region 初始化区域
-        private void IntialCommands()
-        {
-            AddCommand = new RelayCommand(ActionAdd, CanAdd);
-        }
 
         private void InitialProperties()
         {
-            SearchLot = "Initial Lot";
-            SearchCustomer = "Inital Customer";
-            FillTargets(0, 20);
+            SearchLot = "";
+            SearchCustomer = "";
+            GetAllTargets(0, 20);
         }
+
+        private void IntialCommands()
+        {
+            AddCommand = new RelayCommand(ActionAdd, CanAdd);
+            SearchCommand = new RelayCommand(ActionSearch, CanSearch);
+            GetAllCommand = new RelayCommand(ActionGetAll);
+        }
+
+        private void ActionGetAll()
+        {
+            GetAllTargets(0, 20);
+        }
+
+        private bool CanSearch()
+        {
+            return !(string.IsNullOrEmpty(SearchLot) && string.IsNullOrEmpty(SearchCustomer));
+        }
+
+        private void ActionSearch()
+        {
+            GetTargetsByCondition(SearchLot, SearchCustomer, 0, 20);
+        }
+
         #endregion
 
-
-        private void FillTargets(int skip, int take)
+        private void GetAllTargets(int skip, int take)
         {
             TargetReportServiceClient client = new TargetReportServiceClient();
             Targets = new ObservableCollection<Target>(client.GetTargets(skip, take));
+            client.Close();
+        }
+        private void GetTargetsByCondition(string lot, string customer, int skip, int take)
+        {
+            TargetReportServiceClient client = new TargetReportServiceClient();
+            Targets = new ObservableCollection<Target>(client.GetTargetsByCondition(lot, customer, skip, take));
             client.Close();
         }
 
@@ -63,7 +87,8 @@ namespace WpfReportCreator.ViewModel
         public RelayCommand EditCommand { get; private set; }
         public RelayCommand DeleteCommand { get; private set; }
         public RelayCommand DetailsCommand { get; private set; }
-        public RelayCommand RefreshCommand { get; private set; }
+        public RelayCommand SearchCommand { get; private set; }
+        public RelayCommand GetAllCommand { get; private set; }
         #endregion
 
 
