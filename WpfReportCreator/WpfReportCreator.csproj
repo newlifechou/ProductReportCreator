@@ -71,8 +71,8 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="XSWPFControls">
-      <HintPath>..\..\WpfControls\XSWPFControls\bin\Debug\XSWPFControls.dll</HintPath>
+    <Reference Include="XS.WPFControls">
+      <HintPath>..\..\WpfControls\XS.WPFControls\bin\Debug\XS.WPFControls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

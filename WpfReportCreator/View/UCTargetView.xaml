@@ -4,15 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfReportCreator.View"
-             xmlns:control="clr-namespace:XSWPFControls;assembly=XSWPFControls"
+             xmlns:control="clr-namespace:XS.WPFControls;assembly=XS.WPFControls"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800" DataContext="{Binding UCTarget,Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Target Information"  Style="{StaticResource txtPageTitle}"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Stretch" Background="Orange">
@@ -24,7 +25,7 @@
             <Button Content="Search" Style="{StaticResource btnNormal}" Command="{Binding SearchCommand}"/>
             <Button Content="GetAll" Style="{StaticResource btnNormal}" Command="{Binding GetAllCommand}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2" ItemsSource="{Binding Targets}">
+        <DataGrid x:Name="mainGrid" Grid.Row="2" ItemsSource="{Binding Targets}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Lot#">
                     <DataGridTemplateColumn.CellTemplate>
@@ -113,5 +114,42 @@
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3"/>
+        <Grid Grid.Row="4" DataContext="{Binding ElementName=mainGrid,Path=SelectedItem}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Material"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Material}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Size"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Size}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Customer"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Density"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Resistance"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}"/>
+
+
+
+            <TextBox Grid.Row="0" Grid.Column="2" Grid.RowSpan="7" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible">
+                
+            </TextBox>
+        </Grid>
     </Grid>
 </UserControl>
