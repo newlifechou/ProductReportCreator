@@ -18,7 +18,7 @@ namespace WcfReportService
         List<Target> GetTargetsByCondition(string lot, string customer, int take, int skip);
 
         [OperationContract]
-        int GetTargetCount();
+        int GetTargetCount(string lot,string customer);
 
         [OperationContract]
         bool AddTarget(Target product);

@@ -219,10 +219,10 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceTargetReport.Target[]> GetTargetsByConditionAsync(string lot, string customer, int take, int skip);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ITargetReportService/GetTargetCount", ReplyAction="http://www.newlifechou.com/ITargetReportService/GetTargetCountResponse")]
-        int GetTargetCount();
+        int GetTargetCount(string lot, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ITargetReportService/GetTargetCount", ReplyAction="http://www.newlifechou.com/ITargetReportService/GetTargetCountResponse")]
-        System.Threading.Tasks.Task<int> GetTargetCountAsync();
+        System.Threading.Tasks.Task<int> GetTargetCountAsync(string lot, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ITargetReportService/AddTarget", ReplyAction="http://www.newlifechou.com/ITargetReportService/AddTargetResponse")]
         bool AddTarget(WpfReportCreator.ServiceReferenceTargetReport.Target product);
@@ -286,12 +286,12 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
             return base.Channel.GetTargetsByConditionAsync(lot, customer, take, skip);
         }
         
-        public int GetTargetCount() {
-            return base.Channel.GetTargetCount();
+        public int GetTargetCount(string lot, string customer) {
+            return base.Channel.GetTargetCount(lot, customer);
         }
         
-        public System.Threading.Tasks.Task<int> GetTargetCountAsync() {
-            return base.Channel.GetTargetCountAsync();
+        public System.Threading.Tasks.Task<int> GetTargetCountAsync(string lot, string customer) {
+            return base.Channel.GetTargetCountAsync(lot, customer);
         }
         
         public bool AddTarget(WpfReportCreator.ServiceReferenceTargetReport.Target product) {

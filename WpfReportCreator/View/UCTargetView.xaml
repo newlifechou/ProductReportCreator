@@ -27,6 +27,13 @@
         </StackPanel>
         <DataGrid x:Name="mainGrid" Grid.Row="2" ItemsSource="{Binding Targets}">
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Create Date">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CreateDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Lot#">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -76,13 +83,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Create Date">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding CreateDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -113,7 +113,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3"/>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageCommand}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
+                             RecordCount="{Binding RecordCount}"/>
         <Grid Grid.Row="4" DataContext="{Binding ElementName=mainGrid,Path=SelectedItem}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>

@@ -30,9 +30,9 @@ namespace ReportServiceLib
                 .OrderByDescending(p => p.CreateDate).Skip(skip).Take(take).ToList();
         }
 
-        public int GetTargetCount()
+        public int GetTargetCount(string lot,string customer)
         {
-            return db.Products.Count();
+            return db.Products.Where(p => p.Lot.Contains(lot) && p.Customer.Contains(customer)).Count();
         }
 
         public bool AddTarget(Target target)

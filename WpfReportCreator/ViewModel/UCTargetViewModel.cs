@@ -27,9 +27,17 @@ namespace WpfReportCreator.ViewModel
 
         private void InitialProperties()
         {
-            SearchLot = "";
-            SearchCustomer = "";
-            GetAllTargets(0, 20);
+            SearchCustomer = string.Empty;
+            SearchLot = string.Empty;
+            SetPageWhenCondtionChange();
+        }
+
+        private void SetPageWhenCondtionChange()
+        {
+            PageIndex = 1;
+            PageSize = 10;
+            RecordCount = GetTargetsCountByCondition(SearchLot, SearchCustomer);
+            PageAction();
         }
 
         private void IntialCommands()
@@ -39,6 +47,13 @@ namespace WpfReportCreator.ViewModel
             GetAllCommand = new RelayCommand(ActionGetAll);
             EditCommand = new RelayCommand(ActionEdit, CanEdit);
             DeleteCommand = new RelayCommand(ActionDelete, CanDelete);
+
+            PageCommand = new RelayCommand(PageAction);
+        }
+
+        private void PageAction()
+        {
+            GetTargetsByCondition(SearchLot, SearchCustomer, (PageIndex - 1) * PageSize, PageSize);
         }
 
         private bool CanDelete()
@@ -63,7 +78,9 @@ namespace WpfReportCreator.ViewModel
 
         private void ActionGetAll()
         {
-            GetAllTargets(0, 20);
+            SearchCustomer = string.Empty;
+            SearchLot = string.Empty;
+            SetPageWhenCondtionChange();
         }
 
         private bool CanSearch()
@@ -73,7 +90,7 @@ namespace WpfReportCreator.ViewModel
 
         private void ActionSearch()
         {
-            GetTargetsByCondition(SearchLot, SearchCustomer, 0, 20);
+            SetPageWhenCondtionChange();
         }
 
         #endregion
@@ -83,6 +100,11 @@ namespace WpfReportCreator.ViewModel
             TargetReportServiceClient client = new TargetReportServiceClient();
             Targets = new ObservableCollection<Target>(client.GetTargets(skip, take));
             client.Close();
+        }
+        private int GetTargetsCountByCondition(string lot, string customer)
+        {
+            TargetReportServiceClient client = new TargetReportServiceClient();
+            return client.GetTargetCount(lot, customer);
         }
         private void GetTargetsByCondition(string lot, string customer, int skip, int take)
         {
@@ -119,7 +141,50 @@ namespace WpfReportCreator.ViewModel
         #endregion
 
 
+        #region 分页属性和命令
+        private int pageIndex;
+        public int PageIndex
+        {
+            get { return pageIndex; }
+            set
+            {
+                if (pageIndex == value)
+                    return;
+                pageIndex = value;
+                RaisePropertyChanged(() => PageIndex);
+            }
+        }
+        private int pageSize;
+        public int PageSize
+        {
+            get { return pageSize; }
+            set
+            {
+                if (pageSize == value)
+                    return;
+                pageSize = value;
+                RaisePropertyChanged(() => PageSize);
+            }
+        }
+        private int recordCount;
+        public int RecordCount
+        {
+            get { return recordCount; }
+            set
+            {
+                if (recordCount == value)
+                    return;
+                recordCount = value;
+                RaisePropertyChanged(() => RecordCount);
+            }
+        }
+        public RelayCommand PageCommand { get; private set; }
+        #endregion
+
+
+
         #region 属性区域
+
         private ObservableCollection<Target> targets;
         public ObservableCollection<Target> Targets
         {

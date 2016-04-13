@@ -37,9 +37,9 @@ namespace WcfReportService
             return service.DeleteTarget(target.Id);
         }
 
-        public int GetTargetCount()
+        public int GetTargetCount(string lot,string customer)
         {
-            return service.GetTargetCount();
+            return service.GetTargetCount(lot,customer);
         }
 
         public List<Target> GetTargets(int skip, int take=20)
