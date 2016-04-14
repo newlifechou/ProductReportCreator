@@ -27,11 +27,11 @@ namespace WpfReportCreator.ViewModel
         {
             OpenUCTargetCommand = new RelayCommand(() =>
             {
-                WindowManagerService.ShowUCTargetView();
+                App.MainWindowService.ShowUCTargetView();
             });
             OpenUCSampleCommand = new RelayCommand(() =>
             {
-                WindowManagerService.ShowUCSampleView();
+               App.MainWindowService.ShowUCSampleView();
             });
         }
 
@@ -39,13 +39,5 @@ namespace WpfReportCreator.ViewModel
         public RelayCommand OpenUCTargetCommand { get; set; }
         public RelayCommand OpenUCSampleCommand { get; set; }
         #endregion
-
-        public WindowManager WindowManagerService
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<WindowManager>();
-            }
-        }
     }
 }

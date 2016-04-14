@@ -43,13 +43,13 @@ namespace WpfReportCreator
 
         public void ShowTargetEdit(Target target,NewOrUpdate flag)
         {
-            TargetEditViewModel vm = new TargetEditViewModel();
+            UCTargetEditViewModel vm = new UCTargetEditViewModel();
             vm.CurrentTarget = target;
             vm.EditFlag = flag;
 
-            TargetEditView view = new TargetEditView();
+            UCTargetEditView view = new UCTargetEditView();
             view.DataContext = vm;
-            view.ShowDialog();
+            main.mainContent.Content = view;
         }
 
         public void ShowVHPSelect()

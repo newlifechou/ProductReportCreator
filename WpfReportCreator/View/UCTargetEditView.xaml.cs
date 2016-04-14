@@ -17,9 +17,9 @@ namespace WpfReportCreator.View
     /// <summary>
     /// TargetEdit.xaml 的交互逻辑
     /// </summary>
-    public partial class TargetEditView : Window
+    public partial class UCTargetEditView : UserControl
     {
-        public TargetEditView()
+        public UCTargetEditView()
         {
             InitializeComponent();
         }

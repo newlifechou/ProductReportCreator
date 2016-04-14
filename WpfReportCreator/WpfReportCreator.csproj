@@ -98,7 +98,7 @@
     </Compile>
     <Compile Include="Service\Access.cs" />
     <Compile Include="Service\IReport.cs" />
-    <Compile Include="ViewModel\TargetEditViewModel.cs" />
+    <Compile Include="ViewModel\UCTargetEditViewModel.cs" />
     <Compile Include="ViewModel\UCSampleViewModel.cs" />
     <Compile Include="ViewModel\VHPSelectViewModel.cs" />
     <Compile Include="View\LogInView.xaml.cs">
@@ -107,8 +107,8 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\UCTargetViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="View\TargetEditView.xaml.cs">
-      <DependentUpon>TargetEditView.xaml</DependentUpon>
+    <Compile Include="View\UCTargetEditView.xaml.cs">
+      <DependentUpon>UCTargetEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UCSampleView.xaml.cs">
       <DependentUpon>UCSampleView.xaml</DependentUpon>
@@ -148,7 +148,7 @@
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\TargetEditView.xaml">
+    <Page Include="View\UCTargetEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

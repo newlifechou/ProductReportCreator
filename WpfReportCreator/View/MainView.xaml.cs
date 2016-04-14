@@ -25,7 +25,7 @@ namespace WpfReportCreator.View
         public MainView()
         {
             InitializeComponent();
-            ServiceLocator.Current.GetInstance<WindowManager>().ShowUCTargetView();
+            App.MainWindowService.ShowUCTargetView();
         }
 
         #region 内容控件

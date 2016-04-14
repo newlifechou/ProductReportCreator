@@ -1,12 +1,11 @@
-﻿<Window x:Class="WpfReportCreator.View.TargetEditView"
+﻿<UserControl x:Class="WpfReportCreator.View.UCTargetEditView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfReportCreator.View"
-        mc:Ignorable="d" WindowState="Maximized"
-        WindowStartupLocation="CenterScreen"
-        Title="TargetEdit" Height="300" Width="300" Style="{StaticResource win}">
+        mc:Ignorable="d" 
+        d:DesginHeight="300" d:DesginWidth="300">
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -14,7 +13,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="VHP Record" Style="{StaticResource btnNormal}" Command="{Binding SelectVHPCommand}"/>
+            <Button Content="Give Up and Return" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
+            <Button Content="Select VHP Record" Style="{StaticResource btnNormal}" Command="{Binding SelectVHPCommand}"/>
         </StackPanel>
         <Grid Grid.Row="1" DataContext="{Binding CurrentTarget}">
             <Grid.ColumnDefinitions>
@@ -33,7 +33,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource txtNormal}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Id}" Style="{StaticResource txtNormal}"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Material"/>
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Material}" Style="{StaticResource txtNormal}"/>
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Size"/>
@@ -54,8 +54,7 @@
             </RichTextBox>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Give Up" Style="{StaticResource btnNormal}"/>
             <Button Content="Save" Style="{StaticResource btnNormal}"/>
         </StackPanel>
     </Grid>
-</Window>
+</UserControl>

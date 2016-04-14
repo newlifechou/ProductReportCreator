@@ -52,14 +52,6 @@ namespace WpfReportCreator.ViewModel
             PageCommand = new RelayCommand(PageAction);
         }
 
-        public WindowManager WindowManagerService
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<WindowManager>();
-            }
-        }
-
 
 
         private void PageAction()
@@ -136,7 +128,7 @@ namespace WpfReportCreator.ViewModel
             {
                 Id = Guid.NewGuid()
             };
-            WindowManagerService.ShowTargetEdit(empty,NewOrUpdate.New);
+          App.MainWindowService.ShowTargetEdit(empty,NewOrUpdate.New);
         }
 
         private bool CheckAuth()

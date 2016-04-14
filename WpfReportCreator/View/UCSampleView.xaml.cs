@@ -24,10 +24,6 @@ namespace WpfReportCreator.View
         {
             InitializeComponent();
         }
-        private void btnAdd_Click(object sender,RoutedEventArgs e)
-        {
-            TargetEditView edit = new TargetEditView();
-            edit.ShowDialog();
-        }
+
     }
 }

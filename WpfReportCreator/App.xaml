@@ -7,8 +7,7 @@
              d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
     <Application.Resources>
         <ResourceDictionary>
-            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"
-                           xmlns:vm="clr-namespace:WpfReportCreator.ViewModel" />
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:WpfReportCreator.ViewModel"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resource/BasicSkin.xaml"/>
                 <ResourceDictionary Source="Languge/us-en.xaml"/>

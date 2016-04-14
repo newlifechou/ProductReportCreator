@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Practices.ServiceLocation;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,12 @@ namespace WpfReportCreator
     /// </summary>
     public partial class App : Application
     {
+        public static WindowManager MainWindowService
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<WindowManager>();
+            }
+        }
     }
 }

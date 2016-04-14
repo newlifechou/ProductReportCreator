@@ -12,20 +12,27 @@ namespace WpfReportCreator.ViewModel
     /// See http://www.galasoft.ch/mvvm
     /// </para>
     /// </summary>
-    public class TargetEditViewModel : ViewModelBase
+    public class UCTargetEditViewModel : ViewModelBase
     {
         /// <summary>
         /// Initializes a new instance of the TargetEditViewModel class.
         /// </summary>
-        public TargetEditViewModel()
+        public UCTargetEditViewModel()
         {
             SelectVHPCommand = new RelayCommand(SelectVHPAction);
+            GiveUpCommand = new RelayCommand(GiveUpAction);
+        }
+
+        private void GiveUpAction()
+        {
+            App.MainWindowService.ShowUCTargetView();
         }
 
         private void SelectVHPAction()
         {
-            ServiceLocator.Current.GetInstance<WindowManager>().ShowVHPSelect();
+            App.MainWindowService.ShowVHPSelect();
         }
+
 
         private Target currentTarget;
         public Target CurrentTarget
@@ -44,6 +51,6 @@ namespace WpfReportCreator.ViewModel
 
 
         public RelayCommand SelectVHPCommand { get; set; }
-
+        public RelayCommand GiveUpCommand { get; set; }
     }
 }

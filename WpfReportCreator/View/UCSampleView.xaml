@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Sample Information" Style="{StaticResource txtPageTitle}"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Background="LightBlue">
-            <Button Content="Add" Style="{StaticResource btnNormal}" Click="btnAdd_Click"/>
+            <Button Content="Add" Style="{StaticResource btnNormal}"/>
             <TextBlock Text="Lot" />
             <TextBox Text="3456778" Style="{StaticResource txtNormal}"/>
             <TextBlock Text="Customer"/>
