@@ -1,12 +1,11 @@
-﻿<Window x:Class="WpfReportCreator.View.VHPSelectView"
+﻿<UserControl x:Class="WpfReportCreator.View.UCVHPSelectView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfReportCreator.View"
-        mc:Ignorable="d" WindowState="Maximized"
-        Style="{StaticResource win}"
-        Title="VHPSelectView" Height="600" Width="800" DataContext="{Binding VHPSelect,Source={StaticResource Locator}}">
+        mc:Ignorable="d" 
+       d:DesginHeight="600" d:DesginWidth="800" DataContext="{Binding VHPSelect,Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -28,4 +27,4 @@
             <Button Content="Save" Style="{StaticResource btnNormal}"/>
         </StackPanel>
     </Grid>
-</Window>
+</UserControl>

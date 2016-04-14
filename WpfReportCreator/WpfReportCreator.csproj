@@ -116,8 +116,8 @@
     <Compile Include="View\UCTargetView.xaml.cs">
       <DependentUpon>UCTargetView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\VHPSelectView.xaml.cs">
-      <DependentUpon>VHPSelectView.xaml</DependentUpon>
+    <Compile Include="View\UCVHPSelectView.xaml.cs">
+      <DependentUpon>UCVHPSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowManager.cs" />
     <Page Include="Languge\us-en.xaml">
@@ -160,7 +160,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\VHPSelectView.xaml">
+    <Page Include="View\UCVHPSelectView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

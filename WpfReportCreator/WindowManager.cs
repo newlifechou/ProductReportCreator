@@ -19,8 +19,9 @@ namespace WpfReportCreator
         private MainView main;
         private UCTargetView targetView;
         private UCSampleView sampleView;
-       
+        private UCTargetEditView targetEditView;
 
+        private UCTargetEditViewModel targetEditViewModel;
 
         public WindowManager()
         {
@@ -28,6 +29,9 @@ namespace WpfReportCreator
             main = App.Current.MainWindow as MainView;
             targetView = new UCTargetView();
             sampleView = new UCSampleView();
+            targetEditView = new UCTargetEditView();
+
+            targetEditViewModel = new UCTargetEditViewModel();
         }
 
         #region 项目窗体区域
@@ -41,21 +45,20 @@ namespace WpfReportCreator
             main.mainContent.Content = sampleView;
         }
 
-        public void ShowTargetEdit(Target target,NewOrUpdate flag)
+        public void ShowTargetEdit(Target target, NewOrUpdate flag)
         {
-            UCTargetEditViewModel vm = new UCTargetEditViewModel();
-            vm.CurrentTarget = target;
-            vm.EditFlag = flag;
+            targetEditViewModel.CurrentTarget = target;
+            targetEditViewModel.EditFlag = flag;
 
-            UCTargetEditView view = new UCTargetEditView();
-            view.DataContext = vm;
-            main.mainContent.Content = view;
+            targetEditView.DataContext = targetEditViewModel;
+            main.mainContent.Content = targetEditView;
         }
+
 
         public void ShowVHPSelect()
         {
-            VHPSelectView view = new VHPSelectView();
-            view.ShowDialog();
+            UCVHPSelectView view = new UCVHPSelectView();
+            main.mainContent.Content = view;
         }
 
 

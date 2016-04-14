@@ -17,9 +17,9 @@ namespace WpfReportCreator.View
     /// <summary>
     /// VHPSelectView.xaml 的交互逻辑
     /// </summary>
-    public partial class VHPSelectView : Window
+    public partial class UCVHPSelectView : UserControl
     {
-        public VHPSelectView()
+        public UCVHPSelectView()
         {
             InitializeComponent();
         }
