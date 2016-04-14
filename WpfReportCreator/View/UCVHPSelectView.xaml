@@ -4,11 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfReportCreator.View"
+         xmlns:control="clr-namespace:XS.WPFControls;assembly=XS.WPFControls"
         mc:Ignorable="d" 
        d:DesginHeight="600" d:DesginWidth="800" DataContext="{Binding VHPSelect,Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0" ItemsSource="{Binding VHPs}" SelectedItem="{Binding CurrentVHP}">
@@ -22,7 +24,10 @@
                 <DataGridTextColumn Header="Dimension" Binding="{Binding Dimension}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+        <control:SimplePager Grid.Row="1" Command="{Binding PageCommand}" PageIndex="{Binding PageIndex,Mode=TwoWay}"
+                             PageSize="{Binding PageSize}" RecordCount="{Binding RecordCount}"
+                             LabelPageCount="总页数" LabelPageIndex="当前页码" LabelPageSize="每页的记录数" LabelRecordCount="总记录数目"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
             <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
             <Button Content="Select" Style="{StaticResource btnNormal}" Command="{Binding SelectCommand}"/>
         </StackPanel>

@@ -13,7 +13,6 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="Give Up and Return" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
             <Button Content="Select VHP Record" Style="{StaticResource btnNormal}" Command="{Binding SelectVHPCommand}"/>
         </StackPanel>
         <Grid Grid.Row="1" DataContext="{Binding CurrentTarget}">
@@ -54,6 +53,7 @@
             </RichTextBox>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
             <Button Content="Save" Style="{StaticResource btnNormal}" Command="{Binding SaveCommand}"/>
         </StackPanel>
     </Grid>

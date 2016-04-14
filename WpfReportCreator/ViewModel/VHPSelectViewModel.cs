@@ -20,16 +20,35 @@ namespace WpfReportCreator.ViewModel
         /// </summary>
         public VHPSelectViewModel()
         {
-            VHPServiceClient client = new VHPServiceClient();
-            VHPs = new ObservableCollection<VHP>(client.GetVHPs(0,20));
-            if (VHPs.Count>0)
-            {
-                CurrentVHP = VHPs[0];
-            }
+            PageSize = 30;
+            RecordCount = GetRecordCount();
+            PageIndex = 1;
+
+            SetPageByRecord();
 
             SelectCommand = new RelayCommand(SelectAction);
             GiveUpCommand = new RelayCommand(GiveUpAction);
-
+            PageCommand = new RelayCommand(() =>
+              {
+                  SetPageByRecord();
+              });
+        }
+        private int GetRecordCount()
+        {
+            VHPServiceClient client = new VHPServiceClient();
+            int count= client.GetVHPCount();
+            client.Close();
+            return count;
+        }
+        private void SetPageByRecord()
+        {
+            VHPServiceClient client = new VHPServiceClient();
+            VHPs = new ObservableCollection<VHP>(client.GetVHPs((PageIndex-1)*PageSize, PageSize));
+            if (VHPs.Count > 0)
+            {
+                CurrentVHP = VHPs[0];
+            }
+            client.Close();
         }
 
         private void GiveUpAction()
@@ -71,6 +90,60 @@ namespace WpfReportCreator.ViewModel
         }
         public RelayCommand SelectCommand { get; set; }
         public RelayCommand GiveUpCommand { get; set; }
+        public RelayCommand PageCommand { get; set; }
+        #region 分页区域
+        private int pageIndex;
+        public int PageIndex
+        {
+            get { return pageIndex; }
+            set
+            {
+                if (pageIndex == value)
+                    return;
+                pageIndex = value;
+                RaisePropertyChanged(() => PageIndex);
+            }
+        }
+        private int recordCount;
+        public int RecordCount
+        {
+            get { return recordCount; }
+            set
+            {
+                if (recordCount == value)
+                    return;
+                recordCount = value;
+                RaisePropertyChanged(() => RecordCount);
+            }
+        }
+        private int pageSize;
+        public int PageSize
+        {
+            get { return pageSize; }
+            set
+            {
+                if (pageSize == value)
+                    return;
+                pageSize = value;
+                RaisePropertyChanged(() => PageSize);
+            }
+        }
+        private int pageCount;
+        public int PageCount
+        {
+            get { return pageCount; }
+            set
+            {
+                if (pageCount == value)
+                    return;
+                pageCount = value;
+                RaisePropertyChanged(() => PageCount);
+            }
+        }
+
+        #endregion
+
+
 
     }
 }
