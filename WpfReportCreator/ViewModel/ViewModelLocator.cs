@@ -41,9 +41,11 @@ namespace WpfReportCreator.ViewModel
             ////    // Create run time view services and models
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
+            SimpleIoc.Default.Register<WindowManager>();
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<WindowManager>();
+            SimpleIoc.Default.Register<UCTargetViewModel>();
+            SimpleIoc.Default.Register<UCSampleViewModel>();
 
         }
 

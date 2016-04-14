@@ -15,20 +15,41 @@ namespace WpfReportCreator
 {
     public class WindowManager
     {
+        private MainView main;
+        private UCTargetView targetView;
+        private UCSampleView sampleView;
 
+
+
+        public WindowManager()
+        {
+            //只实例化一次
+            main = App.Current.MainWindow as MainView;
+            targetView = new UCTargetView();
+            sampleView = new UCSampleView();
+        }
+
+        #region 项目窗体区域
         public void ShowUCTargetView()
         {
-            MainView main =App.Current.MainWindow as MainView;
-            UCTargetView childView = new UCTargetView();
-            UCTargetViewModel childViewModel = new UCTargetViewModel();
-            childView.DataContext = childViewModel;
-            main.mainContent.Content = childView;
+            main.mainContent.Content = targetView;
         }
 
         public void ShowUCSampleView()
         {
-
+            main.mainContent.Content = sampleView;
         }
+        #endregion
+
+
+
+        #region MessageBox区域
+        public bool ShowMessageBoxOKCancel(string message, string title)
+        {
+            return MessageBox.Show(message, title) == MessageBoxResult.OK;
+        }
+        #endregion
+
 
     }
 }
