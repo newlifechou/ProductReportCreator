@@ -54,7 +54,7 @@
             </RichTextBox>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Save" Style="{StaticResource btnNormal}"/>
+            <Button Content="Save" Style="{StaticResource btnNormal}" Command="{Binding SaveCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

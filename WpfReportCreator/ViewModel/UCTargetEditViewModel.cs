@@ -23,11 +23,15 @@ namespace WpfReportCreator.ViewModel
         {
             SelectVHPCommand = new RelayCommand(SelectVHPAction);
             GiveUpCommand = new RelayCommand(GiveUpAction);
+            SaveCommand = new RelayCommand(SaveAction);
+
+
             Messenger.Default.Register<NotificationMessage<VHP>>(this, "VHPSelect", msg =>
             {
                 var gg = msg.Content;
                 Target tmp = new Target()
                 {
+                    Id=CurrentTarget.Id,
                     CreateDate = DateTime.Now,
                     Customer = gg.Customer,
                     PO = gg.PO,
@@ -39,6 +43,23 @@ namespace WpfReportCreator.ViewModel
 
                 RaisePropertyChanged(() => CurrentTarget);
             });
+        }
+
+        private void SaveAction()
+        {
+            if (CurrentTarget!=null)
+            {
+                TargetReportServiceClient client = new TargetReportServiceClient();
+                if (client.AddTarget(CurrentTarget))
+                {
+                    App.MainWindowService.ShowUCTargetView();
+                }
+                else
+                {
+                    App.MainWindowService.ShowMessageBoxOKCancel("Error", "Error");
+                }
+
+            }
         }
 
         private void GiveUpAction()
@@ -70,5 +91,6 @@ namespace WpfReportCreator.ViewModel
 
         public RelayCommand SelectVHPCommand { get; set; }
         public RelayCommand GiveUpCommand { get; set; }
+        public RelayCommand SaveCommand { get; set; }
     }
 }
