@@ -1,5 +1,8 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
 using WpfReportCreator.ServiceReferenceTargetReport;
+using Microsoft.Practices.ServiceLocation;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -16,8 +19,14 @@ namespace WpfReportCreator.ViewModel
         /// </summary>
         public TargetEditViewModel()
         {
-
+            SelectVHPCommand = new RelayCommand(SelectVHPAction);
         }
+
+        private void SelectVHPAction()
+        {
+            ServiceLocator.Current.GetInstance<WindowManager>().ShowVHPSelect();
+        }
+
         private Target currentTarget;
         public Target CurrentTarget
         {
@@ -32,6 +41,9 @@ namespace WpfReportCreator.ViewModel
         }
         //标志是新建还是更新
         public NewOrUpdate EditFlag { get; set; }
+
+
+        public RelayCommand SelectVHPCommand { get; set; }
 
     }
 }

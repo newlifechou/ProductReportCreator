@@ -52,6 +52,13 @@ namespace WpfReportCreator
             view.ShowDialog();
         }
 
+        public void ShowVHPSelect()
+        {
+            VHPSelectView view = new VHPSelectView();
+            view.ShowDialog();
+        }
+
+
         #endregion
 
 

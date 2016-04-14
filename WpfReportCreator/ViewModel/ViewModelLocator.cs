@@ -31,22 +31,12 @@ namespace WpfReportCreator.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
             SimpleIoc.Default.Register<WindowManager>();
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<UCTargetViewModel>();
             SimpleIoc.Default.Register<UCSampleViewModel>();
-
+            SimpleIoc.Default.Register<VHPSelectViewModel>();
         }
 
         public MainViewModel Main
@@ -73,7 +63,13 @@ namespace WpfReportCreator.ViewModel
             }
         } 
         
-        
+        public VHPSelectViewModel VHPSelect
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<VHPSelectViewModel>();
+            }
+        }
         
         
                   

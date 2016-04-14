@@ -4,17 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfReportCreator.View"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         Title="TargetEdit" Height="300" Width="300" Style="{StaticResource win}">
-    <Grid>
+    <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="VHP Record" Style="{StaticResource btnNormal}"/>
+            <Button Content="VHP Record" Style="{StaticResource btnNormal}" Command="{Binding SelectVHPCommand}"/>
         </StackPanel>
         <Grid Grid.Row="1" DataContext="{Binding CurrentTarget}">
             <Grid.ColumnDefinitions>
@@ -49,9 +49,9 @@
 
 
 
-            <TextBox Grid.Row="0" Grid.Column="2" Grid.RowSpan="7" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Text="{Binding Id}">
+            <RichTextBox Grid.Row="0" Grid.Column="2" Grid.RowSpan="7"  VerticalScrollBarVisibility="Visible">
 
-            </TextBox>
+            </RichTextBox>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="Give Up" Style="{StaticResource btnNormal}"/>
