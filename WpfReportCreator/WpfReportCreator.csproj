@@ -116,6 +116,7 @@
     <Compile Include="View\VHPSelectView.xaml.cs">
       <DependentUpon>VHPSelectView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowManager.cs" />
     <Page Include="Languge\us-en.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,4 +1,6 @@
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using Microsoft.Practices.ServiceLocation;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -16,19 +18,34 @@ namespace WpfReportCreator.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
         public MainViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+            InitialCommands();
+        }
+
+        private void InitialCommands()
+        {
+            OpenUCTargetCommand = new RelayCommand(() =>
+            {
+                WindowManagerService.ShowUCTargetView();
+            });
+            OpenUCSampleCommand = new RelayCommand(() =>
+            {
+                WindowManagerService.ShowUCSampleView();
+            });
+        }
+
+        #region √¸¡Ó«¯”Ú
+        public RelayCommand OpenUCTargetCommand { get; set; }
+        public RelayCommand OpenUCSampleCommand { get; set; }
+        #endregion
+
+        public WindowManager WindowManagerService
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<WindowManager>();
+            }
         }
     }
 }

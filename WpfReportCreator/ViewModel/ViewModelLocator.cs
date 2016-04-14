@@ -43,9 +43,7 @@ namespace WpfReportCreator.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<UCTargetViewModel>();
-            SimpleIoc.Default.Register<UCSampleViewModel>();
-
+            SimpleIoc.Default.Register<WindowManager>();
 
         }
 

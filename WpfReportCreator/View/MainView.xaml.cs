@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Practices.ServiceLocation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfReportCreator.ViewModel;
 
 namespace WpfReportCreator.View
 {
@@ -23,32 +25,12 @@ namespace WpfReportCreator.View
         public MainView()
         {
             InitializeComponent();
-            InitialView();
-
-            mainContent.Content = ucTargetView;
+            ServiceLocator.Current.GetInstance<WindowManager>().ShowUCTargetView();
         }
 
-        private void InitialView()
-        {
-            ucTargetView = new UCTargetView();
-            ucSampleView = new UCSampleView();
-        }
         #region 内容控件
-        private UCTargetView ucTargetView;
-        private UCSampleView ucSampleView;
         private LogInView logInView;
         #endregion
-
-
-        private void btnProductView_Click(object sender, RoutedEventArgs e)
-        {
-            mainContent.Content = ucTargetView;
-        }
-
-        private void btnSampleView_Click(object sender, RoutedEventArgs e)
-        {
-            mainContent.Content = ucSampleView;
-        }
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
