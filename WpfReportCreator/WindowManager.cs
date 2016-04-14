@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfReportCreator.ServiceReferenceTargetReport;
 using WpfReportCreator.View;
 using WpfReportCreator.ViewModel;
 
@@ -18,7 +19,7 @@ namespace WpfReportCreator
         private MainView main;
         private UCTargetView targetView;
         private UCSampleView sampleView;
-
+       
 
 
         public WindowManager()
@@ -39,6 +40,18 @@ namespace WpfReportCreator
         {
             main.mainContent.Content = sampleView;
         }
+
+        public void ShowTargetEdit(Target target,NewOrUpdate flag)
+        {
+            TargetEditViewModel vm = new TargetEditViewModel();
+            vm.CurrentTarget = target;
+            vm.EditFlag = flag;
+
+            TargetEditView view = new TargetEditView();
+            view.DataContext = vm;
+            view.ShowDialog();
+        }
+
         #endregion
 
 

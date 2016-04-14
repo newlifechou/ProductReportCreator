@@ -9,7 +9,7 @@
     </Style>
     <!--TextBlock-->
     <Style TargetType="TextBlock">
-        <Setter Property="Margin" Value="0 3 0 3"/>
+        <Setter Property="Margin" Value="0 2 0 2"/>
         <Setter Property="Padding" Value="5 0 5 0"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>

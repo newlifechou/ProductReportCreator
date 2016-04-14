@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using WpfReportCreator.ServiceReferenceTargetReport;
 using System.Linq;
+using Microsoft.Practices.ServiceLocation;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -50,6 +51,16 @@ namespace WpfReportCreator.ViewModel
 
             PageCommand = new RelayCommand(PageAction);
         }
+
+        public WindowManager WindowManagerService
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<WindowManager>();
+            }
+        }
+
+
 
         private void PageAction()
         {
@@ -115,20 +126,23 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanAdd()
         {
-            return CheckAuth();
+            //return CheckAuth();
+            return true;
+        }
+
+        private void ActionAdd()
+        {
+            Target empty = new Target()
+            {
+                Id = Guid.NewGuid()
+            };
+            WindowManagerService.ShowTargetEdit(empty,NewOrUpdate.New);
         }
 
         private bool CheckAuth()
         {
             return Service.Access.AccessState == Service.LogState.Pass;
         }
-
-        private void ActionAdd()
-        {
-            throw new NotImplementedException();
-        }
-
-
 
 
         #region 命令区域
