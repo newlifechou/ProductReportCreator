@@ -64,6 +64,7 @@ namespace WpfReportCreator.ViewModel
                 if (saveResult)
                 {
                     App.MainWindowService.ShowUCTargetView();
+                    Messenger.Default.Send<NotificationMessage>(null, "RefreshTargetView");
                 }
                 else
                 {

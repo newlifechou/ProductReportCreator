@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using WpfReportCreator.ServiceReferenceTargetReport;
 using System.Linq;
 using Microsoft.Practices.ServiceLocation;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -23,6 +24,11 @@ namespace WpfReportCreator.ViewModel
         {
             InitialProperties();
             IntialCommands();
+
+            Messenger.Default.Register<NotificationMessage>(this, "RefreshTargetView", msg =>
+            {
+                SetPageWhenCondtionChange();
+            });
         }
         #region 初始化区域
 
@@ -46,8 +52,8 @@ namespace WpfReportCreator.ViewModel
             AddCommand = new RelayCommand(ActionAdd, CanAdd);
             SearchCommand = new RelayCommand(ActionSearch, CanSearch);
             GetAllCommand = new RelayCommand(ActionGetAll);
-            EditCommand = new RelayCommand(ActionEdit, CanEdit);
-            DeleteCommand = new RelayCommand(ActionDelete, CanDelete);
+            EditCommand = new RelayCommand<Target>(ActionEdit, CanEdit);
+            DeleteCommand = new RelayCommand<Target>(ActionDelete, CanDelete);
 
             PageCommand = new RelayCommand(PageAction);
         }
@@ -59,24 +65,32 @@ namespace WpfReportCreator.ViewModel
             GetTargetsByCondition(SearchLot, SearchCustomer, (PageIndex - 1) * PageSize, PageSize);
         }
 
-        private bool CanDelete()
+        private bool CanDelete(Target t)
         {
-            return CheckAuth();
+            //return CheckAuth();
+            return true;
         }
 
-        private void ActionDelete()
+        private void ActionDelete(Target t)
         {
-            throw new NotImplementedException();
+            if (App.MainWindowService.ShowMessageBoxOKCancel("Are you sure to delete this?","warning"))
+            {
+                TargetReportServiceClient client = new TargetReportServiceClient();
+                client.DeleteTarget(t);
+                client.Close();
+                Messenger.Default.Send<NotificationMessage>(null, "RefreshTargetView");
+            }
         }
 
-        private bool CanEdit()
+        private bool CanEdit( Target t)
         {
-            return CheckAuth();
+            //return CheckAuth();
+            return true;
         }
 
-        private void ActionEdit()
+        private void ActionEdit( Target t)
         {
-            throw new NotImplementedException();
+            App.MainWindowService.ShowTargetEdit(t, NewOrUpdate.Update);
         }
 
         private void ActionGetAll()
@@ -139,8 +153,8 @@ namespace WpfReportCreator.ViewModel
 
         #region 命令区域
         public RelayCommand AddCommand { get; private set; }
-        public RelayCommand EditCommand { get; private set; }
-        public RelayCommand DeleteCommand { get; private set; }
+        public RelayCommand<Target> EditCommand { get; private set; }
+        public RelayCommand<Target> DeleteCommand { get; private set; }
         public RelayCommand DetailsCommand { get; private set; }
         public RelayCommand SearchCommand { get; private set; }
         public RelayCommand GetAllCommand { get; private set; }

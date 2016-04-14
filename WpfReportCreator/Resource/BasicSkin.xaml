@@ -47,7 +47,7 @@
         <Setter Property="HorizontalGridLinesBrush" Value="Wheat"/>
         <Setter Property="VerticalGridLinesBrush" Value="Wheat"/>
         <!--<Setter Property="GridLinesVisibility" Value="Horizontal"/>-->
-        <Setter Property="CanUserResizeColumns" Value="False"/>
+        <!--<Setter Property="CanUserResizeColumns" Value="False"/>-->
         <Setter Property="CanUserResizeRows" Value="False"/>
         <Setter Property="SelectionMode" Value="Single"/>
     </Style>
