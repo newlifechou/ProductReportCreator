@@ -33,7 +33,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Id}" Style="{StaticResource txtNormal}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource txtNormal}"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Material"/>
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Material}" Style="{StaticResource txtNormal}"/>
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Size"/>

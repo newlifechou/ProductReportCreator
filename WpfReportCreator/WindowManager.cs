@@ -53,6 +53,13 @@ namespace WpfReportCreator
             targetEditView.DataContext = targetEditViewModel;
             main.mainContent.Content = targetEditView;
         }
+        /// <summary>
+        /// 用于下级视图返回
+        /// </summary>
+        public void ReturnToTargetEdit()
+        {
+            main.mainContent.Content = targetEditView;
+        }
 
 
         public void ShowVHPSelect()

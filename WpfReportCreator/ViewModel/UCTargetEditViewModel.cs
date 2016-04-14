@@ -3,6 +3,8 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using WpfReportCreator.ServiceReferenceTargetReport;
 using Microsoft.Practices.ServiceLocation;
+using GalaSoft.MvvmLight.Messaging;
+using WpfReportCreator.ServiceReferenceVHP;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -21,6 +23,22 @@ namespace WpfReportCreator.ViewModel
         {
             SelectVHPCommand = new RelayCommand(SelectVHPAction);
             GiveUpCommand = new RelayCommand(GiveUpAction);
+            Messenger.Default.Register<NotificationMessage<VHP>>(this, "VHPSelect", msg =>
+            {
+                var gg = msg.Content;
+                Target tmp = new Target()
+                {
+                    CreateDate = DateTime.Now,
+                    Customer = gg.Customer,
+                    PO = gg.PO,
+                    Material = gg.ProductName,
+                    Size = gg.Dimension,
+                    Lot = gg.VHPDate.ToString("yyMMdd")
+                };
+                CurrentTarget = tmp;
+
+                RaisePropertyChanged(() => CurrentTarget);
+            });
         }
 
         private void GiveUpAction()

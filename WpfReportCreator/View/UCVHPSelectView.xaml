@@ -11,7 +11,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding VHPs}">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding VHPs}" SelectedItem="{Binding CurrentVHP}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="VHPDate" Binding="{Binding VHPDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="VHPDevice" Binding="{Binding VHPDevice}"/>
@@ -23,8 +23,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
-            <Button Content="Give Up" Style="{StaticResource btnNormal}"/>
-            <Button Content="Save" Style="{StaticResource btnNormal}"/>
+            <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
+            <Button Content="Select" Style="{StaticResource btnNormal}" Command="{Binding SelectCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>
