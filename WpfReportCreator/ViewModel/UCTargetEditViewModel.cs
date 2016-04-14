@@ -5,6 +5,7 @@ using WpfReportCreator.ServiceReferenceTargetReport;
 using Microsoft.Practices.ServiceLocation;
 using GalaSoft.MvvmLight.Messaging;
 using WpfReportCreator.ServiceReferenceVHP;
+using WpfReportCreator.Service;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -31,13 +32,13 @@ namespace WpfReportCreator.ViewModel
                 var gg = msg.Content;
                 Target tmp = new Target()
                 {
-                    Id=CurrentTarget.Id,
+                    Id = CurrentTarget.Id,
                     CreateDate = DateTime.Now,
                     Customer = gg.Customer,
                     PO = gg.PO,
                     Material = gg.ProductName,
                     Size = gg.Dimension,
-                    Lot = gg.VHPDate.ToString("yyMMdd")
+                    Lot = Common.GetProductLotNumber(gg.VHPDate, gg.VHPDevice)
                 };
                 CurrentTarget = tmp;
 
@@ -47,10 +48,20 @@ namespace WpfReportCreator.ViewModel
 
         private void SaveAction()
         {
-            if (CurrentTarget!=null)
+            if (CurrentTarget != null)
             {
                 TargetReportServiceClient client = new TargetReportServiceClient();
-                if (client.AddTarget(CurrentTarget))
+
+                bool saveResult = false;
+                if (EditFlag == NewOrUpdate.New)
+                {
+                    saveResult = client.AddTarget(CurrentTarget);
+                }
+                else
+                {
+                    saveResult = client.UpdateTarget(CurrentTarget);
+                }
+                if (saveResult)
                 {
                     App.MainWindowService.ShowUCTargetView();
                 }
