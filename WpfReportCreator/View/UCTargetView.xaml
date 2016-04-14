@@ -114,7 +114,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageCommand}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
-                             RecordCount="{Binding RecordCount}"/>
+                             RecordCount="{Binding RecordCount}" LabelPageIndex="当前页码" LabelPageCount="总页数"
+                             LabelPageSize="每页记录数" LabelRecordCount="总记录数"/>
         <Grid Grid.Row="4" DataContext="{Binding ElementName=mainGrid,Path=SelectedItem}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
