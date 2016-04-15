@@ -37,12 +37,12 @@ namespace WpfReportCreator
         #region 项目窗体区域
         public void ShowUCTargetView()
         {
-            main.mainContent.Content = targetView;
+            main.SetMainContent(targetView);
         }
 
         public void ShowUCSampleView()
         {
-            main.mainContent.Content = sampleView;
+            main.SetMainContent(sampleView);
         }
 
         public void ShowTargetEdit(Target target, NewOrUpdate flag)
@@ -51,21 +51,21 @@ namespace WpfReportCreator
             targetEditViewModel.EditFlag = flag;
 
             targetEditView.DataContext = targetEditViewModel;
-            main.mainContent.Content = targetEditView;
+            main.SetMainContent(targetEditView);
         }
         /// <summary>
         /// 用于下级视图返回
         /// </summary>
         public void ReturnToTargetEdit()
         {
-            main.mainContent.Content = targetEditView;
+            main.SetMainContent(targetEditView);
         }
 
 
         public void ShowVHPSelect()
         {
-            UCVHPSelectView view = new UCVHPSelectView();
-            main.mainContent.Content = view;
+            UCVHPSelectView viewVHPSelect = new UCVHPSelectView();
+            main.SetMainContent(viewVHPSelect);
         }
 
 

@@ -37,5 +37,17 @@ namespace WpfReportCreator.View
             logInView = new LogInView();
             logInView.ShowDialog();
         }
+
+        /// <summary>
+        /// let WindowManager use it
+        /// </summary>
+        public void SetMainContent(UserControl uc)
+        {
+            if (uc!=null)
+            {
+                this.mainContent.Content = uc;
+            }
+        }
+
     }
 }
