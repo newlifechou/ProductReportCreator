@@ -27,7 +27,10 @@ namespace WcfReportService.Model
         public string Weight { get; set; }
         [DataMember]
         public string Resistance { get; set; }
-
+        [DataMember]
+        public string XRFComposition { get; set; }
+        [DataMember]
+        public string Remark { get; set; }
 
         [DataMember]
         public DateTime CreateDate { get; set; }

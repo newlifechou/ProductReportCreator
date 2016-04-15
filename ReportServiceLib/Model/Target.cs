@@ -22,7 +22,8 @@ namespace ReportServiceLib.Model
         public string Density { get; set; }
         public string Weight { get; set; }
         public string Resistance { get; set; }
-
+        public string XRFComposition { get; set; }
+        public string Remark { get; set; }
 
         public DateTime CreateDate { get; set; }
     }
