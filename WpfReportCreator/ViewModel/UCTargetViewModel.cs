@@ -73,7 +73,7 @@ namespace WpfReportCreator.ViewModel
 
         private void ActionDelete(Target t)
         {
-            if (App.MainWindowService.ShowMessageBoxOKCancel("Are you sure to delete this?","warning"))
+            if (App.MainWindowService.ShowWarningWithOKCancel("Are you sure to delete this?","warning"))
             {
                 TargetReportServiceClient client = new TargetReportServiceClient();
                 client.DeleteTarget(t);

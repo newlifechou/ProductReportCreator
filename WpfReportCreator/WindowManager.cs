@@ -74,9 +74,9 @@ namespace WpfReportCreator
 
 
         #region MessageBox区域
-        public bool ShowMessageBoxOKCancel(string message, string title)
+        public bool ShowWarningWithOKCancel(string message, string title)
         {
-            return MessageBox.Show(message, title) == MessageBoxResult.OK;
+            return MessageBox.Show(message, title,MessageBoxButton.OKCancel,MessageBoxImage.Warning) == MessageBoxResult.OK;
         }
         #endregion
 

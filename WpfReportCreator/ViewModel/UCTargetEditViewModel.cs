@@ -68,7 +68,7 @@ namespace WpfReportCreator.ViewModel
                 }
                 else
                 {
-                    App.MainWindowService.ShowMessageBoxOKCancel("Error", "Error");
+                    App.MainWindowService.ShowWarningWithOKCancel("Error", "Error");
                 }
 
             }
