@@ -146,12 +146,7 @@
             <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource txtNormal}"/>
             <TextBlock Grid.Row="6" Grid.Column="0" Text="Resistance"/>
             <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}"/>
-
-
-
-            <TextBox Grid.Row="0" Grid.Column="2" Grid.RowSpan="7" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible">
-                
-            </TextBox>
+            <control:BindableCSVTable Grid.Row="0" Grid.Column="2" Grid.RowSpan="7" CSVContent="{Binding XRFComposition}" Height="200"/>
         </Grid>
     </Grid>
 </UserControl>

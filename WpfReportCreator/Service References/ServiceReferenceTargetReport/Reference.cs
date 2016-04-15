@@ -44,6 +44,9 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ResistanceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -51,6 +54,9 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XRFCompositionField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -154,6 +160,19 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Resistance {
             get {
                 return this.ResistanceField;
@@ -188,6 +207,19 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
                 if ((object.ReferenceEquals(this.WeightField, value) != true)) {
                     this.WeightField = value;
                     this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string XRFComposition {
+            get {
+                return this.XRFCompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XRFCompositionField, value) != true)) {
+                    this.XRFCompositionField = value;
+                    this.RaisePropertyChanged("XRFComposition");
                 }
             }
         }

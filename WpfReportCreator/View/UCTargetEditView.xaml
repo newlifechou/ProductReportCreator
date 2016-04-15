@@ -5,22 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfReportCreator.View"
         mc:Ignorable="d" 
-        d:DesginHeight="300" d:DesginWidth="300">
-    <Grid Margin="5">
+        d:DesginHeight="600" d:DesginWidth="800">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Target Information Edit" Style="{StaticResource tbPageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
+        <StackPanel Grid.Row="1" Orientation="Horizontal"  Background="Orange">
+            <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}" HorizontalAlignment="Right"/>
+            <Button Content="Save" Style="{StaticResource btnNormal}" Command="{Binding SaveCommand}" HorizontalAlignment="Right"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Button Content="Select VHP Record" Style="{StaticResource btnNormal}" Command="{Binding SelectVHPCommand}"/>
         </StackPanel>
-        <Grid Grid.Row="2" DataContext="{Binding CurrentTarget}">
+        <Grid Grid.Row="3" DataContext="{Binding CurrentTarget}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="500"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -31,6 +35,9 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="60"/>
+
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
@@ -48,15 +55,13 @@
             <TextBlock Grid.Row="6" Grid.Column="0" Text="Resistance"/>
             <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}"/>
 
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Composition"/>
+            <TextBox  Grid.Row="7" Grid.Column="1" Margin="4" Text="{Binding XRFComposition}"
+                      VerticalScrollBarVisibility="Visible" AcceptsReturn="True" TextWrapping="Wrap" />
 
-
-            <RichTextBox Grid.Row="0" Grid.Column="2" Grid.RowSpan="7"  VerticalScrollBarVisibility="Visible">
-
-            </RichTextBox>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Remark"/>
+            <TextBox  Grid.Row="8" Grid.Column="1"   Margin="4" Text="{Binding Remark}"
+                      VerticalScrollBarVisibility="Visible" AcceptsReturn="True" TextWrapping="Wrap" />
         </Grid>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
-            <Button Content="Save" Style="{StaticResource btnNormal}" Command="{Binding SaveCommand}"/>
-        </StackPanel>
     </Grid>
 </UserControl>

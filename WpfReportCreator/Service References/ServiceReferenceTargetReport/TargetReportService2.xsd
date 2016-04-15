@@ -16,9 +16,11 @@
       <xs:element minOccurs="0" name="Lot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Material" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Resistance" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Size" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XRFComposition" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Target" nillable="true" type="tns:Target" />

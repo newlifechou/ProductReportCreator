@@ -72,6 +72,8 @@ namespace ReportServiceLib
             destination.Weight = source.Weight;
             destination.Resistance = source.Resistance;
             destination.CreateDate = source.CreateDate;
+            destination.Remark = source.Remark;
+            destination.XRFComposition = source.XRFComposition;
         }
 
     }
