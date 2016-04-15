@@ -9,11 +9,13 @@
        d:DesginHeight="600" d:DesginWidth="800" DataContext="{Binding VHPSelect,Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding VHPs}" SelectedItem="{Binding CurrentVHP}">
+        <TextBlock Grid.Row="0" Text="VHP Record Selection" Style="{StaticResource tbPageTitle}"/>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding VHPs}" SelectedItem="{Binding CurrentVHP}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="VHPDate" Binding="{Binding VHPDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="ProductName" Binding="{Binding ProductName}"/>
@@ -24,10 +26,10 @@
                 <DataGridTextColumn Header="Dimension" Binding="{Binding Dimension}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="1" Command="{Binding PageCommand}" PageIndex="{Binding PageIndex,Mode=TwoWay}"
+        <control:SimplePager Grid.Row="2" Command="{Binding PageCommand}" PageIndex="{Binding PageIndex,Mode=TwoWay}"
                              PageSize="{Binding PageSize}" RecordCount="{Binding RecordCount}"
                              LabelPageCount="总页数" LabelPageIndex="当前页码" LabelPageSize="每页的记录数" LabelRecordCount="总记录数目"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Right">
             <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
             <Button Content="Select" Style="{StaticResource btnNormal}" Command="{Binding SelectCommand}"/>
         </StackPanel>

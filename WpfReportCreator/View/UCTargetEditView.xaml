@@ -9,13 +9,15 @@
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <TextBlock Grid.Row="0" Text="Target Information Edit" Style="{StaticResource tbPageTitle}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Button Content="Select VHP Record" Style="{StaticResource btnNormal}" Command="{Binding SelectVHPCommand}"/>
         </StackPanel>
-        <Grid Grid.Row="1" DataContext="{Binding CurrentTarget}">
+        <Grid Grid.Row="2" DataContext="{Binding CurrentTarget}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
@@ -52,7 +54,7 @@
 
             </RichTextBox>
         </Grid>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
             <Button Content="Save" Style="{StaticResource btnNormal}" Command="{Binding SaveCommand}"/>
         </StackPanel>
