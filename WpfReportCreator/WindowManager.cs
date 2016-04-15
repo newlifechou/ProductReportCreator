@@ -47,7 +47,24 @@ namespace WpfReportCreator
 
         public void ShowTargetEdit(Target target, NewOrUpdate flag)
         {
-            targetEditViewModel.CurrentTarget = target;
+            //这里target不能够直接引用，不然编辑窗口就会和主窗口的当前选择项就会是同一个数据项了
+            //需要深拷贝才行
+            Target tmpTarget = new Target()
+            {
+                Id=target.Id,
+                Material=target.Material,
+                Lot=target.Lot,
+                PO=target.PO,
+                Customer=target.Customer,
+                XRFComposition=target.XRFComposition,
+                Remark=target.Remark,
+                Resistance=target.Resistance,
+                Size=target.Size,
+                Weight=target.Weight,
+                Density=target.Density,
+                CreateDate=target.CreateDate
+            };
+            targetEditViewModel.CurrentTarget = tmpTarget;
             targetEditViewModel.EditFlag = flag;
 
             targetEditView.DataContext = targetEditViewModel;
