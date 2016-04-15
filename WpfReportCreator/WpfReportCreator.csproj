@@ -81,6 +81,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="NewOrUpdate.cs" />
+    <Compile Include="Resource\ValidationRules\MustLessThan.cs" />
+    <Compile Include="Resource\ValidationRules\RequiredRule.cs" />
     <Compile Include="Service References\ServiceReferenceSampleReport\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
