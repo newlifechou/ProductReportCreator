@@ -11,7 +11,7 @@ namespace WpfReportCreator.Resource.ValidationRules
     /// <summary>
     /// 输入长度不能超过
     /// </summary>
-    public class LengthMaxRule:ValidationRule
+    public class LengthMaxRule : ValidationRule
     {
         private int length;
         /// <summary>
@@ -20,7 +20,15 @@ namespace WpfReportCreator.Resource.ValidationRules
         public int Length
         {
             get { return length; }
-            set { length = value; }
+            set
+            {
+                if (value>0)
+                {
+                    throw new ArgumentException("Length must be more than 0");
+                }
+                length = value;
+
+            }
         }
         public LengthMaxRule()
         {
@@ -30,7 +38,7 @@ namespace WpfReportCreator.Resource.ValidationRules
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string input = value.ToString();
-            if (input.Length>Length)
+            if (input.Length > Length)
             {
                 return new ValidationResult(false, "Must Less than " + Length);
             }

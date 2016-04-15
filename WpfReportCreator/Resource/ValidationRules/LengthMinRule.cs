@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace WpfReportCreator.Resource.ValidationRules
 {
-    public class LengthMinRule:ValidationRule
+    public class LengthMinRule : ValidationRule
     {
         private int length;
         /// <summary>
@@ -17,17 +17,24 @@ namespace WpfReportCreator.Resource.ValidationRules
         public int Length
         {
             get { return length; }
-            set { length = value; }
+            set
+            {
+                if (value > 0)
+                {
+                    throw new ArgumentException("Length must be more than 0");
+                }
+                length = value;
+            }
         }
         public LengthMinRule()
         {
-            Length = 20;
+            Length = 0;
         }
 
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string input = value.ToString();
-            if (input.Length < Length)
+            if (input.Length > Length)
             {
                 return new ValidationResult(false, "Must more than " + Length);
             }

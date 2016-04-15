@@ -19,14 +19,11 @@ namespace WpfReportCreator.Resource.ValidationRules
             get { return min; }
             set
             {
-                if (value < max)
-                {
-                    min = value;
-                }
-                else
+                if (value >= max)
                 {
                     throw new ArgumentException("min value must less than max");
                 }
+                min = value;
             }
         }
         private int max;
@@ -38,12 +35,9 @@ namespace WpfReportCreator.Resource.ValidationRules
             {
                 if (value > min)
                 {
-                    min = value;
-                }
-                else
-                {
                     throw new ArgumentException("max value must more than min");
                 }
+                max = value;
             }
         }
 
