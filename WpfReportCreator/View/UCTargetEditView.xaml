@@ -24,7 +24,7 @@
         <Grid Grid.Row="3" DataContext="{Binding CurrentTarget}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -35,8 +35,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="120"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
 
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -55,12 +54,11 @@
             <TextBlock Grid.Row="6" Grid.Column="0" Text="Resistance"/>
             <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}"/>
 
-            <TextBlock Grid.Row="7" Grid.Column="0" Text="Composition"/>
-            <TextBox  Grid.Row="7" Grid.Column="1" Margin="4" Text="{Binding XRFComposition}"
+            <TextBox  Grid.Row="0" Grid.Column="2" Grid.RowSpan="8" Margin="4" Text="{Binding XRFComposition}"
                       VerticalScrollBarVisibility="Visible" AcceptsReturn="True" TextWrapping="Wrap" />
 
-            <TextBlock Grid.Row="8" Grid.Column="0" Text="Remark"/>
-            <TextBox  Grid.Row="8" Grid.Column="1"   Margin="4" Text="{Binding Remark}"
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Remark"/>
+            <TextBox  Grid.Row="7" Grid.Column="1"   Margin="4" Text="{Binding Remark}"
                       VerticalScrollBarVisibility="Visible" AcceptsReturn="True" TextWrapping="Wrap" />
         </Grid>
     </Grid>

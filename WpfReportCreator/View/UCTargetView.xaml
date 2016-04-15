@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfReportCreator.View"
              xmlns:control="clr-namespace:XS.WPFControls;assembly=XS.WPFControls"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800" DataContext="{Binding UCTarget,Source={StaticResource Locator}}" >
+             d:DesignHeight="800" d:DesignWidth="800" DataContext="{Binding UCTarget,Source={StaticResource Locator}}" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -116,37 +116,41 @@
         <control:SimplePager Grid.Row="3" Command="{Binding PageCommand}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
                              RecordCount="{Binding RecordCount}" LabelPageIndex="当前页码" LabelPageCount="总页数"
                              LabelPageSize="每页记录数" LabelRecordCount="总记录数"/>
-        <Grid Grid.Row="4" DataContext="{Binding ElementName=mainGrid,Path=SelectedItem}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Material"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Material}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Size"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Size}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="Customer"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="Density"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="6" Grid.Column="0" Text="Resistance"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}"/>
-            <control:BindableCSVTable Grid.Row="0" Grid.Column="2" Grid.RowSpan="7" CSVContent="{Binding XRFComposition}" Height="200"/>
-        </Grid>
+        <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto">
+            <Grid DataContext="{Binding ElementName=mainGrid,Path=SelectedItem}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource txtNormal}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Material"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Material}" Style="{StaticResource txtNormal}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Size"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Size}" Style="{StaticResource txtNormal}"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Customer"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource txtNormal}"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource txtNormal}"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Density"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource txtNormal}"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Resistance"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}"/>
+                <control:BindableCSVTable Grid.Row="0" Grid.Column="2" Grid.RowSpan="8"  CSVContent="{Binding XRFComposition}" Margin="4"/>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Remark"/>
+                <TextBox Grid.Row="7" Grid.Column="1"  Text="{Binding Remark}" Margin="4"/>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>

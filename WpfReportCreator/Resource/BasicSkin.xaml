@@ -4,7 +4,7 @@
     <!--Window-->
     <Style TargetType="Window" x:Key="win">
         <Setter Property="MinHeight" Value="600"/>
-        <Setter Property="MinWidth" Value="800"/>
+        <Setter Property="MinWidth" Value="1000"/>
         <Setter Property="Background" Value="Wheat"/>
     </Style>
     <!--TextBlock-->
