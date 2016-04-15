@@ -16,10 +16,10 @@
         <DataGrid Grid.Row="0" ItemsSource="{Binding VHPs}" SelectedItem="{Binding CurrentVHP}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="VHPDate" Binding="{Binding VHPDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="ProductName" Binding="{Binding ProductName}"/>
                 <DataGridTextColumn Header="VHPDevice" Binding="{Binding VHPDevice}"/>
                 <DataGridTextColumn Header="Customer" Binding="{Binding Customer}"/>
                 <DataGridTextColumn Header="PO" Binding="{Binding PO}"/>
-                <DataGridTextColumn Header="ProductName" Binding="{Binding ProductName}"/>
                 <DataGridTextColumn Header="WorkingNumber" Binding="{Binding PMIWorkingNumber}"/>
                 <DataGridTextColumn Header="Dimension" Binding="{Binding Dimension}"/>
             </DataGrid.Columns>
