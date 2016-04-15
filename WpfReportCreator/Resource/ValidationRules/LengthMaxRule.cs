@@ -11,7 +11,7 @@ namespace WpfReportCreator.Resource.ValidationRules
     /// <summary>
     /// 输入长度不能超过
     /// </summary>
-    public class MaxLengthRule:ValidationRule
+    public class LengthMaxRule:ValidationRule
     {
         private int length;
         /// <summary>
@@ -22,7 +22,7 @@ namespace WpfReportCreator.Resource.ValidationRules
             get { return length; }
             set { length = value; }
         }
-        public MaxLengthRule()
+        public LengthMaxRule()
         {
             Length = 20;
         }

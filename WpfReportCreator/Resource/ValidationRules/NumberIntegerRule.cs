@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfReportCreator.Resource.ValidationRules
 {
-    class PositiveRule
+    class NumberIntegerRule
     {
     }
 }
