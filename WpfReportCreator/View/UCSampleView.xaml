@@ -24,7 +24,7 @@
             <Button Content="Search" Style="{StaticResource btnNormal}" Command="{Binding SearchCommand}"/>
             <Button Content="Get All" Style="{StaticResource btnNormal}" Command="{Binding GetAllCommand}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2">
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Samples}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="CreateDate">
                     <DataGridTemplateColumn.CellTemplate>
@@ -36,7 +36,7 @@
                 <DataGridTemplateColumn Header="CreateDate">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding CreateDate,StringFormat={}{yyyy-MM-dd}}"/>
+                            <TextBlock Text="{Binding CreateDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -131,6 +131,6 @@
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize,Mode=OneWay}" RecordCount="{Binding RecordCount,Mode=OneWay}"
-                             Command="{Binding PageCommand}" LabelPageCount="总页数=" LabelPageIndex="当前页码=" LabelPageSize="每页记录数=" LabelRecordCount="总记录数="/>
+                             Command="{Binding PageCommand}" LabelPageCount="总页数" LabelPageIndex="当前页码" LabelPageSize="每页记录数" LabelRecordCount="总记录数"/>
     </Grid>
 </UserControl>

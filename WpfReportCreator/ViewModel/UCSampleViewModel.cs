@@ -26,6 +26,9 @@ namespace WpfReportCreator.ViewModel
         #region 初始化区域
         private void InitalProperties()
         {
+            SearchLot = string.Empty;
+            SearchCustomer = string.Empty;
+            SetPageWhenCondtionChange();
         }
 
         private void SetPageWhenCondtionChange()
@@ -38,19 +41,21 @@ namespace WpfReportCreator.ViewModel
 
         private void PageAction()
         {
-            throw new NotImplementedException();
+            GetPageByCondition(SearchLot, SearchCustomer, (PageIndex - 1) * PageSize, PageSize);
         }
 
         private int GetTargetsCountByCondition(string searchLot, string searchCustomer)
         {
             ServiceReferenceSampleReport.SampleReportServiceClient client = new SampleReportServiceClient();
-            int result = client.GetSampleCount();
+            int result = client.GetSampleCount(SearchLot, searchCustomer);
+            client.Close();
+            return result;
         }
 
-        private void GetPageByCondition(string lot,string customer,int skip,int take)
+        private void GetPageByCondition(string lot, string customer, int skip, int take)
         {
             ServiceReferenceSampleReport.SampleReportServiceClient client = new SampleReportServiceClient();
-            client.GetSamplesByCondition(lot, customer, skip, take);
+            Samples = new ObservableCollection<Sample>(client.GetSamplesByCondition(lot, customer, skip, take));
             client.Close();
         }
 
@@ -59,23 +64,23 @@ namespace WpfReportCreator.ViewModel
             AddCommand = new RelayCommand(ExecuteAdd, CanAdd);
             EditCommand = new RelayCommand<Sample>(ExecuteEdit, CanEdit);
             DeleteCommand = new RelayCommand<Sample>(ExecuteDelete, CanDelete);
-            SearchCommand = new RelayCommand(ExecuteSearchCommand, CanSearch);
+            SearchCommand = new RelayCommand(ExecuteSearch, CanSearch);
             PageCommand = new RelayCommand(ExecutePage);
         }
 
         private void ExecutePage()
         {
-            throw new NotImplementedException();
+            SetPageWhenCondtionChange();
         }
 
-        private void ExecuteSearchCommand()
+        private void ExecuteSearch()
         {
-            throw new NotImplementedException();
+            SetPageWhenCondtionChange();
         }
 
         private bool CanSearch()
         {
-            throw new NotImplementedException();
+            return !string.IsNullOrEmpty(SearchCustomer) && !string.IsNullOrEmpty(SearchLot);
         }
 
         private void ExecuteDelete(Sample obj)

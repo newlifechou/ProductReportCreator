@@ -235,10 +235,10 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         System.Threading.Tasks.Task<WpfReportCreator.ServiceReferenceSampleReport.Sample[]> GetSamplesByConditionAsync(string lot, string customer, int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ISampleReportService/GetSampleCount", ReplyAction="http://www.newlifechou.com/ISampleReportService/GetSampleCountResponse")]
-        int GetSampleCount();
+        int GetSampleCount(string lot, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ISampleReportService/GetSampleCount", ReplyAction="http://www.newlifechou.com/ISampleReportService/GetSampleCountResponse")]
-        System.Threading.Tasks.Task<int> GetSampleCountAsync();
+        System.Threading.Tasks.Task<int> GetSampleCountAsync(string lot, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/ISampleReportService/AddSample", ReplyAction="http://www.newlifechou.com/ISampleReportService/AddSampleResponse")]
         bool AddSample(WpfReportCreator.ServiceReferenceSampleReport.Sample sample);
@@ -302,12 +302,12 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
             return base.Channel.GetSamplesByConditionAsync(lot, customer, skip, take);
         }
         
-        public int GetSampleCount() {
-            return base.Channel.GetSampleCount();
+        public int GetSampleCount(string lot, string customer) {
+            return base.Channel.GetSampleCount(lot, customer);
         }
         
-        public System.Threading.Tasks.Task<int> GetSampleCountAsync() {
-            return base.Channel.GetSampleCountAsync();
+        public System.Threading.Tasks.Task<int> GetSampleCountAsync(string lot, string customer) {
+            return base.Channel.GetSampleCountAsync(lot, customer);
         }
         
         public bool AddSample(WpfReportCreator.ServiceReferenceSampleReport.Sample sample) {
