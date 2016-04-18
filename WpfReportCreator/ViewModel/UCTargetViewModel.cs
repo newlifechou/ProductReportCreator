@@ -157,7 +157,9 @@ namespace WpfReportCreator.ViewModel
         {
             Target empty = new Target()
             {
-                Id = Guid.NewGuid()
+                Id = Guid.NewGuid(),
+                Lot="160418-M-1",
+                Material="Some Composition"
             };
           App.MainWindowService.ShowTargetEdit(empty,NewOrUpdate.New);
         }
