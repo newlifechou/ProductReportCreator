@@ -7,7 +7,7 @@ using System.Windows;
 using WpfReportCreator.ServiceReferenceTargetReport;
 using WpfReportCreator.View;
 using WpfReportCreator.ViewModel;
-
+using System.Windows.Forms;
 /*
     Developer:xs.zhou@outlook.com
     CreateTime:2016/4/14 9:17:32
@@ -82,12 +82,18 @@ namespace WpfReportCreator
         }
 
 
+        /// <summary>
+        /// 显示VHP计划选择视图
+        /// </summary>
         public void ShowVHPSelect()
         {
             UCVHPSelectView viewVHPSelect = new UCVHPSelectView();
             main.SetMainContent(viewVHPSelect);
         }
 
+        /// <summary>
+        ///显示报告视图 
+        /// </summary>
         public void ShowReport()
         {
             reportView = new ReportView();
@@ -98,9 +104,32 @@ namespace WpfReportCreator
 
 
         #region MessageBox区域
+        /// <summary>
+        /// 警告信息显示对话框
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="title"></param>
+        /// <returns></returns>
         public bool ShowWarningWithOKCancel(string message, string title)
         {
-            return MessageBox.Show(message, title,MessageBoxButton.OKCancel,MessageBoxImage.Warning) == MessageBoxResult.OK;
+            return System.Windows.MessageBox.Show(message, title,MessageBoxButton.OKCancel,MessageBoxImage.Warning) 
+                == MessageBoxResult.OK;
+        }
+        /// <summary>
+        /// 文件夹选择对话框
+        /// </summary>
+        /// <returns></returns>
+        public string FolderSelectDialog()
+        {
+            FolderBrowserDialog folderSelect = new FolderBrowserDialog();
+            folderSelect.Description = "Please select the target folder";
+            folderSelect.ShowNewFolderButton = true;
+            folderSelect.RootFolder = Environment.SpecialFolder.Desktop;
+            if (folderSelect.ShowDialog()==DialogResult.OK)
+            {
+                return folderSelect.SelectedPath;
+            }
+            return Environment.SpecialFolder.Desktop.ToString();
         }
         #endregion
 
