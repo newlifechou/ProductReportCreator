@@ -23,6 +23,9 @@ namespace WpfReportCreator
 
         private UCTargetEditViewModel targetEditViewModel;
 
+        private ReportView reportView;
+
+
         public WindowManager()
         {
             //只实例化一次
@@ -85,7 +88,11 @@ namespace WpfReportCreator
             main.SetMainContent(viewVHPSelect);
         }
 
-
+        public void ShowReport()
+        {
+            reportView = new ReportView();
+            main.SetMainContent(reportView);
+        }
         #endregion
 
 
