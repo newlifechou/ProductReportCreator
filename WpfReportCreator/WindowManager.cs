@@ -85,7 +85,7 @@ namespace WpfReportCreator
         public void ShowVHPSelect(string msg)
         {
             UCVHPSelectView viewVHPSelect = new UCVHPSelectView();
-            VHPSelectViewModel vm = new VHPSelectViewModel();
+            UCVHPSelectViewModel vm = new UCVHPSelectViewModel();
             vm.Msg = msg;
             viewVHPSelect.DataContext = vm;
             main.SetMainContent(viewVHPSelect);

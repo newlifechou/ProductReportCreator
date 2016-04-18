@@ -115,7 +115,7 @@
     <Compile Include="ViewModel\UCSampleEditViewModel.cs" />
     <Compile Include="ViewModel\UCTargetEditViewModel.cs" />
     <Compile Include="ViewModel\UCSampleViewModel.cs" />
-    <Compile Include="ViewModel\VHPSelectViewModel.cs" />
+    <Compile Include="ViewModel\UCVHPSelectViewModel.cs" />
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>

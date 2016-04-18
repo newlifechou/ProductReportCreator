@@ -39,7 +39,7 @@ namespace WpfReportCreator.ViewModel
         private void SetPageWhenCondtionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 20;
             RecordCount = GetTargetsCountByCondition(SearchLot, SearchCustomer);
             PageAction();
         }

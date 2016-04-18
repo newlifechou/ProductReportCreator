@@ -29,21 +29,7 @@
                 <DataGridTemplateColumn Header="CreateDate">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Lot}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="CreateDate">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
                             <TextBlock Text="{Binding CreateDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Lot">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Lot}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -131,6 +117,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize,Mode=OneWay}" RecordCount="{Binding RecordCount,Mode=OneWay}"
-                             Command="{Binding PageCommand}" LabelPageCount="总页数" LabelPageIndex="当前页码" LabelPageSize="每页记录数" LabelRecordCount="总记录数"/>
+                             Command="{Binding PageCommand}" LabelPageCount="总页数" LabelPageIndex="当前页码" 
+                             LabelPageSize="每页记录数" LabelRecordCount="总记录数"/>
     </Grid>
 </UserControl>

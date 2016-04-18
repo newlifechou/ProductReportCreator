@@ -13,14 +13,14 @@ namespace WpfReportCreator.ViewModel
     /// See http://www.galasoft.ch/mvvm
     /// </para>
     /// </summary>
-    public class VHPSelectViewModel : ViewModelBase
+    public class UCVHPSelectViewModel : ViewModelBase
     {
 
         public string Msg { get; set; }
         /// <summary>
         /// Initializes a new instance of the VHPSelectViewModel class.
         /// </summary>
-        public VHPSelectViewModel()
+        public UCVHPSelectViewModel()
         {
             PageSize = 30;
             RecordCount = GetRecordCount();

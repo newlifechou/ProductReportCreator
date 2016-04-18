@@ -36,7 +36,7 @@ namespace WpfReportCreator.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<UCTargetViewModel>();
             SimpleIoc.Default.Register<UCSampleViewModel>();
-            SimpleIoc.Default.Register<VHPSelectViewModel>();
+            SimpleIoc.Default.Register<UCVHPSelectViewModel>();
         }
 
         public MainViewModel Main
@@ -63,11 +63,11 @@ namespace WpfReportCreator.ViewModel
             }
         } 
         
-        public VHPSelectViewModel VHPSelect
+        public UCVHPSelectViewModel VHPSelect
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<VHPSelectViewModel>();
+                return ServiceLocator.Current.GetInstance<UCVHPSelectViewModel>();
             }
         }
         
