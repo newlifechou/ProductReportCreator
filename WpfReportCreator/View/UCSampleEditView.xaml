@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfReportCreator.View"
+             xmlns:validation="clr-namespace:WpfReportCreator.Resource.ValidationRules"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -36,10 +37,11 @@
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Button Content="Select VHP Record"  Command="{Binding SelectVHPCommand}" Style="{StaticResource btnNormal}"/>
         </StackPanel>
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="3" DataContext="{Binding CurrentSample}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -54,31 +56,73 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
-            <TextBox Grid.Row="0" Grid.Column="1" >
+            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource txtNormal}"  x:Name="txtLot">
+                <TextBox.Text>
+                    <Binding Path="Lot">
+                        <Binding.ValidationRules>
+                            <validation:RequiredRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Material"/>
-            <TextBox Grid.Row="1" Grid.Column="1" >
+            <TextBox Grid.Row="1" Grid.Column="1"  Style="{StaticResource txtNormal}" x:Name="txtMaterial" >
+                <TextBox.Text>
+                    <Binding Path="Material">
+                        <Binding.ValidationRules>
+                            <validation:RequiredRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Customer"/>
-            <TextBox Grid.Row="2" Grid.Column="1" >
+            <TextBox Grid.Row="2" Grid.Column="1"  Style="{StaticResource txtNormal}" >
+                <TextBox.Text>
+                    <Binding Path="Customer">
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBlock Grid.Row="3" Grid.Column="0" Text="PO"/>
-            <TextBox Grid.Row="3" Grid.Column="1" >
+            <TextBox Grid.Row="3" Grid.Column="1"  Style="{StaticResource txtNormal}" >
+                <TextBox.Text>
+                    <Binding Path="PO">
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBlock Grid.Row="4" Grid.Column="0" Text="ForLot"/>
-            <TextBox Grid.Row="4" Grid.Column="1" >
+            <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource txtNormal}"  >
+                <TextBox.Text>
+                    <Binding Path="ForLot">
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBlock Grid.Row="5" Grid.Column="0" Text="Weight1"/>
-            <TextBox Grid.Row="5" Grid.Column="1" >
+            <TextBox Grid.Row="5" Grid.Column="1"  Style="{StaticResource txtNormal}" >
+                <TextBox.Text>
+                    <Binding Path="Weight1">
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBlock Grid.Row="6" Grid.Column="0" Text="Weight2"/>
-            <TextBox Grid.Row="6" Grid.Column="1" >
+            <TextBox Grid.Row="6" Grid.Column="1"  Style="{StaticResource txtNormal}" >
+                <TextBox.Text>
+                    <Binding Path="Weight2">
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBlock Grid.Row="7" Grid.Column="0" Text="Weight3"/>
-            <TextBox Grid.Row="7" Grid.Column="1" >
+            <TextBox Grid.Row="7" Grid.Column="1"  Style="{StaticResource txtNormal}" >
+                <TextBox.Text>
+                    <Binding Path="Weight3">
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
             <TextBlock Grid.Row="8" Grid.Column="0" Text="Weight4"/>
-            <TextBox Grid.Row="8" Grid.Column="1" >
+            <TextBox Grid.Row="8" Grid.Column="1"  Style="{StaticResource txtNormal}" >
+                <TextBox.Text>
+                    <Binding Path="Weight4">
+                    </Binding>
+                </TextBox.Text>
             </TextBox>
         </Grid>
     </Grid>

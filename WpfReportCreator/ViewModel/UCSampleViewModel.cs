@@ -108,7 +108,8 @@ namespace WpfReportCreator.ViewModel
             Sample sample = new Sample()
             {
                 Id = Guid.NewGuid(),
-                Material = "Some Composition"
+                Material = "Some Composition",
+                Lot="160512-N-1"
             };
             App.MainWindowService.ShowSampleEdit(sample, NewOrUpdate.New);
         }
