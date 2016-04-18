@@ -112,6 +112,7 @@
     <Compile Include="Service\Common.cs" />
     <Compile Include="Service\IReport.cs" />
     <Compile Include="ViewModel\ReportViewModel.cs" />
+    <Compile Include="ViewModel\UCSampleEditViewModel.cs" />
     <Compile Include="ViewModel\UCTargetEditViewModel.cs" />
     <Compile Include="ViewModel\UCSampleViewModel.cs" />
     <Compile Include="ViewModel\VHPSelectViewModel.cs" />
@@ -123,6 +124,9 @@
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\ReportView.xaml.cs">
       <DependentUpon>ReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UCSampleEditView.xaml.cs">
+      <DependentUpon>UCSampleEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UCTargetEditView.xaml.cs">
       <DependentUpon>UCTargetEditView.xaml</DependentUpon>
@@ -166,6 +170,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\ReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UCSampleEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

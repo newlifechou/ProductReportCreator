@@ -17,9 +17,21 @@ namespace WpfReportCreator.ViewModel
     public class UCSampleViewModel : ViewModelBase
     {
 
+        public UCSampleViewModel()
+        {
+            InitalProperties();
+            InitialCommands();
+        }
 
         #region 初始化区域
+        private void InitalProperties()
+        {
 
+        }
+        private void InitialCommands()
+        {
+
+        }
         #endregion
 
         #region 属性区域
@@ -64,11 +76,50 @@ namespace WpfReportCreator.ViewModel
 
         #region 命令区域
         public RelayCommand AddCommand { get; private set; }
-        public RelayCommand EditCommand { get; private set; }
-        public RelayCommand DeleteCommand { get; private set; }
-        public RelayCommand DetailsCommand { get; private set; }
-        public RelayCommand RefreshCommand { get; private set; }
-        #endregion
+        public RelayCommand<Sample> EditCommand { get; private set; }
+        public RelayCommand<Sample> DeleteCommand { get; private set; }
+        public RelayCommand SearchCommand { get; private set; }
+        public RelayCommand GetAllCommand { get; private set; }
 
+        #endregion
+        #region 分页属性和命令
+        private int pageIndex;
+        public int PageIndex
+        {
+            get { return pageIndex; }
+            set
+            {
+                if (pageIndex == value)
+                    return;
+                pageIndex = value;
+                RaisePropertyChanged(() => PageIndex);
+            }
+        }
+        private int pageSize;
+        public int PageSize
+        {
+            get { return pageSize; }
+            set
+            {
+                if (pageSize == value)
+                    return;
+                pageSize = value;
+                RaisePropertyChanged(() => PageSize);
+            }
+        }
+        private int recordCount;
+        public int RecordCount
+        {
+            get { return recordCount; }
+            set
+            {
+                if (recordCount == value)
+                    return;
+                recordCount = value;
+                RaisePropertyChanged(() => RecordCount);
+            }
+        }
+        public RelayCommand PageCommand { get; private set; }
+        #endregion #region 分页
     }
 }
