@@ -6,6 +6,7 @@ using WpfReportCreator.ServiceReferenceTargetReport;
 using System.Linq;
 using Microsoft.Practices.ServiceLocation;
 using GalaSoft.MvvmLight.Messaging;
+using WpfReportCreator.Service;
 
 namespace WpfReportCreator.ViewModel
 {
@@ -61,7 +62,8 @@ namespace WpfReportCreator.ViewModel
 
         private void ActionReport(Target obj)
         {
-            App.MainWindowService.ShowReport();
+            Target t = obj.DeepCopy();
+            App.MainWindowService.ShowReport(t);
         }
 
         private void PageAction()
@@ -77,7 +79,7 @@ namespace WpfReportCreator.ViewModel
 
         private void ActionDelete(Target t)
         {
-            if (App.MainWindowService.ShowWarningWithOKCancel("Are you sure to delete this?","warning"))
+            if (App.MainWindowService.ShowWarningWithOKCancel("Are you sure to delete this?", "warning"))
             {
                 TargetReportServiceClient client = new TargetReportServiceClient();
                 client.DeleteTarget(t);
@@ -86,26 +88,15 @@ namespace WpfReportCreator.ViewModel
             }
         }
 
-        private bool CanEdit( Target t)
+        private bool CanEdit(Target t)
         {
             //return CheckAuth();
             return true;
         }
 
-        private void ActionEdit( Target t)
+        private void ActionEdit(Target t)
         {
-            Target tmp = new Target();
-            tmp.Lot = t.Lot;
-            tmp.Material = t.Material;
-            tmp.PO = t.PO;
-            tmp.Remark = t.Remark;
-            tmp.Resistance = t.Resistance;
-            tmp.Weight = t.Weight;
-            tmp.XRFComposition = t.XRFComposition;
-            tmp.Size = t.Size;
-            tmp.CreateDate = t.CreateDate;
-            tmp.Density = t.Density;
-            tmp.Customer = t.Customer;
+            Target tmp = t.DeepCopy();
             //这里考虑深拷贝一下
             App.MainWindowService.ShowTargetEdit(tmp, NewOrUpdate.Update);
         }
@@ -158,10 +149,10 @@ namespace WpfReportCreator.ViewModel
             Target empty = new Target()
             {
                 Id = Guid.NewGuid(),
-                Lot="160418-M-1",
-                Material="Some Composition"
+                Lot = "160418-M-1",
+                Material = "Some Composition"
             };
-          App.MainWindowService.ShowTargetEdit(empty,NewOrUpdate.New);
+            App.MainWindowService.ShowTargetEdit(empty, NewOrUpdate.New);
         }
 
         private bool CheckAuth()

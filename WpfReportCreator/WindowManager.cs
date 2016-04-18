@@ -24,7 +24,7 @@ namespace WpfReportCreator
         private UCTargetEditViewModel targetEditViewModel;
 
         private ReportView reportView;
-
+        private ReportViewModel reportViewModel;
 
         public WindowManager()
         {
@@ -35,6 +35,8 @@ namespace WpfReportCreator
             targetEditView = new UCTargetEditView();
 
             targetEditViewModel = new UCTargetEditViewModel();
+            reportView = new ReportView();
+            reportViewModel = new ReportViewModel();
         }
 
         #region 项目窗体区域
@@ -94,9 +96,10 @@ namespace WpfReportCreator
         /// <summary>
         ///显示报告视图 
         /// </summary>
-        public void ShowReport()
+        public void ShowReport(Target target)
         {
-            reportView = new ReportView();
+            reportViewModel.CurrentTarget = target;
+            reportView.DataContext = reportViewModel;
             main.SetMainContent(reportView);
         }
         #endregion

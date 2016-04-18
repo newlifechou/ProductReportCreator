@@ -52,7 +52,10 @@
         <Setter Property="SelectionMode" Value="Single"/>
     </Style>
     
-    
+    <!--ListBox-->
+    <Style TargetType="ListBox">
+        <Setter Property="Margin" Value="5"/>
+    </Style>
     
     
 </ResourceDictionary>
