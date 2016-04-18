@@ -54,11 +54,15 @@ namespace WpfReportCreator.ViewModel
             GetAllCommand = new RelayCommand(ActionGetAll);
             EditCommand = new RelayCommand<Target>(ActionEdit, CanEdit);
             DeleteCommand = new RelayCommand<Target>(ActionDelete, CanDelete);
+            ReportCommand = new RelayCommand<Target>(ActionReport);
 
             PageCommand = new RelayCommand(PageAction);
         }
 
-
+        private void ActionReport(Target obj)
+        {
+            App.MainWindowService.ShowReport();
+        }
 
         private void PageAction()
         {
@@ -155,7 +159,7 @@ namespace WpfReportCreator.ViewModel
         public RelayCommand AddCommand { get; private set; }
         public RelayCommand<Target> EditCommand { get; private set; }
         public RelayCommand<Target> DeleteCommand { get; private set; }
-        public RelayCommand DetailsCommand { get; private set; }
+        public RelayCommand<Target> ReportCommand { get; private set; }
         public RelayCommand SearchCommand { get; private set; }
         public RelayCommand GetAllCommand { get; private set; }
         #endregion

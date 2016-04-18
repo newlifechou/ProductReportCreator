@@ -99,10 +99,10 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Details">
+                <DataGridTemplateColumn Header="Report">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Details" Command="{Binding DataContext.DetailsCommand,
+                            <Button Content="Report" Command="{Binding DataContext.ReportCommand,
                                 RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

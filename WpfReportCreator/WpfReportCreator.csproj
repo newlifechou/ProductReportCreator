@@ -111,6 +111,7 @@
     <Compile Include="Service\Access.cs" />
     <Compile Include="Service\Common.cs" />
     <Compile Include="Service\IReport.cs" />
+    <Compile Include="ViewModel\ReportViewModel.cs" />
     <Compile Include="ViewModel\UCTargetEditViewModel.cs" />
     <Compile Include="ViewModel\UCSampleViewModel.cs" />
     <Compile Include="ViewModel\VHPSelectViewModel.cs" />
