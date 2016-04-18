@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfReportCreator.View"
+        xmlns:validation="clr-namespace:WpfReportCreator.Resource.ValidationRules"
         mc:Ignorable="d" 
         d:DesginHeight="600" d:DesginWidth="800">
     <Grid>
@@ -15,11 +16,25 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Target Information Edit" Style="{StaticResource tbPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal"  Background="Orange">
-            <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}" HorizontalAlignment="Right"/>
-            <Button Content="Save" Style="{StaticResource btnNormal}" Command="{Binding SaveCommand}" HorizontalAlignment="Right"/>
+            <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
+            <Button Content="Save"  Command="{Binding SaveCommand}" >
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource btnNormal}">
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding ElementName=txtLot,Path=(Validation.HasError)}" Value="true"/>
+                                    <Condition Binding="{Binding ElementName=txtMaterial,Path=(Validation.HasError)}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Content="Select VHP Record" Style="{StaticResource btnNormal}" Command="{Binding SelectVHPCommand}"/>
+            <Button Content="Select VHP Record"  Command="{Binding SelectVHPCommand}" Style="{StaticResource btnNormal}"/>
         </StackPanel>
         <Grid Grid.Row="3" DataContext="{Binding CurrentTarget}">
             <Grid.ColumnDefinitions>
@@ -40,9 +55,25 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Material"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Material}" Style="{StaticResource txtNormal}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource txtNormal}" x:Name="txtLot">
+                <TextBox.Text>
+                    <Binding Path="Lot" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validation:RequiredRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Material" />
+            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource txtNormal}" x:Name="txtMaterial">
+                <TextBox.Text>
+                    <Binding Path="Material" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validation:RequiredRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Size"/>
             <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Size}" Style="{StaticResource txtNormal}"/>
             <TextBlock Grid.Row="3" Grid.Column="0" Text="Customer"/>

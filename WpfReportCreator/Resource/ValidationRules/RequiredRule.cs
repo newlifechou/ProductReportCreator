@@ -19,7 +19,7 @@ namespace WpfReportCreator.Resource.ValidationRules
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             string input = value as string;
-            if (string.IsNullOrEmpty(input))
+            if (!string.IsNullOrEmpty(input))
             {
                 return new ValidationResult(true, null);
             }

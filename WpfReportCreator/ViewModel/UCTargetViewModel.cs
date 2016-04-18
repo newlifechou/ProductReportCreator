@@ -94,7 +94,20 @@ namespace WpfReportCreator.ViewModel
 
         private void ActionEdit( Target t)
         {
-            App.MainWindowService.ShowTargetEdit(t, NewOrUpdate.Update);
+            Target tmp = new Target();
+            tmp.Lot = t.Lot;
+            tmp.Material = t.Material;
+            tmp.PO = t.PO;
+            tmp.Remark = t.Remark;
+            tmp.Resistance = t.Resistance;
+            tmp.Weight = t.Weight;
+            tmp.XRFComposition = t.XRFComposition;
+            tmp.Size = t.Size;
+            tmp.CreateDate = t.CreateDate;
+            tmp.Density = t.Density;
+            tmp.Customer = t.Customer;
+            //这里考虑深拷贝一下
+            App.MainWindowService.ShowTargetEdit(tmp, NewOrUpdate.Update);
         }
 
         private void ActionGetAll()
