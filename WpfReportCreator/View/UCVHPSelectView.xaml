@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfReportCreator.View"
          xmlns:control="clr-namespace:XS.WPFControls;assembly=XS.WPFControls"
         mc:Ignorable="d" 
-       d:DesginHeight="600" d:DesginWidth="800" DataContext="{Binding VHPSelect,Source={StaticResource Locator}}">
+       d:DesginHeight="600" d:DesginWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

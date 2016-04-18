@@ -27,7 +27,7 @@ namespace WpfReportCreator.ViewModel
             SaveCommand = new RelayCommand(SaveAction);
 
 
-            Messenger.Default.Register<NotificationMessage<VHP>>(this, "VHPSelect", msg =>
+            Messenger.Default.Register<NotificationMessage<VHP>>(this, "TargetSelect", msg =>
             {
                 var gg = msg.Content;
                 Target tmp = new Target()
@@ -81,7 +81,7 @@ namespace WpfReportCreator.ViewModel
 
         private void SelectVHPAction()
         {
-            App.MainWindowService.ShowVHPSelect();
+            App.MainWindowService.ShowVHPSelect("TargetSelect");
         }
 
 

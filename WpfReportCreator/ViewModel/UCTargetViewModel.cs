@@ -84,7 +84,7 @@ namespace WpfReportCreator.ViewModel
                 TargetReportServiceClient client = new TargetReportServiceClient();
                 client.DeleteTarget(t);
                 client.Close();
-                Messenger.Default.Send<NotificationMessage>(null, "RefreshTargetView");
+                SetPageWhenCondtionChange();
             }
         }
 
@@ -149,7 +149,8 @@ namespace WpfReportCreator.ViewModel
             {
                 Id = Guid.NewGuid(),
                 Lot = "160418-M-1",
-                Material = "Some Composition"
+                Material = "Some Composition",
+                CreateDate=DateTime.Now
             };
             App.MainWindowService.ShowTargetEdit(empty, NewOrUpdate.New);
         }

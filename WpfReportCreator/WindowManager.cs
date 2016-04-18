@@ -82,9 +82,12 @@ namespace WpfReportCreator
         /// <summary>
         /// 显示VHP计划选择视图
         /// </summary>
-        public void ShowVHPSelect()
+        public void ShowVHPSelect(string msg)
         {
             UCVHPSelectView viewVHPSelect = new UCVHPSelectView();
+            VHPSelectViewModel vm = new VHPSelectViewModel();
+            vm.Msg = msg;
+            viewVHPSelect.DataContext = vm;
             main.SetMainContent(viewVHPSelect);
         }
 

@@ -89,10 +89,10 @@
                     </Binding>
                 </TextBox.Text>
             </TextBox>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="ForLot"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="ForTarget"/>
             <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource txtNormal}"  >
                 <TextBox.Text>
-                    <Binding Path="ForLot">
+                    <Binding Path="ForTarget">
                     </Binding>
                 </TextBox.Text>
             </TextBox>

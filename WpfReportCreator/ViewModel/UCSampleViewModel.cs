@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,6 +22,10 @@ namespace WpfReportCreator.ViewModel
         {
             InitalProperties();
             InitialCommands();
+            Messenger.Default.Register<NotificationMessage>(this, "RefreshSampleView", msg =>
+            {
+                SetPageWhenCondtionChange();
+            });
         }
 
         #region 初始化区域
@@ -85,7 +90,14 @@ namespace WpfReportCreator.ViewModel
 
         private void ExecuteDelete(Sample obj)
         {
-            throw new NotImplementedException();
+            if (App.MainWindowService.ShowWarningWithOKCancel("Are you sure to delete this?","Warning"))
+            {
+                SampleReportServiceClient client = new SampleReportServiceClient();
+                client.DeleteSample(obj);
+                client.Close();
+                SetPageWhenCondtionChange();
+            }
+
         }
 
         private bool CanDelete(Sample arg)
@@ -95,7 +107,7 @@ namespace WpfReportCreator.ViewModel
 
         private void ExecuteEdit(Sample obj)
         {
-            throw new NotImplementedException();
+            App.MainWindowService.ShowSampleEdit(obj, NewOrUpdate.Update);
         }
 
         private bool CanEdit(Sample arg)
@@ -109,7 +121,8 @@ namespace WpfReportCreator.ViewModel
             {
                 Id = Guid.NewGuid(),
                 Material = "Some Composition",
-                Lot="160512-N-1"
+                Lot="160512-N-1",
+                CreateDate=DateTime.Now
             };
             App.MainWindowService.ShowSampleEdit(sample, NewOrUpdate.New);
         }

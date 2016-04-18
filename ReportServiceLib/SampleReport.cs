@@ -62,6 +62,7 @@ namespace ReportServiceLib
             destination.Customer = source.Customer;
             destination.Lot = source.Lot;
             destination.PO = source.PO;
+            destination.ForTarget = source.ForTarget;
             destination.Weight1 = source.Weight1;
             destination.Weight2 = source.Weight2;
             destination.Weight3 = source.Weight3;

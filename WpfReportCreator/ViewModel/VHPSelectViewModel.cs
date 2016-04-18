@@ -15,6 +15,8 @@ namespace WpfReportCreator.ViewModel
     /// </summary>
     public class VHPSelectViewModel : ViewModelBase
     {
+
+        public string Msg { get; set; }
         /// <summary>
         /// Initializes a new instance of the VHPSelectViewModel class.
         /// </summary>
@@ -58,7 +60,7 @@ namespace WpfReportCreator.ViewModel
 
         private void SelectAction()
         {
-            Messenger.Default.Send<NotificationMessage<VHP>>(new NotificationMessage<VHP>(CurrentVHP,""), "VHPSelect");
+            Messenger.Default.Send<NotificationMessage<VHP>>(new NotificationMessage<VHP>(CurrentVHP,""), Msg);
             App.MainWindowService.ReturnToTargetEdit();
         }
 
