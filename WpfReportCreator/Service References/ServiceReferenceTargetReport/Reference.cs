@@ -32,6 +32,9 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         private string DensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -103,6 +106,19 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
                 if ((object.ReferenceEquals(this.DensityField, value) != true)) {
                     this.DensityField = value;
                     this.RaisePropertyChanged("Density");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
                 }
             }
         }

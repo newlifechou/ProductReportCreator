@@ -32,6 +32,7 @@ namespace WcfReportService.Model
 
         [DataMember]
         public DateTime CreateDate { get; set; }
-
+        [DataMember]
+        public string Remark { get; set; }
     }
 }

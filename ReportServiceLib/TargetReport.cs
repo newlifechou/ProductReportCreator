@@ -74,6 +74,7 @@ namespace ReportServiceLib
             destination.CreateDate = source.CreateDate;
             destination.Remark = source.Remark;
             destination.XRFComposition = source.XRFComposition;
+            destination.Dimension = source.Dimension;
         }
 
     }

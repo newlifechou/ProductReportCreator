@@ -57,6 +57,7 @@ namespace WpfReportCreator.Service
                 tmp.XRFComposition = t.XRFComposition;
                 tmp.Remark = t.Remark;
                 tmp.CreateDate = t.CreateDate;
+                tmp.Dimension = t.Dimension;
             }
             return tmp;
         }
@@ -77,6 +78,7 @@ namespace WpfReportCreator.Service
                 tmp.ForTarget = s.ForTarget;
                 tmp.Customer = s.Customer;
                 tmp.CreateDate = s.CreateDate;
+                tmp.Remark = s.Remark;
             }
             return tmp;
         }

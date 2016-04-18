@@ -68,7 +68,7 @@ namespace ReportServiceLib
             destination.Weight3 = source.Weight3;
             destination.Weight4 = source.Weight4;
             destination.CreateDate = source.CreateDate;
-
+            destination.Remark = source.Remark;
         }
     }
 }

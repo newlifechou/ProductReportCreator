@@ -31,6 +31,7 @@
       <xs:element minOccurs="0" name="Lot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Material" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight3" nillable="true" type="xs:string" />

@@ -24,7 +24,7 @@ namespace ReportServiceLib.Model
         public string Resistance { get; set; }
         public string XRFComposition { get; set; }
         public string Remark { get; set; }
-
+        public string Dimension { get; set; }
         public DateTime CreateDate { get; set; }
     }
 }
