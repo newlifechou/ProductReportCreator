@@ -71,6 +71,14 @@ namespace WpfReportCreator.ViewModel
             DeleteCommand = new RelayCommand<Sample>(ExecuteDelete, CanDelete);
             SearchCommand = new RelayCommand(ExecuteSearch, CanSearch);
             PageCommand = new RelayCommand(ExecutePage);
+            GetAllCommand = new RelayCommand(GetAllExecute);
+        }
+
+        private void GetAllExecute()
+        {
+            SearchCustomer = string.Empty;
+            SearchLot = string.Empty;
+            SetPageWhenCondtionChange();
         }
 
         private void ExecutePage()
@@ -85,7 +93,7 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanSearch()
         {
-            return !string.IsNullOrEmpty(SearchCustomer) && !string.IsNullOrEmpty(SearchLot);
+            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchLot));
         }
 
         private void ExecuteDelete(Sample obj)

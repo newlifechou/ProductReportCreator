@@ -38,14 +38,14 @@ namespace WpfReportCreator.ViewModel
         private int GetRecordCount()
         {
             VHPServiceClient client = new VHPServiceClient();
-            int count= client.GetVHPCount();
+            int count = client.GetVHPCount();
             client.Close();
             return count;
         }
         private void SetPageByRecord()
         {
             VHPServiceClient client = new VHPServiceClient();
-            VHPs = new ObservableCollection<VHP>(client.GetVHPs((PageIndex-1)*PageSize, PageSize));
+            VHPs = new ObservableCollection<VHP>(client.GetVHPs((PageIndex - 1) * PageSize, PageSize));
             if (VHPs.Count > 0)
             {
                 CurrentVHP = VHPs[0];
@@ -56,12 +56,27 @@ namespace WpfReportCreator.ViewModel
         private void GiveUpAction()
         {
             App.MainWindowService.ReturnToTargetEdit();
+            ReturnByMsg();
+
         }
 
         private void SelectAction()
         {
-            Messenger.Default.Send<NotificationMessage<VHP>>(new NotificationMessage<VHP>(CurrentVHP,""), Msg);
-            App.MainWindowService.ReturnToTargetEdit();
+            Messenger.Default.Send<NotificationMessage<VHP>>(new NotificationMessage<VHP>(CurrentVHP, ""), Msg);
+            ReturnByMsg();
+
+        }
+
+        private void ReturnByMsg()
+        {
+            if (Msg == "SampleSelect")
+            {
+                App.MainWindowService.ReturnToSampleEdit();
+            }
+            else if (Msg == "TargetSelect")
+            {
+                App.MainWindowService.ReturnToTargetEdit();
+            }
         }
 
         private VHP currentVHP;
