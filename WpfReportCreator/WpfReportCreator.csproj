@@ -82,6 +82,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="NewOrUpdate.cs" />
+    <Compile Include="Resource\ValidationRules\DateRule.cs" />
+    <Compile Include="Resource\ValidationRules\EmailRule.cs" />
+    <Compile Include="Resource\ValidationRules\IDCardRule.cs" />
+    <Compile Include="Resource\ValidationRules\LengthMaxRule.cs" />
+    <Compile Include="Resource\ValidationRules\LengthMinRule.cs" />
+    <Compile Include="Resource\ValidationRules\NumberIntegerRule.cs" />
+    <Compile Include="Resource\ValidationRules\NumberRangeRule.cs" />
+    <Compile Include="Resource\ValidationRules\NumberRule.cs" />
+    <Compile Include="Resource\ValidationRules\NumberPositiveRule.cs" />
+    <Compile Include="Resource\ValidationRules\LengthRangeRule.cs" />
+    <Compile Include="Resource\ValidationRules\RequiredRule.cs" />
     <Compile Include="Service References\ServiceReferenceSampleReport\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
