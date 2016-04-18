@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfReportCreator.ServiceReferenceSampleReport;
 using WpfReportCreator.ServiceReferenceTargetReport;
 
 /*
@@ -59,5 +60,26 @@ namespace WpfReportCreator.Service
             }
             return tmp;
         }
+
+        public static Sample DeepCopy(this Sample s)
+        {
+            Sample tmp = new Sample();
+            if (s!=null)
+            {
+                tmp.Id = s.Id;
+                tmp.Lot = s.Lot;
+                tmp.Material = s.Material;
+                tmp.PO = s.PO;
+                tmp.Weight1 = s.Weight1;
+                tmp.Weight2 = s.Weight2;
+                tmp.Weight3 = s.Weight3;
+                tmp.Weight4 = s.Weight4;
+                tmp.ForTarget = s.ForTarget;
+                tmp.Customer = s.Customer;
+                tmp.CreateDate = s.CreateDate;
+            }
+            return tmp;
+        }
+
     }
 }
