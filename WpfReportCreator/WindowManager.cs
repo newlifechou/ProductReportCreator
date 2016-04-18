@@ -8,9 +8,11 @@ using WpfReportCreator.ServiceReferenceTargetReport;
 using WpfReportCreator.View;
 using WpfReportCreator.ViewModel;
 using System.Windows.Forms;
+using WpfReportCreator.Service;
+using WpfReportCreator.ServiceReferenceSampleReport;
 /*
-    Developer:xs.zhou@outlook.com
-    CreateTime:2016/4/14 9:17:32
+Developer:xs.zhou@outlook.com
+CreateTime:2016/4/14 9:17:32
 */
 namespace WpfReportCreator
 {
@@ -26,6 +28,10 @@ namespace WpfReportCreator
         private ReportView reportView;
         private ReportViewModel reportViewModel;
 
+        private UCSampleEditView sampleEditView;
+        private UCSampleEditViewModel sampleEditViewModel;
+
+
         public WindowManager()
         {
             //只实例化一次
@@ -37,6 +43,9 @@ namespace WpfReportCreator
             targetEditViewModel = new UCTargetEditViewModel();
             reportView = new ReportView();
             reportViewModel = new ReportViewModel();
+
+            sampleEditView = new UCSampleEditView();
+            sampleEditViewModel = new UCSampleEditViewModel();
         }
 
         #region 项目窗体区域
@@ -54,21 +63,7 @@ namespace WpfReportCreator
         {
             //这里target不能够直接引用，不然编辑窗口就会和主窗口的当前选择项就会是同一个数据项了
             //需要深拷贝才行
-            Target tmpTarget = new Target()
-            {
-                Id=target.Id,
-                Material=target.Material,
-                Lot=target.Lot,
-                PO=target.PO,
-                Customer=target.Customer,
-                XRFComposition=target.XRFComposition,
-                Remark=target.Remark,
-                Resistance=target.Resistance,
-                Size=target.Size,
-                Weight=target.Weight,
-                Density=target.Density,
-                CreateDate=target.CreateDate
-            };
+            Target tmpTarget = target.DeepCopy();
             targetEditViewModel.CurrentTarget = tmpTarget;
             targetEditViewModel.EditFlag = flag;
 
@@ -102,6 +97,23 @@ namespace WpfReportCreator
             reportView.DataContext = reportViewModel;
             main.SetMainContent(reportView);
         }
+
+
+        public void ShowSampleEdit(Sample sample, NewOrUpdate flag)
+        {
+            Sample tmpSample = sample.DeepCopy();
+            sampleEditViewModel.CurrentSample = tmpSample;
+            sampleEditViewModel.Flag = flag;
+            sampleEditView.DataContext = sampleEditViewModel;
+            main.SetMainContent(sampleEditView);
+
+        }
+
+        public void ReturnToSampleEdit()
+        {
+            main.SetMainContent(sampleEditView);
+        }
+
         #endregion
 
 
@@ -115,7 +127,7 @@ namespace WpfReportCreator
         /// <returns></returns>
         public bool ShowWarningWithOKCancel(string message, string title)
         {
-            return System.Windows.MessageBox.Show(message, title,MessageBoxButton.OKCancel,MessageBoxImage.Warning) 
+            return System.Windows.MessageBox.Show(message, title, MessageBoxButton.OKCancel, MessageBoxImage.Warning)
                 == MessageBoxResult.OK;
         }
         /// <summary>
@@ -128,7 +140,7 @@ namespace WpfReportCreator
             folderSelect.Description = "Please select the target folder";
             folderSelect.ShowNewFolderButton = true;
             folderSelect.RootFolder = Environment.SpecialFolder.Desktop;
-            if (folderSelect.ShowDialog()==DialogResult.OK)
+            if (folderSelect.ShowDialog() == DialogResult.OK)
             {
                 return folderSelect.SelectedPath;
             }

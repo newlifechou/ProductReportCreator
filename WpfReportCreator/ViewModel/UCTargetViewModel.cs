@@ -96,9 +96,8 @@ namespace WpfReportCreator.ViewModel
 
         private void ActionEdit(Target t)
         {
-            Target tmp = t.DeepCopy();
-            //这里考虑深拷贝一下
-            App.MainWindowService.ShowTargetEdit(tmp, NewOrUpdate.Update);
+            //这里考虑深拷贝一下，改在WindowManager中实现
+            App.MainWindowService.ShowTargetEdit(t, NewOrUpdate.Update);
         }
 
         private void ActionGetAll()

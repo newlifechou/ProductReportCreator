@@ -41,6 +41,7 @@ namespace WpfReportCreator.ViewModel
                 RaisePropertyChanged(nameof(currentSample));
             }
         }
+        public NewOrUpdate Flag { get; set; }
 
         public RelayCommand SaveCommand { get; private set; }
         public RelayCommand GiveUpCommand { get; private set; }

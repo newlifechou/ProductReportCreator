@@ -105,7 +105,12 @@ namespace WpfReportCreator.ViewModel
 
         private void ExecuteAdd()
         {
-            throw new NotImplementedException();
+            Sample sample = new Sample()
+            {
+                Id = Guid.NewGuid(),
+                Material = "Some Composition"
+            };
+            App.MainWindowService.ShowSampleEdit(sample, NewOrUpdate.New);
         }
 
         private bool CanAdd()
