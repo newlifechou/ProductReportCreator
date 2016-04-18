@@ -33,9 +33,9 @@ namespace WcfReportService
             return service.DeleteSample(sample.Id);
         }
 
-        public int GetSampleCount()
+        public int GetSampleCount(string lot, string customer)
         {
-            return service.GetSampleCount();
+            return service.GetSampleCount(lot,customer);
         }
 
         public List<Sample> GetSamples(int skip, int take)

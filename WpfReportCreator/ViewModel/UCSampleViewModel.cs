@@ -26,11 +26,86 @@ namespace WpfReportCreator.ViewModel
         #region 初始化区域
         private void InitalProperties()
         {
-
         }
+
+        private void SetPageWhenCondtionChange()
+        {
+            PageIndex = 1;
+            PageSize = 10;
+            RecordCount = GetTargetsCountByCondition(SearchLot, SearchCustomer);
+            PageAction();
+        }
+
+        private void PageAction()
+        {
+            throw new NotImplementedException();
+        }
+
+        private int GetTargetsCountByCondition(string searchLot, string searchCustomer)
+        {
+            ServiceReferenceSampleReport.SampleReportServiceClient client = new SampleReportServiceClient();
+            int result = client.GetSampleCount();
+        }
+
+        private void GetPageByCondition(string lot,string customer,int skip,int take)
+        {
+            ServiceReferenceSampleReport.SampleReportServiceClient client = new SampleReportServiceClient();
+            client.GetSamplesByCondition(lot, customer, skip, take);
+            client.Close();
+        }
+
         private void InitialCommands()
         {
+            AddCommand = new RelayCommand(ExecuteAdd, CanAdd);
+            EditCommand = new RelayCommand<Sample>(ExecuteEdit, CanEdit);
+            DeleteCommand = new RelayCommand<Sample>(ExecuteDelete, CanDelete);
+            SearchCommand = new RelayCommand(ExecuteSearchCommand, CanSearch);
+            PageCommand = new RelayCommand(ExecutePage);
+        }
 
+        private void ExecutePage()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ExecuteSearchCommand()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CanSearch()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ExecuteDelete(Sample obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CanDelete(Sample arg)
+        {
+            return true;
+        }
+
+        private void ExecuteEdit(Sample obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CanEdit(Sample arg)
+        {
+            return true;
+        }
+
+        private void ExecuteAdd()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CanAdd()
+        {
+            return true;
         }
         #endregion
 

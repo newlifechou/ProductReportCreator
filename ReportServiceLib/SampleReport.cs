@@ -31,9 +31,9 @@ namespace ReportServiceLib
 
 
 
-        public int GetSampleCount()
+        public int GetSampleCount(string lot,string customer)
         {
-            return db.Samples.Count();
+            return db.Samples.Where(p => p.Lot.Contains(lot) && p.Customer.Contains(customer)).Count();
         }
         public bool AddSample(Sample sample)
         {

@@ -17,7 +17,7 @@ namespace WcfReportService
         List<Sample> GetSamplesByCondition(string lot, string customer, int skip, int take);
 
         [OperationContract]
-        int GetSampleCount();
+        int GetSampleCount(string lot,string customer);
 
         [OperationContract]
         bool AddSample(Sample sample);
