@@ -121,7 +121,7 @@
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" Command="{Binding DataContext.DeleteCommand,
+                            <Button Content="Delete" Command="{Binding DataContext.DeleteCommand,
                                 RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"  CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
