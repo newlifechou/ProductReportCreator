@@ -53,6 +53,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
@@ -121,6 +122,13 @@
             <TextBox Grid.Row="8" Grid.Column="1"  Style="{StaticResource txtNormal}" >
                 <TextBox.Text>
                     <Binding Path="Weight4">
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="Remark"/>
+            <TextBox Grid.Row="9" Grid.Column="1"  Style="{StaticResource txtNormal}" >
+                <TextBox.Text>
+                    <Binding Path="Remark">
                     </Binding>
                 </TextBox.Text>
             </TextBox>
