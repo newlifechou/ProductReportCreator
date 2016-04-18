@@ -14,18 +14,123 @@
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Sample Information" Style="{StaticResource tbPageTitle}"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Background="LightBlue">
-            <Button Content="Add" Style="{StaticResource btnNormal}"/>
+        <TextBlock Grid.Row="0" Text="Sample Information" Style="{StaticResource tbPageTitle}"/>
+        <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="LightBlue">
+            <Button Content="Add" Style="{StaticResource btnNormal}" Command="{Binding AddCommand}"/>
             <TextBlock Text="Lot" />
-            <TextBox Text="3456778" Style="{StaticResource txtNormal}"/>
+            <TextBox Text="{Binding SearchLot}" Style="{StaticResource txtNormal}"/>
             <TextBlock Text="Customer"/>
-            <TextBox Text="2342344"  Style="{StaticResource txtNormal}"/>
-            <Button Content="Search" Style="{StaticResource btnNormal}"/>
+            <TextBox Text="{Binding SearchCustomer}"  Style="{StaticResource txtNormal}"/>
+            <Button Content="Search" Style="{StaticResource btnNormal}" Command="{Binding SearchCommand}"/>
+            <Button Content="Get All" Style="{StaticResource btnNormal}" Command="{Binding GetAllCommand}"/>
         </StackPanel>
         <DataGrid Grid.Row="2">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="CreateDate">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Lot}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="CreateDate">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CreateDate,StringFormat={}{yyyy-MM-dd}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Lot">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Lot}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Lot">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Lot}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Material">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Material}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Customer">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Customer}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="PO">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding PO}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="ForTarget">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ForTarget}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Weight1">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Weight1}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Weight2">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Weight2}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Weight3">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Weight3}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Weight4">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Weight4}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Command="{Binding DataContext.EditCommand,
+                                RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Command="{Binding DataContext.DeleteCommand,
+                                RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"  CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
 
+
+            </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3"/>
+        <control:SimplePager Grid.Row="3" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize,Mode=OneWay}" RecordCount="{Binding RecordCount,Mode=OneWay}"
+                             Command="{Binding PageCommand}" LabelPageCount="总页数=" LabelPageIndex="当前页码=" LabelPageSize="每页记录数=" LabelRecordCount="总记录数="/>
     </Grid>
 </UserControl>
