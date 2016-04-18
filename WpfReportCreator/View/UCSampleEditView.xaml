@@ -7,6 +7,79 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Sample Information Edit" Style="{StaticResource tbPageTitle}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"  Background="Orange">
+            <Button Content="Give Up" Style="{StaticResource btnNormal}" Command="{Binding GiveUpCommand}"/>
+            <Button Content="Save"  Command="{Binding SaveCommand}" >
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource btnNormal}">
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding ElementName=txtLot,Path=(Validation.HasError)}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=txtMaterial,Path=(Validation.HasError)}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="IsEnabled" Value="True"/>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Content="Select VHP Record"  Command="{Binding SelectVHPCommand}" Style="{StaticResource btnNormal}"/>
+        </StackPanel>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
+            <TextBox Grid.Row="0" Grid.Column="1" >
+            </TextBox>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Material"/>
+            <TextBox Grid.Row="1" Grid.Column="1" >
+            </TextBox>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Customer"/>
+            <TextBox Grid.Row="2" Grid.Column="1" >
+            </TextBox>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="PO"/>
+            <TextBox Grid.Row="3" Grid.Column="1" >
+            </TextBox>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="ForLot"/>
+            <TextBox Grid.Row="4" Grid.Column="1" >
+            </TextBox>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Weight1"/>
+            <TextBox Grid.Row="5" Grid.Column="1" >
+            </TextBox>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Weight2"/>
+            <TextBox Grid.Row="6" Grid.Column="1" >
+            </TextBox>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Weight3"/>
+            <TextBox Grid.Row="7" Grid.Column="1" >
+            </TextBox>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Weight4"/>
+            <TextBox Grid.Row="8" Grid.Column="1" >
+            </TextBox>
+        </Grid>
     </Grid>
 </UserControl>
