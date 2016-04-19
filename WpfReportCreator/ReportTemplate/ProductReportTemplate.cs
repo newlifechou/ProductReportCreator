@@ -18,7 +18,7 @@ using Pic = DocumentFormat.OpenXml.Drawing.Pictures;
 using Thm15 = DocumentFormat.OpenXml.Office2013.Theme;
 using WpfReportCreator.ServiceReferenceTargetReport;
 
-namespace WpfReportCreator.Document
+namespace WpfReportCreator.ReportTemplate
 {
     public class ProductReportTemplate
     {

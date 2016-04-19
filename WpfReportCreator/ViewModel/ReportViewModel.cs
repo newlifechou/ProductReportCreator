@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfReportCreator.ReportTemplate;
 using WpfReportCreator.ServiceReferenceTargetReport;
 
 /*
@@ -36,7 +37,17 @@ namespace WpfReportCreator.ViewModel
 
         private void ActionProductReport()
         {
-            throw new NotImplementedException();
+            if (CurrentTarget!=null)
+            {
+                string fileName = $"Lot#{CurrentTarget.Lot}-{CurrentTarget.Material}-{CurrentTarget.Customer}.docx".Replace('%',' ');
+                
+                string filePath = System.IO.Path.Combine(SavePath,fileName );
+
+                ProductReportTemplate template = new ProductReportTemplate();
+                template.CurrentTarget = CurrentTarget;
+                template.CreatePackage(filePath);
+                App.MainWindowService.ShowOKInfo($"Report is Created at {SavePath} ", "OK");
+            }
         }
 
         private Target currentTarget;

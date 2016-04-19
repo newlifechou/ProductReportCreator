@@ -133,6 +133,11 @@ namespace WpfReportCreator
             return System.Windows.MessageBox.Show(message, title, MessageBoxButton.OKCancel, MessageBoxImage.Warning)
                 == MessageBoxResult.OK;
         }
+
+        public void ShowOKInfo(string message, string title)
+        {
+            System.Windows.MessageBox.Show(message, title, MessageBoxButton.OK, System.Windows.MessageBoxImage.Information);
+        }
         /// <summary>
         /// 文件夹选择对话框
         /// </summary>
@@ -147,7 +152,7 @@ namespace WpfReportCreator
             {
                 return folderSelect.SelectedPath;
             }
-            return Environment.SpecialFolder.Desktop.ToString();
+            return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
         }
         #endregion
 
