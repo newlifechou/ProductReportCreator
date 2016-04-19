@@ -35,6 +35,9 @@ namespace WpfReportCreator.ViewModel
             throw new NotImplementedException();
         }
 
+       /// <summary>
+       /// 生成产品报告
+       /// </summary>
         private void ActionProductReport()
         {
             if (CurrentTarget!=null)

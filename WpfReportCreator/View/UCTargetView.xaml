@@ -11,9 +11,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Target Information"  Style="{StaticResource tbPageTitle}"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Stretch" Background="Orange">
@@ -66,6 +66,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding PO}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Weight">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Weight}" HorizontalAlignment="Right"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -132,6 +139,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Lot"/>
@@ -144,16 +152,18 @@
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="Density"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="Resistance"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="Dimension"/>
-                <TextBox Grid.Row="7" Grid.Column="1"  Text="{Binding Dimension}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="Remark"/>
-                <TextBox Grid.Row="8" Grid.Column="1"  Text="{Binding Remark}" Margin="4" IsReadOnly="True"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Weight"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Density"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Resistance"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Dimension"/>
+                <TextBox Grid.Row="8" Grid.Column="1"  Text="{Binding Dimension}" Style="{StaticResource txtNormal}" IsReadOnly="True"/>
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="Remark"/>
+                <TextBox Grid.Row="9" Grid.Column="1"  Text="{Binding Remark}" Margin="4" IsReadOnly="True"/>
 
-                <control:BindableCSVTable Grid.Row="0" Grid.Column="2" Grid.RowSpan="9"  CSVContent="{Binding XRFComposition}" Margin="4"/>
+                <control:BindableCSVTable Grid.Row="0" Grid.Column="2" Grid.RowSpan="10"  CSVContent="{Binding XRFComposition}" Margin="4"/>
             </Grid>
         </ScrollViewer>
     </Grid>

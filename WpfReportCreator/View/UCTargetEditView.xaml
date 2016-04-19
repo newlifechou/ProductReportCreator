@@ -52,6 +52,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
 
                 <RowDefinition/>
@@ -82,16 +83,18 @@
             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource txtNormal}"/>
             <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"/>
             <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="Density"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="6" Grid.Column="0" Text="Resistance"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="7" Grid.Column="0" Text="Dimension"/>
-            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource txtNormal}"/>
-            <TextBlock Grid.Row="8" Grid.Column="0" Text="Remark"/>
-            <TextBox  Grid.Row="8" Grid.Column="1"   Margin="4" Text="{Binding Remark}"
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Weight"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Density"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Resistance"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Dimension"/>
+            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource txtNormal}"/>
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="Remark"/>
+            <TextBox  Grid.Row="9" Grid.Column="1"   Margin="4" Text="{Binding Remark}"
                       VerticalScrollBarVisibility="Visible" AcceptsReturn="True" TextWrapping="Wrap" />
-            <TextBox  Grid.Row="0" Grid.Column="2" Grid.RowSpan="9" Margin="4" Text="{Binding XRFComposition}"
+            <TextBox  Grid.Row="0" Grid.Column="2" Grid.RowSpan="10" Margin="4" Text="{Binding XRFComposition}"
                       VerticalScrollBarVisibility="Visible" AcceptsReturn="True" TextWrapping="Wrap" />
         </Grid>
     </Grid>

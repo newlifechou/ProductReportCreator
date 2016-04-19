@@ -58,6 +58,7 @@ namespace WpfReportCreator.Service
                 tmp.Remark = t.Remark;
                 tmp.CreateDate = t.CreateDate;
                 tmp.Dimension = t.Dimension;
+                tmp.Weight = t.Weight;
             }
             return tmp;
         }
