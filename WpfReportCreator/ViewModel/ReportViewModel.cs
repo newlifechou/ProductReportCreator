@@ -18,8 +18,15 @@ namespace WpfReportCreator.ViewModel
     {
         public ReportViewModel()
         {
+            savePath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             ProductReportCommand = new RelayCommand(ActionProductReport);
             CoaReportCommand = new RelayCommand(ActionCoaReport);
+            BrowseSavePathCommand = new RelayCommand(BrowseSavePathExecute);
+        }
+
+        private void BrowseSavePathExecute()
+        {
+            SavePath=App.MainWindowService.ShowFolderSelectDialog();
         }
 
         private void ActionCoaReport()
@@ -70,10 +77,23 @@ namespace WpfReportCreator.ViewModel
                 RaisePropertyChanged(() => CoaReportTemplates);
             }
         }
+        //文件存储路径
+        private string savePath;
+        public string SavePath
+        {
+            get { return savePath; }
+            set
+            {
+                if (savePath == value)
+                    return;
+                savePath = value;
+                RaisePropertyChanged(() => SavePath);
+            }
+        }
+
 
         public RelayCommand ProductReportCommand { get; set; }
         public RelayCommand CoaReportCommand { get; set; }
-
-
+        public RelayCommand BrowseSavePathCommand { get; set; }
     }
 }

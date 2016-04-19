@@ -51,7 +51,13 @@
         <Setter Property="CanUserResizeRows" Value="False"/>
         <Setter Property="SelectionMode" Value="Single"/>
     </Style>
-    
+    <Style TargetType="DataGridRow">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="Wheat"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <!--ListBox-->
     <Style TargetType="ListBox">
         <Setter Property="Margin" Value="5"/>

@@ -137,7 +137,7 @@ namespace WpfReportCreator
         /// 文件夹选择对话框
         /// </summary>
         /// <returns></returns>
-        public string FolderSelectDialog()
+        public string ShowFolderSelectDialog()
         {
             FolderBrowserDialog folderSelect = new FolderBrowserDialog();
             folderSelect.Description = "Please select the target folder";
