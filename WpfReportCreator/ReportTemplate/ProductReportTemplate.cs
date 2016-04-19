@@ -22,7 +22,8 @@ namespace WpfReportCreator.ReportTemplate
 {
     public class ProductReportTemplate
     {
-        public Target  CurrentTarget { get; set; }
+        public Target CurrentTarget { get; set; }
+
         // Creates a WordprocessingDocument.
         public void CreatePackage(string filePath)
         {
@@ -83,13 +84,13 @@ namespace WpfReportCreator.ReportTemplate
             Ap.Template template1 = new Ap.Template();
             template1.Text = "产品报告-模板160101.dotx";
             Ap.TotalTime totalTime1 = new Ap.TotalTime();
-            totalTime1.Text = "4";
+            totalTime1.Text = "7";
             Ap.Pages pages1 = new Ap.Pages();
             pages1.Text = "1";
             Ap.Words words1 = new Ap.Words();
-            words1.Text = "23";
+            words1.Text = "13";
             Ap.Characters characters1 = new Ap.Characters();
-            characters1.Text = "134";
+            characters1.Text = "75";
             Ap.Application application1 = new Ap.Application();
             application1.Text = "Microsoft Office Word";
             Ap.DocumentSecurity documentSecurity1 = new Ap.DocumentSecurity();
@@ -136,7 +137,7 @@ namespace WpfReportCreator.ReportTemplate
             Ap.LinksUpToDate linksUpToDate1 = new Ap.LinksUpToDate();
             linksUpToDate1.Text = "false";
             Ap.CharactersWithSpaces charactersWithSpaces1 = new Ap.CharactersWithSpaces();
-            charactersWithSpaces1.Text = "156";
+            charactersWithSpaces1.Text = "87";
             Ap.SharedDocument sharedDocument1 = new Ap.SharedDocument();
             sharedDocument1.Text = "false";
             Ap.HyperlinksChanged hyperlinksChanged1 = new Ap.HyperlinksChanged();
@@ -224,1104 +225,388 @@ namespace WpfReportCreator.ReportTemplate
             paragraph1.Append(run1);
             paragraph1.Append(run2);
 
-            Table table1 = new Table();
-
-            TableProperties tableProperties1 = new TableProperties();
-            TableStyle tableStyle1 = new TableStyle() { Val = "a9" };
-            TableWidth tableWidth1 = new TableWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-            TableLook tableLook1 = new TableLook() { Val = "04A0" };
-
-            tableProperties1.Append(tableStyle1);
-            tableProperties1.Append(tableWidth1);
-            tableProperties1.Append(tableLook1);
-
-            TableGrid tableGrid1 = new TableGrid();
-            GridColumn gridColumn1 = new GridColumn() { Width = "1518" };
-            GridColumn gridColumn2 = new GridColumn() { Width = "8938" };
-
-            tableGrid1.Append(gridColumn1);
-            tableGrid1.Append(gridColumn2);
-
-            TableRow tableRow1 = new TableRow();
-
-            TableCell tableCell1 = new TableCell();
-
-            TableCellProperties tableCellProperties1 = new TableCellProperties();
-            TableCellWidth tableCellWidth1 = new TableCellWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-            GridSpan gridSpan1 = new GridSpan() { Val = 2 };
-
-            TableCellBorders tableCellBorders1 = new TableCellBorders();
-            TopBorder topBorder1 = new TopBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-            BottomBorder bottomBorder1 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-
-            tableCellBorders1.Append(topBorder1);
-            tableCellBorders1.Append(bottomBorder1);
-            TableCellVerticalAlignment tableCellVerticalAlignment1 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties1.Append(tableCellWidth1);
-            tableCellProperties1.Append(gridSpan1);
-            tableCellProperties1.Append(tableCellBorders1);
-            tableCellProperties1.Append(tableCellVerticalAlignment1);
-
             Paragraph paragraph2 = new Paragraph();
 
             ParagraphProperties paragraphProperties2 = new ParagraphProperties();
-            ParagraphStyleId paragraphStyleId2 = new ParagraphStyleId() { Val = "1" };
 
-            paragraphProperties2.Append(paragraphStyleId2);
+            ParagraphMarkRunProperties paragraphMarkRunProperties1 = new ParagraphMarkRunProperties();
+            Bold bold1 = new Bold();
+            Color color1 = new Color() { Val = "000099" };
+            FontSize fontSize1 = new FontSize() { Val = "28" };
+
+            paragraphMarkRunProperties1.Append(bold1);
+            paragraphMarkRunProperties1.Append(color1);
+            paragraphMarkRunProperties1.Append(fontSize1);
+
+            paragraphProperties2.Append(paragraphMarkRunProperties1);
 
             Run run3 = new Run();
 
             RunProperties runProperties2 = new RunProperties();
             RunFonts runFonts2 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
+            Bold bold2 = new Bold();
+            Color color2 = new Color() { Val = "000099" };
+            FontSize fontSize2 = new FontSize() { Val = "28" };
 
             runProperties2.Append(runFonts2);
+            runProperties2.Append(bold2);
+            runProperties2.Append(color2);
+            runProperties2.Append(fontSize2);
             Text text3 = new Text();
-            text3.Text = "订单";
+            text3.Text = "产品";
 
             run3.Append(runProperties2);
             run3.Append(text3);
 
             Run run4 = new Run();
-            Text text4 = new Text();
-            text4.Text = "信息";
 
+            RunProperties runProperties3 = new RunProperties();
+            RunFonts runFonts3 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
+            Bold bold3 = new Bold();
+            Color color3 = new Color() { Val = "000099" };
+            FontSize fontSize3 = new FontSize() { Val = "28" };
+
+            runProperties3.Append(runFonts3);
+            runProperties3.Append(bold3);
+            runProperties3.Append(color3);
+            runProperties3.Append(fontSize3);
+            Text text4 = new Text();
+            text4.Text = "Lot";
+
+            run4.Append(runProperties3);
             run4.Append(text4);
+            BookmarkStart bookmarkStart1 = new BookmarkStart() { Name = "_GoBack", Id = "0" };
+            BookmarkEnd bookmarkEnd1 = new BookmarkEnd() { Id = "0" };
+
+            Run run5 = new Run();
+
+            RunProperties runProperties4 = new RunProperties();
+            RunFonts runFonts4 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
+            Bold bold4 = new Bold();
+            Color color4 = new Color() { Val = "000099" };
+            FontSize fontSize4 = new FontSize() { Val = "28" };
+
+            runProperties4.Append(runFonts4);
+            runProperties4.Append(bold4);
+            runProperties4.Append(color4);
+            runProperties4.Append(fontSize4);
+            Text text5 = new Text();
+            text5.Text = "编号："+CurrentTarget.Lot;
+
+            run5.Append(runProperties4);
+            run5.Append(text5);
 
             paragraph2.Append(paragraphProperties2);
             paragraph2.Append(run3);
             paragraph2.Append(run4);
-
-            tableCell1.Append(tableCellProperties1);
-            tableCell1.Append(paragraph2);
-
-            tableRow1.Append(tableCell1);
-
-            TableRow tableRow2 = new TableRow();
-
-            TableCell tableCell2 = new TableCell();
-
-            TableCellProperties tableCellProperties2 = new TableCellProperties();
-            TableCellWidth tableCellWidth2 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-
-            TableCellBorders tableCellBorders2 = new TableCellBorders();
-            TopBorder topBorder2 = new TopBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-
-            tableCellBorders2.Append(topBorder2);
-            TableCellVerticalAlignment tableCellVerticalAlignment2 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties2.Append(tableCellWidth2);
-            tableCellProperties2.Append(tableCellBorders2);
-            tableCellProperties2.Append(tableCellVerticalAlignment2);
+            paragraph2.Append(bookmarkStart1);
+            paragraph2.Append(bookmarkEnd1);
+            paragraph2.Append(run5);
 
             Paragraph paragraph3 = new Paragraph();
 
             ParagraphProperties paragraphProperties3 = new ParagraphProperties();
-            Justification justification1 = new Justification() { Val = JustificationValues.Center };
 
-            paragraphProperties3.Append(justification1);
+            ParagraphMarkRunProperties paragraphMarkRunProperties2 = new ParagraphMarkRunProperties();
+            Bold bold5 = new Bold();
 
-            Run run5 = new Run();
+            paragraphMarkRunProperties2.Append(bold5);
 
-            RunProperties runProperties3 = new RunProperties();
-            RunFonts runFonts3 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
-
-            runProperties3.Append(runFonts3);
-            Text text5 = new Text();
-            text5.Text = "产品名称";
-
-            run5.Append(runProperties3);
-            run5.Append(text5);
-
-            paragraph3.Append(paragraphProperties3);
-            paragraph3.Append(run5);
-
-            tableCell2.Append(tableCellProperties2);
-            tableCell2.Append(paragraph3);
-
-            TableCell tableCell3 = new TableCell();
-
-            TableCellProperties tableCellProperties3 = new TableCellProperties();
-            TableCellWidth tableCellWidth3 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            TableCellBorders tableCellBorders3 = new TableCellBorders();
-            TopBorder topBorder3 = new TopBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-
-            tableCellBorders3.Append(topBorder3);
-
-            tableCellProperties3.Append(tableCellWidth3);
-            tableCellProperties3.Append(tableCellBorders3);
-
-            Paragraph paragraph4 = new Paragraph();
+            paragraphProperties3.Append(paragraphMarkRunProperties2);
 
             Run run6 = new Run();
 
-            RunProperties runProperties4 = new RunProperties();
-            RunFonts runFonts4 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
-
-            runProperties4.Append(runFonts4);
-            Text text6 = new Text();
-            //Material
-            text6.Text = CurrentTarget.Material;
-
-            run6.Append(runProperties4);
-            run6.Append(text6);
-
-            paragraph4.Append(run6);
-
-            tableCell3.Append(tableCellProperties3);
-            tableCell3.Append(paragraph4);
-
-            tableRow2.Append(tableCell2);
-            tableRow2.Append(tableCell3);
-
-            TableRow tableRow3 = new TableRow();
-
-            TableCell tableCell4 = new TableCell();
-
-            TableCellProperties tableCellProperties4 = new TableCellProperties();
-            TableCellWidth tableCellWidth4 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-            TableCellVerticalAlignment tableCellVerticalAlignment3 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties4.Append(tableCellWidth4);
-            tableCellProperties4.Append(tableCellVerticalAlignment3);
-
-            Paragraph paragraph5 = new Paragraph();
-
-            ParagraphProperties paragraphProperties4 = new ParagraphProperties();
-            Justification justification2 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties4.Append(justification2);
-
-            Run run7 = new Run();
-
             RunProperties runProperties5 = new RunProperties();
             RunFonts runFonts5 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
+            Bold bold6 = new Bold();
 
             runProperties5.Append(runFonts5);
-            Text text7 = new Text();
-            text7.Text = "客户公司";
+            runProperties5.Append(bold6);
+            Text text6 = new Text();
+            text6.Text = "订单信息";
 
-            run7.Append(runProperties5);
-            run7.Append(text7);
+            run6.Append(runProperties5);
+            run6.Append(text6);
 
-            paragraph5.Append(paragraphProperties4);
-            paragraph5.Append(run7);
+            paragraph3.Append(paragraphProperties3);
+            paragraph3.Append(run6);
 
-            tableCell4.Append(tableCellProperties4);
-            tableCell4.Append(paragraph5);
+            Paragraph paragraph4 = new Paragraph();
 
-            TableCell tableCell5 = new TableCell();
-
-            TableCellProperties tableCellProperties5 = new TableCellProperties();
-            TableCellWidth tableCellWidth5 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            tableCellProperties5.Append(tableCellWidth5);
-
-            Paragraph paragraph6 = new Paragraph();
-
-            Run run8 = new Run();
+            Run run7 = new Run();
 
             RunProperties runProperties6 = new RunProperties();
             RunFonts runFonts6 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties6.Append(runFonts6);
-            Text text8 = new Text();
-            //Customer
-            text8.Text = CurrentTarget.Customer;
+            Text text7 = new Text();
+            text7.Text = "产品名称："+CurrentTarget.Material;
 
-            run8.Append(runProperties6);
-            run8.Append(text8);
+            run7.Append(runProperties6);
+            run7.Append(text7);
 
-            paragraph6.Append(run8);
+            paragraph4.Append(run7);
 
-            tableCell5.Append(tableCellProperties5);
-            tableCell5.Append(paragraph6);
+            Paragraph paragraph5 = new Paragraph();
 
-            tableRow3.Append(tableCell4);
-            tableRow3.Append(tableCell5);
-
-            TableRow tableRow4 = new TableRow();
-
-            TableCell tableCell6 = new TableCell();
-
-            TableCellProperties tableCellProperties6 = new TableCellProperties();
-            TableCellWidth tableCellWidth6 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-            TableCellVerticalAlignment tableCellVerticalAlignment4 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties6.Append(tableCellWidth6);
-            tableCellProperties6.Append(tableCellVerticalAlignment4);
-
-            Paragraph paragraph7 = new Paragraph();
-
-            ParagraphProperties paragraphProperties5 = new ParagraphProperties();
-            Justification justification3 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties5.Append(justification3);
-
-            Run run9 = new Run();
+            Run run8 = new Run();
 
             RunProperties runProperties7 = new RunProperties();
             RunFonts runFonts7 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties7.Append(runFonts7);
-            Text text9 = new Text();
-            text9.Text = "订单批号";
+            Text text8 = new Text();
+            text8.Text = "客户公司："+CurrentTarget.Customer;
 
-            run9.Append(runProperties7);
-            run9.Append(text9);
+            run8.Append(runProperties7);
+            run8.Append(text8);
 
-            paragraph7.Append(paragraphProperties5);
-            paragraph7.Append(run9);
+            paragraph5.Append(run8);
 
-            tableCell6.Append(tableCellProperties6);
-            tableCell6.Append(paragraph7);
+            Paragraph paragraph6 = new Paragraph();
 
-            TableCell tableCell7 = new TableCell();
-
-            TableCellProperties tableCellProperties7 = new TableCellProperties();
-            TableCellWidth tableCellWidth7 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            tableCellProperties7.Append(tableCellWidth7);
-
-            Paragraph paragraph8 = new Paragraph();
-
-            Run run10 = new Run();
+            Run run9 = new Run();
 
             RunProperties runProperties8 = new RunProperties();
             RunFonts runFonts8 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties8.Append(runFonts8);
-            Text text10 = new Text();
-            //PO
-            text10.Text = CurrentTarget.PO;
+            Text text9 = new Text();
+            text9.Text = "订单";
 
-            run10.Append(runProperties8);
-            run10.Append(text10);
+            run9.Append(runProperties8);
+            run9.Append(text9);
 
-            paragraph8.Append(run10);
-
-            tableCell7.Append(tableCellProperties7);
-            tableCell7.Append(paragraph8);
-
-            tableRow4.Append(tableCell6);
-            tableRow4.Append(tableCell7);
-
-            TableRow tableRow5 = new TableRow();
-
-            TableCell tableCell8 = new TableCell();
-
-            TableCellProperties tableCellProperties8 = new TableCellProperties();
-            TableCellWidth tableCellWidth8 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-
-            TableCellBorders tableCellBorders4 = new TableCellBorders();
-            BottomBorder bottomBorder2 = new BottomBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-
-            tableCellBorders4.Append(bottomBorder2);
-            TableCellVerticalAlignment tableCellVerticalAlignment5 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties8.Append(tableCellWidth8);
-            tableCellProperties8.Append(tableCellBorders4);
-            tableCellProperties8.Append(tableCellVerticalAlignment5);
-
-            Paragraph paragraph9 = new Paragraph();
-
-            ParagraphProperties paragraphProperties6 = new ParagraphProperties();
-            Justification justification4 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties6.Append(justification4);
-
-            Run run11 = new Run();
+            Run run10 = new Run();
 
             RunProperties runProperties9 = new RunProperties();
             RunFonts runFonts9 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties9.Append(runFonts9);
-            Text text11 = new Text();
-            text11.Text = "报告日期";
+            Text text10 = new Text();
+            text10.Text = "PO";
 
-            run11.Append(runProperties9);
-            run11.Append(text11);
+            run10.Append(runProperties9);
+            run10.Append(text10);
 
-            paragraph9.Append(paragraphProperties6);
-            paragraph9.Append(run11);
-
-            tableCell8.Append(tableCellProperties8);
-            tableCell8.Append(paragraph9);
-
-            TableCell tableCell9 = new TableCell();
-
-            TableCellProperties tableCellProperties9 = new TableCellProperties();
-            TableCellWidth tableCellWidth9 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            TableCellBorders tableCellBorders5 = new TableCellBorders();
-            BottomBorder bottomBorder3 = new BottomBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-
-            tableCellBorders5.Append(bottomBorder3);
-
-            tableCellProperties9.Append(tableCellWidth9);
-            tableCellProperties9.Append(tableCellBorders5);
-
-            Paragraph paragraph10 = new Paragraph();
-
-            Run run12 = new Run();
+            Run run11 = new Run();
 
             RunProperties runProperties10 = new RunProperties();
             RunFonts runFonts10 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties10.Append(runFonts10);
-            Text text12 = new Text();
-            //CreateDate
-            text12.Text = CurrentTarget.CreateDate.ToString("yyyy-MM-dd");
+            Text text11 = new Text();
+            text11.Text = "号："+CurrentTarget.PO;
 
-            run12.Append(runProperties10);
-            run12.Append(text12);
+            run11.Append(runProperties10);
+            run11.Append(text11);
 
-            paragraph10.Append(run12);
+            paragraph6.Append(run9);
+            paragraph6.Append(run10);
+            paragraph6.Append(run11);
 
-            tableCell9.Append(tableCellProperties9);
-            tableCell9.Append(paragraph10);
+            Paragraph paragraph7 = new Paragraph();
 
-            tableRow5.Append(tableCell8);
-            tableRow5.Append(tableCell9);
-
-            TableRow tableRow6 = new TableRow();
-
-            TableCell tableCell10 = new TableCell();
-
-            TableCellProperties tableCellProperties10 = new TableCellProperties();
-            TableCellWidth tableCellWidth10 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-
-            TableCellBorders tableCellBorders6 = new TableCellBorders();
-            BottomBorder bottomBorder4 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-
-            tableCellBorders6.Append(bottomBorder4);
-            TableCellVerticalAlignment tableCellVerticalAlignment6 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties10.Append(tableCellWidth10);
-            tableCellProperties10.Append(tableCellBorders6);
-            tableCellProperties10.Append(tableCellVerticalAlignment6);
-
-            Paragraph paragraph11 = new Paragraph();
-
-            ParagraphProperties paragraphProperties7 = new ParagraphProperties();
-            Justification justification5 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties7.Append(justification5);
-
-            Run run13 = new Run();
+            Run run12 = new Run();
 
             RunProperties runProperties11 = new RunProperties();
             RunFonts runFonts11 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties11.Append(runFonts11);
-            Text text13 = new Text();
-            text13.Text = "备注内容";
+            Text text12 = new Text();
+            text12.Text = "报告日期："+CurrentTarget.CreateDate.ToString("yyyy-MM-dd");
 
-            run13.Append(runProperties11);
-            run13.Append(text13);
+            run12.Append(runProperties11);
+            run12.Append(text12);
 
-            paragraph11.Append(paragraphProperties7);
-            paragraph11.Append(run13);
+            paragraph7.Append(run12);
+            Paragraph paragraph8 = new Paragraph();
 
-            tableCell10.Append(tableCellProperties10);
-            tableCell10.Append(paragraph11);
+            Paragraph paragraph9 = new Paragraph();
 
-            TableCell tableCell11 = new TableCell();
+            ParagraphProperties paragraphProperties4 = new ParagraphProperties();
 
-            TableCellProperties tableCellProperties11 = new TableCellProperties();
-            TableCellWidth tableCellWidth11 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
+            ParagraphMarkRunProperties paragraphMarkRunProperties3 = new ParagraphMarkRunProperties();
+            Bold bold7 = new Bold();
 
-            TableCellBorders tableCellBorders7 = new TableCellBorders();
-            BottomBorder bottomBorder5 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            paragraphMarkRunProperties3.Append(bold7);
 
-            tableCellBorders7.Append(bottomBorder5);
+            paragraphProperties4.Append(paragraphMarkRunProperties3);
 
-            tableCellProperties11.Append(tableCellWidth11);
-            tableCellProperties11.Append(tableCellBorders7);
-
-            Paragraph paragraph12 = new Paragraph();
-
-            Run run14 = new Run();
+            Run run13 = new Run();
 
             RunProperties runProperties12 = new RunProperties();
             RunFonts runFonts12 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
+            Bold bold8 = new Bold();
 
             runProperties12.Append(runFonts12);
-            Text text14 = new Text();
-            //ReportRemark
-            text14.Text = string.Empty;
+            runProperties12.Append(bold8);
+            Text text13 = new Text();
+            text13.Text = "成分测试结果";
 
-            run14.Append(runProperties12);
-            run14.Append(text14);
+            run13.Append(runProperties12);
+            run13.Append(text13);
 
-            paragraph12.Append(run14);
+            paragraph9.Append(paragraphProperties4);
+            paragraph9.Append(run13);
 
-            tableCell11.Append(tableCellProperties11);
-            tableCell11.Append(paragraph12);
+            Paragraph paragraph10 = new Paragraph();
 
-            tableRow6.Append(tableCell10);
-            tableRow6.Append(tableCell11);
-
-            TableRow tableRow7 = new TableRow();
-
-            TableCell tableCell12 = new TableCell();
-
-            TableCellProperties tableCellProperties12 = new TableCellProperties();
-            TableCellWidth tableCellWidth12 = new TableCellWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-            GridSpan gridSpan2 = new GridSpan() { Val = 2 };
-
-            TableCellBorders tableCellBorders8 = new TableCellBorders();
-            TopBorder topBorder4 = new TopBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-            LeftBorder leftBorder1 = new LeftBorder() { Val = BorderValues.Nil };
-            BottomBorder bottomBorder6 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-            RightBorder rightBorder1 = new RightBorder() { Val = BorderValues.Nil };
-
-            tableCellBorders8.Append(topBorder4);
-            tableCellBorders8.Append(leftBorder1);
-            tableCellBorders8.Append(bottomBorder6);
-            tableCellBorders8.Append(rightBorder1);
-            TableCellVerticalAlignment tableCellVerticalAlignment7 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties12.Append(tableCellWidth12);
-            tableCellProperties12.Append(gridSpan2);
-            tableCellProperties12.Append(tableCellBorders8);
-            tableCellProperties12.Append(tableCellVerticalAlignment7);
-            Paragraph paragraph13 = new Paragraph();
-
-            tableCell12.Append(tableCellProperties12);
-            tableCell12.Append(paragraph13);
-
-            tableRow7.Append(tableCell12);
-
-            TableRow tableRow8 = new TableRow();
-
-            TableCell tableCell13 = new TableCell();
-
-            TableCellProperties tableCellProperties13 = new TableCellProperties();
-            TableCellWidth tableCellWidth13 = new TableCellWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-            GridSpan gridSpan3 = new GridSpan() { Val = 2 };
-
-            TableCellBorders tableCellBorders9 = new TableCellBorders();
-            TopBorder topBorder5 = new TopBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-            BottomBorder bottomBorder7 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-
-            tableCellBorders9.Append(topBorder5);
-            tableCellBorders9.Append(bottomBorder7);
-            TableCellVerticalAlignment tableCellVerticalAlignment8 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties13.Append(tableCellWidth13);
-            tableCellProperties13.Append(gridSpan3);
-            tableCellProperties13.Append(tableCellBorders9);
-            tableCellProperties13.Append(tableCellVerticalAlignment8);
-
-            Paragraph paragraph14 = new Paragraph();
-
-            ParagraphProperties paragraphProperties8 = new ParagraphProperties();
-            ParagraphStyleId paragraphStyleId3 = new ParagraphStyleId() { Val = "1" };
-
-            ParagraphMarkRunProperties paragraphMarkRunProperties1 = new ParagraphMarkRunProperties();
-            Color color1 = new Color() { Val = "0000FF" };
-            FontSize fontSize1 = new FontSize() { Val = "40" };
-
-            paragraphMarkRunProperties1.Append(color1);
-            paragraphMarkRunProperties1.Append(fontSize1);
-
-            paragraphProperties8.Append(paragraphStyleId3);
-            paragraphProperties8.Append(paragraphMarkRunProperties1);
-
-            Run run15 = new Run();
+            Run run14 = new Run();
 
             RunProperties runProperties13 = new RunProperties();
             RunFonts runFonts13 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties13.Append(runFonts13);
-            Text text15 = new Text();
-            text15.Text = "检测结果";
+            Text text14 = new Text();
+            text14.Text = "周新生";
 
-            run15.Append(runProperties13);
-            run15.Append(text15);
+            run14.Append(runProperties13);
+            run14.Append(text14);
 
-            paragraph14.Append(paragraphProperties8);
-            paragraph14.Append(run15);
+            paragraph10.Append(run14);
 
-            tableCell13.Append(tableCellProperties13);
-            tableCell13.Append(paragraph14);
+            Paragraph paragraph11 = new Paragraph();
 
-            tableRow8.Append(tableCell13);
-
-            TableRow tableRow9 = new TableRow();
-
-            TableCell tableCell14 = new TableCell();
-
-            TableCellProperties tableCellProperties14 = new TableCellProperties();
-            TableCellWidth tableCellWidth14 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-
-            TableCellBorders tableCellBorders10 = new TableCellBorders();
-            TopBorder topBorder6 = new TopBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-            BottomBorder bottomBorder8 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-
-            tableCellBorders10.Append(topBorder6);
-            tableCellBorders10.Append(bottomBorder8);
-            TableCellVerticalAlignment tableCellVerticalAlignment9 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties14.Append(tableCellWidth14);
-            tableCellProperties14.Append(tableCellBorders10);
-            tableCellProperties14.Append(tableCellVerticalAlignment9);
-
-            Paragraph paragraph15 = new Paragraph();
-
-            ParagraphProperties paragraphProperties9 = new ParagraphProperties();
-            Justification justification6 = new Justification() { Val = JustificationValues.Center };
-
-            ParagraphMarkRunProperties paragraphMarkRunProperties2 = new ParagraphMarkRunProperties();
-            Underline underline1 = new Underline() { Val = UnderlineValues.Single };
-
-            paragraphMarkRunProperties2.Append(underline1);
-
-            paragraphProperties9.Append(justification6);
-            paragraphProperties9.Append(paragraphMarkRunProperties2);
-
-            Run run16 = new Run();
+            Run run15 = new Run();
 
             RunProperties runProperties14 = new RunProperties();
             RunFonts runFonts14 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties14.Append(runFonts14);
-            Text text16 = new Text();
-            text16.Text = "产品编号";
+            Text text15 = new Text();
+            text15.Text = "重量";
 
-            run16.Append(runProperties14);
-            run16.Append(text16);
+            run15.Append(runProperties14);
+            run15.Append(text15);
 
-            paragraph15.Append(paragraphProperties9);
-            paragraph15.Append(run16);
-
-            tableCell14.Append(tableCellProperties14);
-            tableCell14.Append(paragraph15);
-
-            TableCell tableCell15 = new TableCell();
-
-            TableCellProperties tableCellProperties15 = new TableCellProperties();
-            TableCellWidth tableCellWidth15 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            TableCellBorders tableCellBorders11 = new TableCellBorders();
-            TopBorder topBorder7 = new TopBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)12U, Space = (UInt32Value)0U };
-            BottomBorder bottomBorder9 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-
-            tableCellBorders11.Append(topBorder7);
-            tableCellBorders11.Append(bottomBorder9);
-
-            tableCellProperties15.Append(tableCellWidth15);
-            tableCellProperties15.Append(tableCellBorders11);
-
-            Paragraph paragraph16 = new Paragraph();
-
-            ParagraphProperties paragraphProperties10 = new ParagraphProperties();
-
-            ParagraphMarkRunProperties paragraphMarkRunProperties3 = new ParagraphMarkRunProperties();
-            Color color2 = new Color() { Val = "0000FF" };
-
-            paragraphMarkRunProperties3.Append(color2);
-
-            paragraphProperties10.Append(paragraphMarkRunProperties3);
-
-            Run run17 = new Run();
+            Run run16 = new Run();
 
             RunProperties runProperties15 = new RunProperties();
             RunFonts runFonts15 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
-            Color color3 = new Color() { Val = "0000FF" };
 
             runProperties15.Append(runFonts15);
-            runProperties15.Append(color3);
-            Text text17 = new Text();
-            //Lot
-            text17.Text = CurrentTarget.Lot;
+            Text text16 = new Text();
+            text16.Text = "(g)";
 
-            run17.Append(runProperties15);
-            run17.Append(text17);
+            run16.Append(runProperties15);
+            run16.Append(text16);
 
-            paragraph16.Append(paragraphProperties10);
-            paragraph16.Append(run17);
-
-            tableCell15.Append(tableCellProperties15);
-            tableCell15.Append(paragraph16);
-
-            tableRow9.Append(tableCell14);
-            tableRow9.Append(tableCell15);
-
-            TableRow tableRow10 = new TableRow();
-
-            TableCell tableCell16 = new TableCell();
-
-            TableCellProperties tableCellProperties16 = new TableCellProperties();
-            TableCellWidth tableCellWidth16 = new TableCellWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-            GridSpan gridSpan4 = new GridSpan() { Val = 2 };
-
-            TableCellBorders tableCellBorders12 = new TableCellBorders();
-            TopBorder topBorder8 = new TopBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-
-            tableCellBorders12.Append(topBorder8);
-
-            tableCellProperties16.Append(tableCellWidth16);
-            tableCellProperties16.Append(gridSpan4);
-            tableCellProperties16.Append(tableCellBorders12);
-
-            Paragraph paragraph17 = new Paragraph();
-
-            ParagraphProperties paragraphProperties11 = new ParagraphProperties();
-            Justification justification7 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties11.Append(justification7);
-
-            paragraph17.Append(paragraphProperties11);
-
-            Paragraph paragraph18 = new Paragraph();
-
-            ParagraphProperties paragraphProperties12 = new ParagraphProperties();
-            Justification justification8 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties12.Append(justification8);
-
-            Run run18 = new Run();
+            Run run17 = new Run();
 
             RunProperties runProperties16 = new RunProperties();
             RunFonts runFonts16 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
             runProperties16.Append(runFonts16);
+            Text text17 = new Text();
+            text17.Text = "："+CurrentTarget.Weight;
+
+            run17.Append(runProperties16);
+            run17.Append(text17);
+
+            paragraph11.Append(run15);
+            paragraph11.Append(run16);
+            paragraph11.Append(run17);
+
+            Paragraph paragraph12 = new Paragraph();
+
+            Run run18 = new Run();
+
+            RunProperties runProperties17 = new RunProperties();
+            RunFonts runFonts17 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
+
+            runProperties17.Append(runFonts17);
             Text text18 = new Text();
-            //XRFComposition
-            text18.Text = "周新生产品成分";
+            text18.Text = "密度";
 
-            run18.Append(runProperties16);
+            run18.Append(runProperties17);
             run18.Append(text18);
-
-            paragraph18.Append(paragraphProperties12);
-            paragraph18.Append(run18);
-
-            Paragraph paragraph19 = new Paragraph();
-
-            ParagraphProperties paragraphProperties13 = new ParagraphProperties();
-            Justification justification9 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties13.Append(justification9);
-
-            paragraph19.Append(paragraphProperties13);
-
-            tableCell16.Append(tableCellProperties16);
-            tableCell16.Append(paragraph17);
-            tableCell16.Append(paragraph18);
-            tableCell16.Append(paragraph19);
-
-            tableRow10.Append(tableCell16);
-
-            TableRow tableRow11 = new TableRow();
-
-            TableCell tableCell17 = new TableCell();
-
-            TableCellProperties tableCellProperties17 = new TableCellProperties();
-            TableCellWidth tableCellWidth17 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-            TableCellVerticalAlignment tableCellVerticalAlignment10 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties17.Append(tableCellWidth17);
-            tableCellProperties17.Append(tableCellVerticalAlignment10);
-
-            Paragraph paragraph20 = new Paragraph();
-
-            ParagraphProperties paragraphProperties14 = new ParagraphProperties();
-            Justification justification10 = new Justification() { Val = JustificationValues.Center };
-
-            ParagraphMarkRunProperties paragraphMarkRunProperties4 = new ParagraphMarkRunProperties();
-            RunFonts runFonts17 = new RunFonts() { AsciiTheme = ThemeFontValues.MinorEastAsia, HighAnsiTheme = ThemeFontValues.MinorEastAsia };
-
-            paragraphMarkRunProperties4.Append(runFonts17);
-
-            paragraphProperties14.Append(justification10);
-            paragraphProperties14.Append(paragraphMarkRunProperties4);
 
             Run run19 = new Run();
 
-            RunProperties runProperties17 = new RunProperties();
+            RunProperties runProperties18 = new RunProperties();
             RunFonts runFonts18 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
-            runProperties17.Append(runFonts18);
+            runProperties18.Append(runFonts18);
             Text text19 = new Text();
-            text19.Text = "靶材重量";
+            text19.Text = "(g/cm3)";
 
-            run19.Append(runProperties17);
+            run19.Append(runProperties18);
             run19.Append(text19);
-
-            paragraph20.Append(paragraphProperties14);
-            paragraph20.Append(run19);
-
-            tableCell17.Append(tableCellProperties17);
-            tableCell17.Append(paragraph20);
-
-            TableCell tableCell18 = new TableCell();
-
-            TableCellProperties tableCellProperties18 = new TableCellProperties();
-            TableCellWidth tableCellWidth18 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            tableCellProperties18.Append(tableCellWidth18);
-
-            Paragraph paragraph21 = new Paragraph();
 
             Run run20 = new Run();
 
-            RunProperties runProperties18 = new RunProperties();
+            RunProperties runProperties19 = new RunProperties();
             RunFonts runFonts19 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
-            runProperties18.Append(runFonts19);
+            runProperties19.Append(runFonts19);
             Text text20 = new Text();
-            //Weight
-            text20.Text = CurrentTarget.Weight;
+            text20.Text = "："+CurrentTarget.Density;
 
-            run20.Append(runProperties18);
+            run20.Append(runProperties19);
             run20.Append(text20);
 
-            paragraph21.Append(run20);
+            paragraph12.Append(run18);
+            paragraph12.Append(run19);
+            paragraph12.Append(run20);
 
-            tableCell18.Append(tableCellProperties18);
-            tableCell18.Append(paragraph21);
-
-            tableRow11.Append(tableCell17);
-            tableRow11.Append(tableCell18);
-
-            TableRow tableRow12 = new TableRow();
-
-            TableCell tableCell19 = new TableCell();
-
-            TableCellProperties tableCellProperties19 = new TableCellProperties();
-            TableCellWidth tableCellWidth19 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-            TableCellVerticalAlignment tableCellVerticalAlignment11 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties19.Append(tableCellWidth19);
-            tableCellProperties19.Append(tableCellVerticalAlignment11);
-
-            Paragraph paragraph22 = new Paragraph();
-
-            ParagraphProperties paragraphProperties15 = new ParagraphProperties();
-            Justification justification11 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties15.Append(justification11);
+            Paragraph paragraph13 = new Paragraph();
 
             Run run21 = new Run();
 
-            RunProperties runProperties19 = new RunProperties();
+            RunProperties runProperties20 = new RunProperties();
             RunFonts runFonts20 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
-            runProperties19.Append(runFonts20);
+            runProperties20.Append(runFonts20);
             Text text21 = new Text();
-            text21.Text = "靶材密度";
+            text21.Text = "尺寸";
 
-            run21.Append(runProperties19);
+            run21.Append(runProperties20);
             run21.Append(text21);
-
-            paragraph22.Append(paragraphProperties15);
-            paragraph22.Append(run21);
-
-            tableCell19.Append(tableCellProperties19);
-            tableCell19.Append(paragraph22);
-
-            TableCell tableCell20 = new TableCell();
-
-            TableCellProperties tableCellProperties20 = new TableCellProperties();
-            TableCellWidth tableCellWidth20 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            tableCellProperties20.Append(tableCellWidth20);
-
-            Paragraph paragraph23 = new Paragraph();
 
             Run run22 = new Run();
 
-            RunProperties runProperties20 = new RunProperties();
+            RunProperties runProperties21 = new RunProperties();
             RunFonts runFonts21 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
-            runProperties20.Append(runFonts21);
+            runProperties21.Append(runFonts21);
             Text text22 = new Text();
-            //Density
-            text22.Text = CurrentTarget.Density;
+            text22.Text = "(mm)";
 
-            run22.Append(runProperties20);
+            run22.Append(runProperties21);
             run22.Append(text22);
-
-            paragraph23.Append(run22);
-
-            tableCell20.Append(tableCellProperties20);
-            tableCell20.Append(paragraph23);
-
-            tableRow12.Append(tableCell19);
-            tableRow12.Append(tableCell20);
-
-            TableRow tableRow13 = new TableRow();
-
-            TableCell tableCell21 = new TableCell();
-
-            TableCellProperties tableCellProperties21 = new TableCellProperties();
-            TableCellWidth tableCellWidth21 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-            TableCellVerticalAlignment tableCellVerticalAlignment12 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties21.Append(tableCellWidth21);
-            tableCellProperties21.Append(tableCellVerticalAlignment12);
-
-            Paragraph paragraph24 = new Paragraph();
-
-            ParagraphProperties paragraphProperties16 = new ParagraphProperties();
-            Justification justification12 = new Justification() { Val = JustificationValues.Center };
-
-            ParagraphMarkRunProperties paragraphMarkRunProperties5 = new ParagraphMarkRunProperties();
-            RunFonts runFonts22 = new RunFonts() { AsciiTheme = ThemeFontValues.MinorEastAsia, HighAnsiTheme = ThemeFontValues.MinorEastAsia };
-
-            paragraphMarkRunProperties5.Append(runFonts22);
-
-            paragraphProperties16.Append(justification12);
-            paragraphProperties16.Append(paragraphMarkRunProperties5);
 
             Run run23 = new Run();
 
-            RunProperties runProperties21 = new RunProperties();
-            RunFonts runFonts23 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
+            RunProperties runProperties22 = new RunProperties();
+            RunFonts runFonts22 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
-            runProperties21.Append(runFonts23);
+            runProperties22.Append(runFonts22);
             Text text23 = new Text();
-            text23.Text = "电阻率值";
+            text23.Text = "："+CurrentTarget.Dimension;
 
-            run23.Append(runProperties21);
+            run23.Append(runProperties22);
             run23.Append(text23);
 
-            paragraph24.Append(paragraphProperties16);
-            paragraph24.Append(run23);
+            paragraph13.Append(run21);
+            paragraph13.Append(run22);
+            paragraph13.Append(run23);
 
-            tableCell21.Append(tableCellProperties21);
-            tableCell21.Append(paragraph24);
-
-            TableCell tableCell22 = new TableCell();
-
-            TableCellProperties tableCellProperties22 = new TableCellProperties();
-            TableCellWidth tableCellWidth22 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            tableCellProperties22.Append(tableCellWidth22);
-
-            Paragraph paragraph25 = new Paragraph();
+            Paragraph paragraph14 = new Paragraph();
 
             Run run24 = new Run();
 
-            RunProperties runProperties22 = new RunProperties();
-            RunFonts runFonts24 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
-
-            runProperties22.Append(runFonts24);
-            Text text24 = new Text();
-            //Resistance
-            text24.Text = CurrentTarget.Resistance;
-
-            run24.Append(runProperties22);
-            run24.Append(text24);
-            BookmarkStart bookmarkStart1 = new BookmarkStart() { Name = "_GoBack", Id = "0" };
-            BookmarkEnd bookmarkEnd1 = new BookmarkEnd() { Id = "0" };
-
-            paragraph25.Append(run24);
-            paragraph25.Append(bookmarkStart1);
-            paragraph25.Append(bookmarkEnd1);
-
-            tableCell22.Append(tableCellProperties22);
-            tableCell22.Append(paragraph25);
-
-            tableRow13.Append(tableCell21);
-            tableRow13.Append(tableCell22);
-
-            TableRow tableRow14 = new TableRow();
-
-            TableCell tableCell23 = new TableCell();
-
-            TableCellProperties tableCellProperties23 = new TableCellProperties();
-            TableCellWidth tableCellWidth23 = new TableCellWidth() { Width = "5000", Type = TableWidthUnitValues.Pct };
-            GridSpan gridSpan5 = new GridSpan() { Val = 2 };
-
-            tableCellProperties23.Append(tableCellWidth23);
-            tableCellProperties23.Append(gridSpan5);
-            Paragraph paragraph26 = new Paragraph();
-
-            tableCell23.Append(tableCellProperties23);
-            tableCell23.Append(paragraph26);
-
-            tableRow14.Append(tableCell23);
-
-            TableRow tableRow15 = new TableRow();
-
-            TableCell tableCell24 = new TableCell();
-
-            TableCellProperties tableCellProperties24 = new TableCellProperties();
-            TableCellWidth tableCellWidth24 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-            TableCellVerticalAlignment tableCellVerticalAlignment13 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties24.Append(tableCellWidth24);
-            tableCellProperties24.Append(tableCellVerticalAlignment13);
-
-            Paragraph paragraph27 = new Paragraph();
-
-            ParagraphProperties paragraphProperties17 = new ParagraphProperties();
-            Justification justification13 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties17.Append(justification13);
-
-            Run run25 = new Run();
-
             RunProperties runProperties23 = new RunProperties();
-            RunFonts runFonts25 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
+            RunFonts runFonts23 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
 
-            runProperties23.Append(runFonts25);
-            Text text25 = new Text();
-            text25.Text = "尺寸";
+            runProperties23.Append(runFonts23);
+            Text text24 = new Text();
+            text24.Text = "备注内容："+CurrentTarget.Remark;
 
-            run25.Append(runProperties23);
-            run25.Append(text25);
+            run24.Append(runProperties23);
+            run24.Append(text24);
 
-            Run run26 = new Run();
-
-            RunProperties runProperties24 = new RunProperties();
-            RunFonts runFonts26 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
-
-            runProperties24.Append(runFonts26);
-            Text text26 = new Text();
-            text26.Text = "(mm)";
-
-            run26.Append(runProperties24);
-            run26.Append(text26);
-
-            paragraph27.Append(paragraphProperties17);
-            paragraph27.Append(run25);
-            paragraph27.Append(run26);
-
-            tableCell24.Append(tableCellProperties24);
-            tableCell24.Append(paragraph27);
-
-            TableCell tableCell25 = new TableCell();
-
-            TableCellProperties tableCellProperties25 = new TableCellProperties();
-            TableCellWidth tableCellWidth25 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            tableCellProperties25.Append(tableCellWidth25);
-
-            Paragraph paragraph28 = new Paragraph();
-
-            ParagraphProperties paragraphProperties18 = new ParagraphProperties();
-            Justification justification14 = new Justification() { Val = JustificationValues.Left };
-
-            paragraphProperties18.Append(justification14);
-
-            Run run27 = new Run();
-
-            RunProperties runProperties25 = new RunProperties();
-            RunFonts runFonts27 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
-
-            runProperties25.Append(runFonts27);
-            Text text27 = new Text();
-            //Dimension
-            text27.Text = CurrentTarget.Dimension;
-
-            run27.Append(runProperties25);
-            run27.Append(text27);
-
-            paragraph28.Append(paragraphProperties18);
-            paragraph28.Append(run27);
-
-            tableCell25.Append(tableCellProperties25);
-            tableCell25.Append(paragraph28);
-
-            tableRow15.Append(tableCell24);
-            tableRow15.Append(tableCell25);
-
-            TableRow tableRow16 = new TableRow();
-
-            TableRowProperties tableRowProperties1 = new TableRowProperties();
-            TableRowHeight tableRowHeight1 = new TableRowHeight() { Val = (UInt32Value)202U };
-
-            tableRowProperties1.Append(tableRowHeight1);
-
-            TableCell tableCell26 = new TableCell();
-
-            TableCellProperties tableCellProperties26 = new TableCellProperties();
-            TableCellWidth tableCellWidth26 = new TableCellWidth() { Width = "726", Type = TableWidthUnitValues.Pct };
-            TableCellVerticalAlignment tableCellVerticalAlignment14 = new TableCellVerticalAlignment() { Val = TableVerticalAlignmentValues.Center };
-
-            tableCellProperties26.Append(tableCellWidth26);
-            tableCellProperties26.Append(tableCellVerticalAlignment14);
-
-            Paragraph paragraph29 = new Paragraph();
-
-            ParagraphProperties paragraphProperties19 = new ParagraphProperties();
-            Justification justification15 = new Justification() { Val = JustificationValues.Center };
-
-            paragraphProperties19.Append(justification15);
-
-            Run run28 = new Run();
-
-            RunProperties runProperties26 = new RunProperties();
-            RunFonts runFonts28 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
-
-            runProperties26.Append(runFonts28);
-            Text text28 = new Text();
-            text28.Text = "外观情况";
-
-            run28.Append(runProperties26);
-            run28.Append(text28);
-
-            paragraph29.Append(paragraphProperties19);
-            paragraph29.Append(run28);
-
-            tableCell26.Append(tableCellProperties26);
-            tableCell26.Append(paragraph29);
-
-            TableCell tableCell27 = new TableCell();
-
-            TableCellProperties tableCellProperties27 = new TableCellProperties();
-            TableCellWidth tableCellWidth27 = new TableCellWidth() { Width = "4274", Type = TableWidthUnitValues.Pct };
-
-            tableCellProperties27.Append(tableCellWidth27);
-
-            Paragraph paragraph30 = new Paragraph();
-
-            Run run29 = new Run();
-
-            RunProperties runProperties27 = new RunProperties();
-            RunFonts runFonts29 = new RunFonts() { Hint = FontTypeHintValues.EastAsia };
-
-            runProperties27.Append(runFonts29);
-            Text text29 = new Text();
-            //Remark
-            text29.Text = CurrentTarget.Remark;
-
-            run29.Append(runProperties27);
-            run29.Append(text29);
-
-            paragraph30.Append(run29);
-
-            tableCell27.Append(tableCellProperties27);
-            tableCell27.Append(paragraph30);
-
-            tableRow16.Append(tableRowProperties1);
-            tableRow16.Append(tableCell26);
-            tableRow16.Append(tableCell27);
-
-            table1.Append(tableProperties1);
-            table1.Append(tableGrid1);
-            table1.Append(tableRow1);
-            table1.Append(tableRow2);
-            table1.Append(tableRow3);
-            table1.Append(tableRow4);
-            table1.Append(tableRow5);
-            table1.Append(tableRow6);
-            table1.Append(tableRow7);
-            table1.Append(tableRow8);
-            table1.Append(tableRow9);
-            table1.Append(tableRow10);
-            table1.Append(tableRow11);
-            table1.Append(tableRow12);
-            table1.Append(tableRow13);
-            table1.Append(tableRow14);
-            table1.Append(tableRow15);
-            table1.Append(tableRow16);
-            Paragraph paragraph31 = new Paragraph();
+            paragraph14.Append(run24);
 
             SectionProperties sectionProperties1 = new SectionProperties();
             HeaderReference headerReference1 = new HeaderReference() { Type = HeaderFooterValues.Default, Id = "rId6" };
@@ -1339,8 +624,19 @@ namespace WpfReportCreator.ReportTemplate
             sectionProperties1.Append(docGrid1);
 
             body1.Append(paragraph1);
-            body1.Append(table1);
-            body1.Append(paragraph31);
+            body1.Append(paragraph2);
+            body1.Append(paragraph3);
+            body1.Append(paragraph4);
+            body1.Append(paragraph5);
+            body1.Append(paragraph6);
+            body1.Append(paragraph7);
+            body1.Append(paragraph8);
+            body1.Append(paragraph9);
+            body1.Append(paragraph10);
+            body1.Append(paragraph11);
+            body1.Append(paragraph12);
+            body1.Append(paragraph13);
+            body1.Append(paragraph14);
             body1.Append(sectionProperties1);
 
             document1.Append(body1);
@@ -1460,15 +756,15 @@ namespace WpfReportCreator.ReportTemplate
             BottomMarginDiv bottomMarginDiv1 = new BottomMarginDiv() { Val = "0" };
 
             DivBorder divBorder1 = new DivBorder();
-            TopBorder topBorder9 = new TopBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
-            LeftBorder leftBorder2 = new LeftBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
-            BottomBorder bottomBorder10 = new BottomBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
-            RightBorder rightBorder2 = new RightBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            TopBorder topBorder1 = new TopBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            LeftBorder leftBorder1 = new LeftBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            BottomBorder bottomBorder1 = new BottomBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            RightBorder rightBorder1 = new RightBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
 
-            divBorder1.Append(topBorder9);
-            divBorder1.Append(leftBorder2);
-            divBorder1.Append(bottomBorder10);
-            divBorder1.Append(rightBorder2);
+            divBorder1.Append(topBorder1);
+            divBorder1.Append(leftBorder1);
+            divBorder1.Append(bottomBorder1);
+            divBorder1.Append(rightBorder1);
 
             div1.Append(bodyDiv1);
             div1.Append(leftMarginDiv1);
@@ -1485,15 +781,15 @@ namespace WpfReportCreator.ReportTemplate
             BottomMarginDiv bottomMarginDiv2 = new BottomMarginDiv() { Val = "0" };
 
             DivBorder divBorder2 = new DivBorder();
-            TopBorder topBorder10 = new TopBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
-            LeftBorder leftBorder3 = new LeftBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
-            BottomBorder bottomBorder11 = new BottomBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
-            RightBorder rightBorder3 = new RightBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            TopBorder topBorder2 = new TopBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            LeftBorder leftBorder2 = new LeftBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            BottomBorder bottomBorder2 = new BottomBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            RightBorder rightBorder2 = new RightBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
 
-            divBorder2.Append(topBorder10);
-            divBorder2.Append(leftBorder3);
-            divBorder2.Append(bottomBorder11);
-            divBorder2.Append(rightBorder3);
+            divBorder2.Append(topBorder2);
+            divBorder2.Append(leftBorder2);
+            divBorder2.Append(bottomBorder2);
+            divBorder2.Append(rightBorder2);
 
             div2.Append(bodyDiv2);
             div2.Append(leftMarginDiv2);
@@ -1556,19 +852,19 @@ namespace WpfReportCreator.ReportTemplate
 
             SdtContentBlock sdtContentBlock1 = new SdtContentBlock();
 
-            Paragraph paragraph32 = new Paragraph();
+            Paragraph paragraph15 = new Paragraph();
 
-            ParagraphProperties paragraphProperties20 = new ParagraphProperties();
-            ParagraphStyleId paragraphStyleId4 = new ParagraphStyleId() { Val = "a7" };
+            ParagraphProperties paragraphProperties5 = new ParagraphProperties();
+            ParagraphStyleId paragraphStyleId2 = new ParagraphStyleId() { Val = "a7" };
 
-            paragraphProperties20.Append(paragraphStyleId4);
+            paragraphProperties5.Append(paragraphStyleId2);
 
-            Run run30 = new Run();
+            Run run25 = new Run();
 
-            RunProperties runProperties28 = new RunProperties();
+            RunProperties runProperties24 = new RunProperties();
             NoProof noProof1 = new NoProof();
 
-            runProperties28.Append(noProof1);
+            runProperties24.Append(noProof1);
 
             AlternateContent alternateContent1 = new AlternateContent();
 
@@ -1850,94 +1146,94 @@ namespace WpfReportCreator.ReportTemplate
 
             TextBoxContent textBoxContent1 = new TextBoxContent();
 
-            Paragraph paragraph33 = new Paragraph();
+            Paragraph paragraph16 = new Paragraph();
 
-            ParagraphProperties paragraphProperties21 = new ParagraphProperties();
-            Justification justification16 = new Justification() { Val = JustificationValues.Center };
+            ParagraphProperties paragraphProperties6 = new ParagraphProperties();
+            Justification justification1 = new Justification() { Val = JustificationValues.Center };
 
-            ParagraphMarkRunProperties paragraphMarkRunProperties6 = new ParagraphMarkRunProperties();
-            Color color4 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
-            FontSize fontSize2 = new FontSize() { Val = "16" };
+            ParagraphMarkRunProperties paragraphMarkRunProperties4 = new ParagraphMarkRunProperties();
+            Color color5 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
+            FontSize fontSize5 = new FontSize() { Val = "16" };
             FontSizeComplexScript fontSizeComplexScript1 = new FontSizeComplexScript() { Val = "16" };
 
-            paragraphMarkRunProperties6.Append(color4);
-            paragraphMarkRunProperties6.Append(fontSize2);
-            paragraphMarkRunProperties6.Append(fontSizeComplexScript1);
+            paragraphMarkRunProperties4.Append(color5);
+            paragraphMarkRunProperties4.Append(fontSize5);
+            paragraphMarkRunProperties4.Append(fontSizeComplexScript1);
 
-            paragraphProperties21.Append(justification16);
-            paragraphProperties21.Append(paragraphMarkRunProperties6);
+            paragraphProperties6.Append(justification1);
+            paragraphProperties6.Append(paragraphMarkRunProperties4);
 
-            Run run31 = new Run();
+            Run run26 = new Run();
 
-            RunProperties runProperties29 = new RunProperties();
-            FontSize fontSize3 = new FontSize() { Val = "22" };
+            RunProperties runProperties25 = new RunProperties();
+            FontSize fontSize6 = new FontSize() { Val = "22" };
 
-            runProperties29.Append(fontSize3);
+            runProperties25.Append(fontSize6);
             FieldChar fieldChar1 = new FieldChar() { FieldCharType = FieldCharValues.Begin };
 
-            run31.Append(runProperties29);
-            run31.Append(fieldChar1);
+            run26.Append(runProperties25);
+            run26.Append(fieldChar1);
 
-            Run run32 = new Run();
+            Run run27 = new Run();
             FieldCode fieldCode1 = new FieldCode() { Space = SpaceProcessingModeValues.Preserve };
             fieldCode1.Text = " PAGE   \\* MERGEFORMAT ";
 
-            run32.Append(fieldCode1);
+            run27.Append(fieldCode1);
 
-            Run run33 = new Run();
+            Run run28 = new Run();
 
-            RunProperties runProperties30 = new RunProperties();
-            FontSize fontSize4 = new FontSize() { Val = "22" };
+            RunProperties runProperties26 = new RunProperties();
+            FontSize fontSize7 = new FontSize() { Val = "22" };
 
-            runProperties30.Append(fontSize4);
+            runProperties26.Append(fontSize7);
             FieldChar fieldChar2 = new FieldChar() { FieldCharType = FieldCharValues.Separate };
 
-            run33.Append(runProperties30);
-            run33.Append(fieldChar2);
+            run28.Append(runProperties26);
+            run28.Append(fieldChar2);
 
-            Run run34 = new Run();
+            Run run29 = new Run();
 
-            RunProperties runProperties31 = new RunProperties();
+            RunProperties runProperties27 = new RunProperties();
             NoProof noProof2 = new NoProof();
-            Color color5 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
-            FontSize fontSize5 = new FontSize() { Val = "16" };
+            Color color6 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
+            FontSize fontSize8 = new FontSize() { Val = "16" };
             FontSizeComplexScript fontSizeComplexScript2 = new FontSizeComplexScript() { Val = "16" };
 
-            runProperties31.Append(noProof2);
-            runProperties31.Append(color5);
-            runProperties31.Append(fontSize5);
-            runProperties31.Append(fontSizeComplexScript2);
-            Text text30 = new Text();
-            text30.Text = "1";
+            runProperties27.Append(noProof2);
+            runProperties27.Append(color6);
+            runProperties27.Append(fontSize8);
+            runProperties27.Append(fontSizeComplexScript2);
+            Text text25 = new Text();
+            text25.Text = "1";
 
-            run34.Append(runProperties31);
-            run34.Append(text30);
+            run29.Append(runProperties27);
+            run29.Append(text25);
 
-            Run run35 = new Run();
+            Run run30 = new Run();
 
-            RunProperties runProperties32 = new RunProperties();
+            RunProperties runProperties28 = new RunProperties();
             NoProof noProof3 = new NoProof();
-            Color color6 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
-            FontSize fontSize6 = new FontSize() { Val = "16" };
+            Color color7 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
+            FontSize fontSize9 = new FontSize() { Val = "16" };
             FontSizeComplexScript fontSizeComplexScript3 = new FontSizeComplexScript() { Val = "16" };
 
-            runProperties32.Append(noProof3);
-            runProperties32.Append(color6);
-            runProperties32.Append(fontSize6);
-            runProperties32.Append(fontSizeComplexScript3);
+            runProperties28.Append(noProof3);
+            runProperties28.Append(color7);
+            runProperties28.Append(fontSize9);
+            runProperties28.Append(fontSizeComplexScript3);
             FieldChar fieldChar3 = new FieldChar() { FieldCharType = FieldCharValues.End };
 
-            run35.Append(runProperties32);
-            run35.Append(fieldChar3);
+            run30.Append(runProperties28);
+            run30.Append(fieldChar3);
 
-            paragraph33.Append(paragraphProperties21);
-            paragraph33.Append(run31);
-            paragraph33.Append(run32);
-            paragraph33.Append(run33);
-            paragraph33.Append(run34);
-            paragraph33.Append(run35);
+            paragraph16.Append(paragraphProperties6);
+            paragraph16.Append(run26);
+            paragraph16.Append(run27);
+            paragraph16.Append(run28);
+            paragraph16.Append(run29);
+            paragraph16.Append(run30);
 
-            textBoxContent1.Append(paragraph33);
+            textBoxContent1.Append(paragraph16);
 
             textBoxInfo21.Append(textBoxContent1);
 
@@ -2411,94 +1707,94 @@ namespace WpfReportCreator.ReportTemplate
 
             TextBoxContent textBoxContent2 = new TextBoxContent();
 
-            Paragraph paragraph34 = new Paragraph();
+            Paragraph paragraph17 = new Paragraph();
 
-            ParagraphProperties paragraphProperties22 = new ParagraphProperties();
-            Justification justification17 = new Justification() { Val = JustificationValues.Center };
+            ParagraphProperties paragraphProperties7 = new ParagraphProperties();
+            Justification justification2 = new Justification() { Val = JustificationValues.Center };
 
-            ParagraphMarkRunProperties paragraphMarkRunProperties7 = new ParagraphMarkRunProperties();
-            Color color7 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
-            FontSize fontSize7 = new FontSize() { Val = "16" };
+            ParagraphMarkRunProperties paragraphMarkRunProperties5 = new ParagraphMarkRunProperties();
+            Color color8 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
+            FontSize fontSize10 = new FontSize() { Val = "16" };
             FontSizeComplexScript fontSizeComplexScript4 = new FontSizeComplexScript() { Val = "16" };
 
-            paragraphMarkRunProperties7.Append(color7);
-            paragraphMarkRunProperties7.Append(fontSize7);
-            paragraphMarkRunProperties7.Append(fontSizeComplexScript4);
+            paragraphMarkRunProperties5.Append(color8);
+            paragraphMarkRunProperties5.Append(fontSize10);
+            paragraphMarkRunProperties5.Append(fontSizeComplexScript4);
 
-            paragraphProperties22.Append(justification17);
-            paragraphProperties22.Append(paragraphMarkRunProperties7);
+            paragraphProperties7.Append(justification2);
+            paragraphProperties7.Append(paragraphMarkRunProperties5);
 
-            Run run36 = new Run();
+            Run run31 = new Run();
 
-            RunProperties runProperties33 = new RunProperties();
-            FontSize fontSize8 = new FontSize() { Val = "22" };
+            RunProperties runProperties29 = new RunProperties();
+            FontSize fontSize11 = new FontSize() { Val = "22" };
 
-            runProperties33.Append(fontSize8);
+            runProperties29.Append(fontSize11);
             FieldChar fieldChar4 = new FieldChar() { FieldCharType = FieldCharValues.Begin };
 
-            run36.Append(runProperties33);
-            run36.Append(fieldChar4);
+            run31.Append(runProperties29);
+            run31.Append(fieldChar4);
 
-            Run run37 = new Run();
+            Run run32 = new Run();
             FieldCode fieldCode2 = new FieldCode() { Space = SpaceProcessingModeValues.Preserve };
             fieldCode2.Text = " PAGE   \\* MERGEFORMAT ";
 
-            run37.Append(fieldCode2);
+            run32.Append(fieldCode2);
 
-            Run run38 = new Run();
+            Run run33 = new Run();
 
-            RunProperties runProperties34 = new RunProperties();
-            FontSize fontSize9 = new FontSize() { Val = "22" };
+            RunProperties runProperties30 = new RunProperties();
+            FontSize fontSize12 = new FontSize() { Val = "22" };
 
-            runProperties34.Append(fontSize9);
+            runProperties30.Append(fontSize12);
             FieldChar fieldChar5 = new FieldChar() { FieldCharType = FieldCharValues.Separate };
 
-            run38.Append(runProperties34);
-            run38.Append(fieldChar5);
+            run33.Append(runProperties30);
+            run33.Append(fieldChar5);
 
-            Run run39 = new Run();
+            Run run34 = new Run();
 
-            RunProperties runProperties35 = new RunProperties();
+            RunProperties runProperties31 = new RunProperties();
             NoProof noProof4 = new NoProof();
-            Color color8 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
-            FontSize fontSize10 = new FontSize() { Val = "16" };
+            Color color9 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
+            FontSize fontSize13 = new FontSize() { Val = "16" };
             FontSizeComplexScript fontSizeComplexScript5 = new FontSizeComplexScript() { Val = "16" };
 
-            runProperties35.Append(noProof4);
-            runProperties35.Append(color8);
-            runProperties35.Append(fontSize10);
-            runProperties35.Append(fontSizeComplexScript5);
-            Text text31 = new Text();
-            text31.Text = "1";
+            runProperties31.Append(noProof4);
+            runProperties31.Append(color9);
+            runProperties31.Append(fontSize13);
+            runProperties31.Append(fontSizeComplexScript5);
+            Text text26 = new Text();
+            text26.Text = "1";
 
-            run39.Append(runProperties35);
-            run39.Append(text31);
+            run34.Append(runProperties31);
+            run34.Append(text26);
 
-            Run run40 = new Run();
+            Run run35 = new Run();
 
-            RunProperties runProperties36 = new RunProperties();
+            RunProperties runProperties32 = new RunProperties();
             NoProof noProof5 = new NoProof();
-            Color color9 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
-            FontSize fontSize11 = new FontSize() { Val = "16" };
+            Color color10 = new Color() { Val = "323E4F", ThemeColor = ThemeColorValues.Text2, ThemeShade = "BF" };
+            FontSize fontSize14 = new FontSize() { Val = "16" };
             FontSizeComplexScript fontSizeComplexScript6 = new FontSizeComplexScript() { Val = "16" };
 
-            runProperties36.Append(noProof5);
-            runProperties36.Append(color9);
-            runProperties36.Append(fontSize11);
-            runProperties36.Append(fontSizeComplexScript6);
+            runProperties32.Append(noProof5);
+            runProperties32.Append(color10);
+            runProperties32.Append(fontSize14);
+            runProperties32.Append(fontSizeComplexScript6);
             FieldChar fieldChar6 = new FieldChar() { FieldCharType = FieldCharValues.End };
 
-            run40.Append(runProperties36);
-            run40.Append(fieldChar6);
+            run35.Append(runProperties32);
+            run35.Append(fieldChar6);
 
-            paragraph34.Append(paragraphProperties22);
-            paragraph34.Append(run36);
-            paragraph34.Append(run37);
-            paragraph34.Append(run38);
-            paragraph34.Append(run39);
-            paragraph34.Append(run40);
+            paragraph17.Append(paragraphProperties7);
+            paragraph17.Append(run31);
+            paragraph17.Append(run32);
+            paragraph17.Append(run33);
+            paragraph17.Append(run34);
+            paragraph17.Append(run35);
 
-            textBoxContent2.Append(paragraph34);
+            textBoxContent2.Append(paragraph17);
 
             textBox1.Append(textBoxContent2);
 
@@ -2540,13 +1836,13 @@ namespace WpfReportCreator.ReportTemplate
             alternateContent1.Append(alternateContentChoice1);
             alternateContent1.Append(alternateContentFallback1);
 
-            run30.Append(runProperties28);
-            run30.Append(alternateContent1);
+            run25.Append(runProperties24);
+            run25.Append(alternateContent1);
 
-            paragraph32.Append(paragraphProperties20);
-            paragraph32.Append(run30);
+            paragraph15.Append(paragraphProperties5);
+            paragraph15.Append(run25);
 
-            sdtContentBlock1.Append(paragraph32);
+            sdtContentBlock1.Append(paragraph15);
 
             sdtBlock1.Append(sdtProperties1);
             sdtBlock1.Append(sdtContentBlock1);
@@ -2710,15 +2006,15 @@ namespace WpfReportCreator.ReportTemplate
             RunPropertiesDefault runPropertiesDefault1 = new RunPropertiesDefault();
 
             RunPropertiesBaseStyle runPropertiesBaseStyle1 = new RunPropertiesBaseStyle();
-            RunFonts runFonts30 = new RunFonts() { AsciiTheme = ThemeFontValues.MinorHighAnsi, HighAnsiTheme = ThemeFontValues.MinorHighAnsi, EastAsiaTheme = ThemeFontValues.MinorEastAsia, ComplexScriptTheme = ThemeFontValues.MinorBidi };
+            RunFonts runFonts24 = new RunFonts() { AsciiTheme = ThemeFontValues.MinorHighAnsi, HighAnsiTheme = ThemeFontValues.MinorHighAnsi, EastAsiaTheme = ThemeFontValues.MinorEastAsia, ComplexScriptTheme = ThemeFontValues.MinorBidi };
             Kern kern1 = new Kern() { Val = (UInt32Value)2U };
-            FontSize fontSize12 = new FontSize() { Val = "21" };
+            FontSize fontSize15 = new FontSize() { Val = "21" };
             FontSizeComplexScript fontSizeComplexScript7 = new FontSizeComplexScript() { Val = "22" };
             Languages languages1 = new Languages() { Val = "en-US", EastAsia = "zh-CN", Bidi = "ar-SA" };
 
-            runPropertiesBaseStyle1.Append(runFonts30);
+            runPropertiesBaseStyle1.Append(runFonts24);
             runPropertiesBaseStyle1.Append(kern1);
-            runPropertiesBaseStyle1.Append(fontSize12);
+            runPropertiesBaseStyle1.Append(fontSize15);
             runPropertiesBaseStyle1.Append(fontSizeComplexScript7);
             runPropertiesBaseStyle1.Append(languages1);
 
@@ -3481,10 +2777,10 @@ namespace WpfReportCreator.ReportTemplate
 
             StyleParagraphProperties styleParagraphProperties1 = new StyleParagraphProperties();
             WidowControl widowControl1 = new WidowControl() { Val = false };
-            Justification justification18 = new Justification() { Val = JustificationValues.Both };
+            Justification justification3 = new Justification() { Val = JustificationValues.Both };
 
             styleParagraphProperties1.Append(widowControl1);
-            styleParagraphProperties1.Append(justification18);
+            styleParagraphProperties1.Append(justification3);
 
             style1.Append(styleName1);
             style1.Append(primaryStyle1);
@@ -3501,25 +2797,25 @@ namespace WpfReportCreator.ReportTemplate
             StyleParagraphProperties styleParagraphProperties2 = new StyleParagraphProperties();
             KeepNext keepNext1 = new KeepNext();
             KeepLines keepLines1 = new KeepLines();
-            Justification justification19 = new Justification() { Val = JustificationValues.Left };
+            Justification justification4 = new Justification() { Val = JustificationValues.Left };
             OutlineLevel outlineLevel1 = new OutlineLevel() { Val = 0 };
 
             styleParagraphProperties2.Append(keepNext1);
             styleParagraphProperties2.Append(keepLines1);
-            styleParagraphProperties2.Append(justification19);
+            styleParagraphProperties2.Append(justification4);
             styleParagraphProperties2.Append(outlineLevel1);
 
             StyleRunProperties styleRunProperties1 = new StyleRunProperties();
-            RunFonts runFonts31 = new RunFonts() { EastAsia = "黑体" };
+            RunFonts runFonts25 = new RunFonts() { EastAsia = "黑体" };
             BoldComplexScript boldComplexScript1 = new BoldComplexScript();
             Kern kern2 = new Kern() { Val = (UInt32Value)44U };
-            FontSize fontSize13 = new FontSize() { Val = "32" };
+            FontSize fontSize16 = new FontSize() { Val = "32" };
             FontSizeComplexScript fontSizeComplexScript8 = new FontSizeComplexScript() { Val = "44" };
 
-            styleRunProperties1.Append(runFonts31);
+            styleRunProperties1.Append(runFonts25);
             styleRunProperties1.Append(boldComplexScript1);
             styleRunProperties1.Append(kern2);
-            styleRunProperties1.Append(fontSize13);
+            styleRunProperties1.Append(fontSize16);
             styleRunProperties1.Append(fontSizeComplexScript8);
 
             style2.Append(styleName2);
@@ -3592,24 +2888,24 @@ namespace WpfReportCreator.ReportTemplate
 
             StyleParagraphProperties styleParagraphProperties3 = new StyleParagraphProperties();
             SpacingBetweenLines spacingBetweenLines2 = new SpacingBetweenLines() { Before = "240", After = "60" };
-            Justification justification20 = new Justification() { Val = JustificationValues.Center };
+            Justification justification5 = new Justification() { Val = JustificationValues.Center };
             OutlineLevel outlineLevel2 = new OutlineLevel() { Val = 0 };
 
             styleParagraphProperties3.Append(spacingBetweenLines2);
-            styleParagraphProperties3.Append(justification20);
+            styleParagraphProperties3.Append(justification5);
             styleParagraphProperties3.Append(outlineLevel2);
 
             StyleRunProperties styleRunProperties2 = new StyleRunProperties();
-            RunFonts runFonts32 = new RunFonts() { EastAsia = "黑体", AsciiTheme = ThemeFontValues.MajorHighAnsi, HighAnsiTheme = ThemeFontValues.MajorHighAnsi, ComplexScriptTheme = ThemeFontValues.MajorBidi };
+            RunFonts runFonts26 = new RunFonts() { EastAsia = "黑体", AsciiTheme = ThemeFontValues.MajorHighAnsi, HighAnsiTheme = ThemeFontValues.MajorHighAnsi, ComplexScriptTheme = ThemeFontValues.MajorBidi };
             BoldComplexScript boldComplexScript2 = new BoldComplexScript();
-            Color color10 = new Color() { Val = "FF0000" };
-            FontSize fontSize14 = new FontSize() { Val = "52" };
+            Color color11 = new Color() { Val = "FF0000" };
+            FontSize fontSize17 = new FontSize() { Val = "52" };
             FontSizeComplexScript fontSizeComplexScript9 = new FontSizeComplexScript() { Val = "32" };
 
-            styleRunProperties2.Append(runFonts32);
+            styleRunProperties2.Append(runFonts26);
             styleRunProperties2.Append(boldComplexScript2);
-            styleRunProperties2.Append(color10);
-            styleRunProperties2.Append(fontSize14);
+            styleRunProperties2.Append(color11);
+            styleRunProperties2.Append(fontSize17);
             styleRunProperties2.Append(fontSizeComplexScript9);
 
             style6.Append(styleName6);
@@ -3628,16 +2924,16 @@ namespace WpfReportCreator.ReportTemplate
             UIPriority uIPriority6 = new UIPriority() { Val = 10 };
 
             StyleRunProperties styleRunProperties3 = new StyleRunProperties();
-            RunFonts runFonts33 = new RunFonts() { EastAsia = "黑体", AsciiTheme = ThemeFontValues.MajorHighAnsi, HighAnsiTheme = ThemeFontValues.MajorHighAnsi, ComplexScriptTheme = ThemeFontValues.MajorBidi };
+            RunFonts runFonts27 = new RunFonts() { EastAsia = "黑体", AsciiTheme = ThemeFontValues.MajorHighAnsi, HighAnsiTheme = ThemeFontValues.MajorHighAnsi, ComplexScriptTheme = ThemeFontValues.MajorBidi };
             BoldComplexScript boldComplexScript3 = new BoldComplexScript();
-            Color color11 = new Color() { Val = "FF0000" };
-            FontSize fontSize15 = new FontSize() { Val = "52" };
+            Color color12 = new Color() { Val = "FF0000" };
+            FontSize fontSize18 = new FontSize() { Val = "52" };
             FontSizeComplexScript fontSizeComplexScript10 = new FontSizeComplexScript() { Val = "32" };
 
-            styleRunProperties3.Append(runFonts33);
+            styleRunProperties3.Append(runFonts27);
             styleRunProperties3.Append(boldComplexScript3);
-            styleRunProperties3.Append(color11);
-            styleRunProperties3.Append(fontSize15);
+            styleRunProperties3.Append(color12);
+            styleRunProperties3.Append(fontSize18);
             styleRunProperties3.Append(fontSizeComplexScript10);
 
             style7.Append(styleName7);
@@ -3656,9 +2952,9 @@ namespace WpfReportCreator.ReportTemplate
             StyleParagraphProperties styleParagraphProperties4 = new StyleParagraphProperties();
 
             ParagraphBorders paragraphBorders1 = new ParagraphBorders();
-            BottomBorder bottomBorder12 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)6U, Space = (UInt32Value)1U };
+            BottomBorder bottomBorder3 = new BottomBorder() { Val = BorderValues.Single, Color = "auto", Size = (UInt32Value)6U, Space = (UInt32Value)1U };
 
-            paragraphBorders1.Append(bottomBorder12);
+            paragraphBorders1.Append(bottomBorder3);
 
             Tabs tabs1 = new Tabs();
             TabStop tabStop1 = new TabStop() { Val = TabStopValues.Center, Position = 4153 };
@@ -3667,18 +2963,18 @@ namespace WpfReportCreator.ReportTemplate
             tabs1.Append(tabStop1);
             tabs1.Append(tabStop2);
             SnapToGrid snapToGrid1 = new SnapToGrid() { Val = false };
-            Justification justification21 = new Justification() { Val = JustificationValues.Center };
+            Justification justification6 = new Justification() { Val = JustificationValues.Center };
 
             styleParagraphProperties4.Append(paragraphBorders1);
             styleParagraphProperties4.Append(tabs1);
             styleParagraphProperties4.Append(snapToGrid1);
-            styleParagraphProperties4.Append(justification21);
+            styleParagraphProperties4.Append(justification6);
 
             StyleRunProperties styleRunProperties4 = new StyleRunProperties();
-            FontSize fontSize16 = new FontSize() { Val = "18" };
+            FontSize fontSize19 = new FontSize() { Val = "18" };
             FontSizeComplexScript fontSizeComplexScript11 = new FontSizeComplexScript() { Val = "18" };
 
-            styleRunProperties4.Append(fontSize16);
+            styleRunProperties4.Append(fontSize19);
             styleRunProperties4.Append(fontSizeComplexScript11);
 
             style8.Append(styleName8);
@@ -3696,10 +2992,10 @@ namespace WpfReportCreator.ReportTemplate
             UIPriority uIPriority8 = new UIPriority() { Val = 99 };
 
             StyleRunProperties styleRunProperties5 = new StyleRunProperties();
-            FontSize fontSize17 = new FontSize() { Val = "18" };
+            FontSize fontSize20 = new FontSize() { Val = "18" };
             FontSizeComplexScript fontSizeComplexScript12 = new FontSizeComplexScript() { Val = "18" };
 
-            styleRunProperties5.Append(fontSize17);
+            styleRunProperties5.Append(fontSize20);
             styleRunProperties5.Append(fontSizeComplexScript12);
 
             style9.Append(styleName9);
@@ -3724,17 +3020,17 @@ namespace WpfReportCreator.ReportTemplate
             tabs2.Append(tabStop3);
             tabs2.Append(tabStop4);
             SnapToGrid snapToGrid2 = new SnapToGrid() { Val = false };
-            Justification justification22 = new Justification() { Val = JustificationValues.Left };
+            Justification justification7 = new Justification() { Val = JustificationValues.Left };
 
             styleParagraphProperties5.Append(tabs2);
             styleParagraphProperties5.Append(snapToGrid2);
-            styleParagraphProperties5.Append(justification22);
+            styleParagraphProperties5.Append(justification7);
 
             StyleRunProperties styleRunProperties6 = new StyleRunProperties();
-            FontSize fontSize18 = new FontSize() { Val = "18" };
+            FontSize fontSize21 = new FontSize() { Val = "18" };
             FontSizeComplexScript fontSizeComplexScript13 = new FontSizeComplexScript() { Val = "18" };
 
-            styleRunProperties6.Append(fontSize18);
+            styleRunProperties6.Append(fontSize21);
             styleRunProperties6.Append(fontSizeComplexScript13);
 
             style10.Append(styleName10);
@@ -3752,10 +3048,10 @@ namespace WpfReportCreator.ReportTemplate
             UIPriority uIPriority10 = new UIPriority() { Val = 99 };
 
             StyleRunProperties styleRunProperties7 = new StyleRunProperties();
-            FontSize fontSize19 = new FontSize() { Val = "18" };
+            FontSize fontSize22 = new FontSize() { Val = "18" };
             FontSizeComplexScript fontSizeComplexScript14 = new FontSizeComplexScript() { Val = "18" };
 
-            styleRunProperties7.Append(fontSize19);
+            styleRunProperties7.Append(fontSize22);
             styleRunProperties7.Append(fontSizeComplexScript14);
 
             style11.Append(styleName11);
@@ -3772,17 +3068,17 @@ namespace WpfReportCreator.ReportTemplate
             StyleTableProperties styleTableProperties2 = new StyleTableProperties();
 
             TableBorders tableBorders1 = new TableBorders();
-            TopBorder topBorder11 = new TopBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-            LeftBorder leftBorder4 = new LeftBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-            BottomBorder bottomBorder13 = new BottomBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
-            RightBorder rightBorder4 = new RightBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            TopBorder topBorder3 = new TopBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            LeftBorder leftBorder3 = new LeftBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            BottomBorder bottomBorder4 = new BottomBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            RightBorder rightBorder3 = new RightBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
             InsideHorizontalBorder insideHorizontalBorder1 = new InsideHorizontalBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
             InsideVerticalBorder insideVerticalBorder1 = new InsideVerticalBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
 
-            tableBorders1.Append(topBorder11);
-            tableBorders1.Append(leftBorder4);
-            tableBorders1.Append(bottomBorder13);
-            tableBorders1.Append(rightBorder4);
+            tableBorders1.Append(topBorder3);
+            tableBorders1.Append(leftBorder3);
+            tableBorders1.Append(bottomBorder4);
+            tableBorders1.Append(rightBorder3);
             tableBorders1.Append(insideHorizontalBorder1);
             tableBorders1.Append(insideVerticalBorder1);
 
@@ -3802,10 +3098,10 @@ namespace WpfReportCreator.ReportTemplate
             UnhideWhenUsed unhideWhenUsed6 = new UnhideWhenUsed();
 
             StyleRunProperties styleRunProperties8 = new StyleRunProperties();
-            FontSize fontSize20 = new FontSize() { Val = "18" };
+            FontSize fontSize23 = new FontSize() { Val = "18" };
             FontSizeComplexScript fontSizeComplexScript15 = new FontSizeComplexScript() { Val = "18" };
 
-            styleRunProperties8.Append(fontSize20);
+            styleRunProperties8.Append(fontSize23);
             styleRunProperties8.Append(fontSizeComplexScript15);
 
             style13.Append(styleName13);
@@ -3824,10 +3120,10 @@ namespace WpfReportCreator.ReportTemplate
             SemiHidden semiHidden5 = new SemiHidden();
 
             StyleRunProperties styleRunProperties9 = new StyleRunProperties();
-            FontSize fontSize21 = new FontSize() { Val = "18" };
+            FontSize fontSize24 = new FontSize() { Val = "18" };
             FontSizeComplexScript fontSizeComplexScript16 = new FontSizeComplexScript() { Val = "18" };
 
-            styleRunProperties9.Append(fontSize21);
+            styleRunProperties9.Append(fontSize24);
             styleRunProperties9.Append(fontSizeComplexScript16);
 
             style14.Append(styleName14);
@@ -3844,16 +3140,16 @@ namespace WpfReportCreator.ReportTemplate
             UIPriority uIPriority14 = new UIPriority() { Val = 9 };
 
             StyleRunProperties styleRunProperties10 = new StyleRunProperties();
-            RunFonts runFonts34 = new RunFonts() { EastAsia = "黑体" };
+            RunFonts runFonts28 = new RunFonts() { EastAsia = "黑体" };
             BoldComplexScript boldComplexScript4 = new BoldComplexScript();
             Kern kern3 = new Kern() { Val = (UInt32Value)44U };
-            FontSize fontSize22 = new FontSize() { Val = "32" };
+            FontSize fontSize25 = new FontSize() { Val = "32" };
             FontSizeComplexScript fontSizeComplexScript17 = new FontSizeComplexScript() { Val = "44" };
 
-            styleRunProperties10.Append(runFonts34);
+            styleRunProperties10.Append(runFonts28);
             styleRunProperties10.Append(boldComplexScript4);
             styleRunProperties10.Append(kern3);
-            styleRunProperties10.Append(fontSize22);
+            styleRunProperties10.Append(fontSize25);
             styleRunProperties10.Append(fontSizeComplexScript17);
 
             style15.Append(styleName15);
@@ -3869,9 +3165,9 @@ namespace WpfReportCreator.ReportTemplate
             SemiHidden semiHidden6 = new SemiHidden();
 
             StyleRunProperties styleRunProperties11 = new StyleRunProperties();
-            Color color12 = new Color() { Val = "808080" };
+            Color color13 = new Color() { Val = "808080" };
 
-            styleRunProperties11.Append(color12);
+            styleRunProperties11.Append(color13);
 
             style16.Append(styleName16);
             style16.Append(basedOn12);
@@ -3886,10 +3182,10 @@ namespace WpfReportCreator.ReportTemplate
 
             StyleParagraphProperties styleParagraphProperties6 = new StyleParagraphProperties();
             WidowControl widowControl2 = new WidowControl() { Val = false };
-            Justification justification23 = new Justification() { Val = JustificationValues.Both };
+            Justification justification8 = new Justification() { Val = JustificationValues.Both };
 
             styleParagraphProperties6.Append(widowControl2);
-            styleParagraphProperties6.Append(justification23);
+            styleParagraphProperties6.Append(justification8);
 
             style17.Append(styleName17);
             style17.Append(uIPriority16);
@@ -3944,27 +3240,27 @@ namespace WpfReportCreator.ReportTemplate
             header1.AddNamespaceDeclaration("wne", "http://schemas.microsoft.com/office/word/2006/wordml");
             header1.AddNamespaceDeclaration("wps", "http://schemas.microsoft.com/office/word/2010/wordprocessingShape");
 
-            Paragraph paragraph35 = new Paragraph();
+            Paragraph paragraph18 = new Paragraph();
 
-            ParagraphProperties paragraphProperties23 = new ParagraphProperties();
-            ParagraphStyleId paragraphStyleId5 = new ParagraphStyleId() { Val = "a5" };
+            ParagraphProperties paragraphProperties8 = new ParagraphProperties();
+            ParagraphStyleId paragraphStyleId3 = new ParagraphStyleId() { Val = "a5" };
 
             ParagraphBorders paragraphBorders2 = new ParagraphBorders();
-            BottomBorder bottomBorder14 = new BottomBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
+            BottomBorder bottomBorder5 = new BottomBorder() { Val = BorderValues.None, Color = "auto", Size = (UInt32Value)0U, Space = (UInt32Value)0U };
 
-            paragraphBorders2.Append(bottomBorder14);
-            Justification justification24 = new Justification() { Val = JustificationValues.Right };
+            paragraphBorders2.Append(bottomBorder5);
+            Justification justification9 = new Justification() { Val = JustificationValues.Right };
 
-            paragraphProperties23.Append(paragraphStyleId5);
-            paragraphProperties23.Append(paragraphBorders2);
-            paragraphProperties23.Append(justification24);
+            paragraphProperties8.Append(paragraphStyleId3);
+            paragraphProperties8.Append(paragraphBorders2);
+            paragraphProperties8.Append(justification9);
 
-            Run run41 = new Run();
+            Run run36 = new Run();
 
-            RunProperties runProperties37 = new RunProperties();
+            RunProperties runProperties33 = new RunProperties();
             NoProof noProof6 = new NoProof();
 
-            runProperties37.Append(noProof6);
+            runProperties33.Append(noProof6);
 
             Drawing drawing2 = new Drawing();
 
@@ -4085,13 +3381,13 @@ namespace WpfReportCreator.ReportTemplate
 
             drawing2.Append(anchor2);
 
-            run41.Append(runProperties37);
-            run41.Append(drawing2);
+            run36.Append(runProperties33);
+            run36.Append(drawing2);
 
-            paragraph35.Append(paragraphProperties23);
-            paragraph35.Append(run41);
+            paragraph18.Append(paragraphProperties8);
+            paragraph18.Append(run36);
 
-            header1.Append(paragraph35);
+            header1.Append(paragraph18);
 
             headerPart1.Header = header1;
         }
@@ -4131,29 +3427,29 @@ namespace WpfReportCreator.ReportTemplate
 
             Endnote endnote1 = new Endnote() { Type = FootnoteEndnoteValues.Separator, Id = -1 };
 
-            Paragraph paragraph36 = new Paragraph();
+            Paragraph paragraph19 = new Paragraph();
 
-            Run run42 = new Run();
+            Run run37 = new Run();
             SeparatorMark separatorMark1 = new SeparatorMark();
 
-            run42.Append(separatorMark1);
+            run37.Append(separatorMark1);
 
-            paragraph36.Append(run42);
+            paragraph19.Append(run37);
 
-            endnote1.Append(paragraph36);
+            endnote1.Append(paragraph19);
 
             Endnote endnote2 = new Endnote() { Type = FootnoteEndnoteValues.ContinuationSeparator, Id = 0 };
 
-            Paragraph paragraph37 = new Paragraph();
+            Paragraph paragraph20 = new Paragraph();
 
-            Run run43 = new Run();
+            Run run38 = new Run();
             ContinuationSeparatorMark continuationSeparatorMark1 = new ContinuationSeparatorMark();
 
-            run43.Append(continuationSeparatorMark1);
+            run38.Append(continuationSeparatorMark1);
 
-            paragraph37.Append(run43);
+            paragraph20.Append(run38);
 
-            endnote2.Append(paragraph37);
+            endnote2.Append(paragraph20);
 
             endnotes1.Append(endnote1);
             endnotes1.Append(endnote2);
@@ -4188,29 +3484,29 @@ namespace WpfReportCreator.ReportTemplate
 
             Footnote footnote1 = new Footnote() { Type = FootnoteEndnoteValues.Separator, Id = -1 };
 
-            Paragraph paragraph38 = new Paragraph();
+            Paragraph paragraph21 = new Paragraph();
 
-            Run run44 = new Run();
+            Run run39 = new Run();
             SeparatorMark separatorMark2 = new SeparatorMark();
 
-            run44.Append(separatorMark2);
+            run39.Append(separatorMark2);
 
-            paragraph38.Append(run44);
+            paragraph21.Append(run39);
 
-            footnote1.Append(paragraph38);
+            footnote1.Append(paragraph21);
 
             Footnote footnote2 = new Footnote() { Type = FootnoteEndnoteValues.ContinuationSeparator, Id = 0 };
 
-            Paragraph paragraph39 = new Paragraph();
+            Paragraph paragraph22 = new Paragraph();
 
-            Run run45 = new Run();
+            Run run40 = new Run();
             ContinuationSeparatorMark continuationSeparatorMark2 = new ContinuationSeparatorMark();
 
-            run45.Append(continuationSeparatorMark2);
+            run40.Append(continuationSeparatorMark2);
 
-            paragraph39.Append(run45);
+            paragraph22.Append(run40);
 
-            footnote2.Append(paragraph39);
+            footnote2.Append(paragraph22);
 
             footnotes1.Append(footnote1);
             footnotes1.Append(footnote2);
@@ -4746,9 +4042,9 @@ namespace WpfReportCreator.ReportTemplate
         {
             document.PackageProperties.Creator = "CDPMI";
             document.PackageProperties.Description = "xs.zhou";
-            document.PackageProperties.Revision = "2";
+            document.PackageProperties.Revision = "27";
             document.PackageProperties.Created = System.Xml.XmlConvert.ToDateTime("2016-04-19T02:31:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
-            document.PackageProperties.Modified = System.Xml.XmlConvert.ToDateTime("2016-04-19T02:31:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
+            document.PackageProperties.Modified = System.Xml.XmlConvert.ToDateTime("2016-04-19T04:02:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
             document.PackageProperties.LastModifiedBy = "xs zhou";
             document.PackageProperties.LastPrinted = System.Xml.XmlConvert.ToDateTime("2015-08-03T10:39:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
         }
