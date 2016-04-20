@@ -56,12 +56,13 @@ namespace WpfReportCreator.Service
 
 
                 //填充XRF表格
+                string xrfComposition = target.XRFComposition ?? "暂时没有成分数据";
 
-                string[] lines = target.XRFComposition.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                string[] lines =xrfComposition.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
                 int rowCount = lines.Count();
                 int columnCount = lines[0].Split(',').Count();
-                //判断行数，如果小于2，则说明没有成分数据，而是测不出说明文本
+                //判断行数，如果小于2，则说明没有成分数据，而是说明文本
                 if (rowCount > 2)
                 {
                     if (document.Tables != null && document.Tables.Count > 0)
@@ -91,7 +92,7 @@ namespace WpfReportCreator.Service
                 }
                 else
                 {
-                    document.ReplaceText("[XRFRemark]", target.XRFComposition);
+                    document.ReplaceText("[XRFRemark]", xrfComposition);
                 }
                 document.Save();
             }

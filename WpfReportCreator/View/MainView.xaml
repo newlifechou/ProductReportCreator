@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen" DataContext="{Binding Main,Source={StaticResource Locator}}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Margin="3" Padding="3" CornerRadius="2" BorderThickness="2" BorderBrush="Orange">
