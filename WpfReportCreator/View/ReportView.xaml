@@ -58,9 +58,7 @@
             <Button Content="Browse File Path" Style="{StaticResource btnNormal}" Command="{Binding BrowseSavePathCommand}"/>
             <TextBlock Text="{Binding SavePath}"/>
         </StackPanel>
-        <ListBox Grid.Row="3" Grid.Column="0" ItemsSource="{Binding ProductReportTemplates}"/>
-        <ListBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding CoaReportTemplates}"/>
-        <Button Grid.Row="4" Grid.Column="0" Content="Create Product Report" Style="{StaticResource btnNormal}"  Command="{Binding ProductReportCommand}"/>
-        <Button Grid.Row="4" Grid.Column="1" Content="Create COA Report" Style="{StaticResource btnNormal}" Command="{Binding CoaReportCommand}"/>
+        <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ReportTemplates}"/>
+        <Button  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Create  Report" Style="{StaticResource btnNormal}"  Command="{Binding ProductReportCommand}"/>
     </Grid>
 </UserControl>

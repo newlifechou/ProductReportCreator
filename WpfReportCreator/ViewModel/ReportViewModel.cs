@@ -21,7 +21,6 @@ namespace WpfReportCreator.ViewModel
         {
             savePath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             ProductReportCommand = new RelayCommand(ActionProductReport);
-            CoaReportCommand = new RelayCommand(ActionCoaReport);
             BrowseSavePathCommand = new RelayCommand(BrowseSavePathExecute);
         }
 
@@ -46,9 +45,7 @@ namespace WpfReportCreator.ViewModel
                 
                 string filePath = System.IO.Path.Combine(SavePath,fileName );
 
-                ProductReportTemplate template = new ProductReportTemplate();
-                template.CurrentTarget = CurrentTarget;
-                template.CreatePackage(filePath);
+
                 App.MainWindowService.ShowOKInfo($"Report is Created at {SavePath} ", "OK");
             }
         }
@@ -79,18 +76,6 @@ namespace WpfReportCreator.ViewModel
             }
         }
 
-        private ObservableCollection<string> coaReportTemplates;
-        public ObservableCollection<string> CoaReportTemplates
-        {
-            get { return coaReportTemplates; }
-            set
-            {
-                if (coaReportTemplates == value)
-                    return;
-                coaReportTemplates = value;
-                RaisePropertyChanged(() => CoaReportTemplates);
-            }
-        }
         //文件存储路径
         private string savePath;
         public string SavePath
@@ -107,7 +92,6 @@ namespace WpfReportCreator.ViewModel
 
 
         public RelayCommand ProductReportCommand { get; set; }
-        public RelayCommand CoaReportCommand { get; set; }
         public RelayCommand BrowseSavePathCommand { get; set; }
     }
 }
