@@ -25,7 +25,7 @@ namespace ReportServiceLib
 
         public List<Sample> GetSamples(string lot, string customer, int skip, int take)
         {
-            return db.Samples.Where(p => p.Lot.Contains(lot) && p.Customer.Contains(customer))
+            return db.Samples.Where(p => p.Lot.StartsWith(lot) && p.Customer.Contains(customer))
                 .OrderByDescending(p => p.CreateDate).Skip(skip).Take(take).ToList(); ;
         }
 
@@ -33,7 +33,7 @@ namespace ReportServiceLib
 
         public int GetSampleCount(string lot,string customer)
         {
-            return db.Samples.Where(p => p.Lot.Contains(lot) && p.Customer.Contains(customer)).Count();
+            return db.Samples.Where(p => p.Lot.StartsWith(lot) && p.Customer.Contains(customer)).Count();
         }
         public bool AddSample(Sample sample)
         {
