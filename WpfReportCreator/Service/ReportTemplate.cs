@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfReportCreator.ServiceReferenceTargetReport;
 
 /*
     Developer:xs.zhou@outlook.com
@@ -15,6 +16,6 @@ namespace WpfReportCreator.Service
         public int Id { get; set; }
         public string ReportTempateName { get; set; }
         //委托类型的Creator
-        public Action<string> ReportCreator { get; set; }
+        public Action<string,Target> ReportCreator { get; set; }
     }
 }

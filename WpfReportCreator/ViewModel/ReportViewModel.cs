@@ -27,11 +27,41 @@ namespace WpfReportCreator.ViewModel
 
 
         }
+        //    
 
+        //    string filePath =
         private void ActionReport(ReportTemplate obj)
         {
-            obj.ReportCreator();
+
+            obj.ReportCreator(FilePath(obj.Id),CurrentTarget);
+
             App.MainWindowService.ShowOKInfo($"Report is Created at {SavePath} ", obj.ReportTempateName);
+        }
+        private string FilePath(int id)
+        {
+            string filePath = string.Empty;
+            switch (id)
+            {
+                case 0:
+                    string fileStr1 = $"Lot#{CurrentTarget.Lot}-{CurrentTarget.Material}-{CurrentTarget.Customer}.docx".Replace('%', ' ');
+                    filePath = GetFilePath(fileStr1);
+                    break;
+                case 1:
+                    string fileStr2 = "COAReport" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".docx";
+                    filePath = GetFilePath(fileStr2);
+                    break;
+                case 2:
+                    string fileStr3 = "COAReportBridgeLine" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".docx";
+                    filePath = GetFilePath(fileStr3);
+                    break;
+                default:
+                    throw new Exception("File Name Not Right");
+            }
+            return filePath;
+        }
+        private string GetFilePath(string fileName)
+        {
+            return System.IO.Path.Combine(SavePath, fileName);
         }
 
         private void BrowseSavePathExecute()

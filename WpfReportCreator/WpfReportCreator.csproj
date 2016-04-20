@@ -224,7 +224,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Report\ProductTemplate.docx" />
+    <None Include="Report\ProductTemplate.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Service References\ServiceReferenceSampleReport\SampleReportService.wsdl" />
     <None Include="Service References\ServiceReferenceSampleReport\SampleReportService.xsd">
       <SubType>Designer</SubType>
