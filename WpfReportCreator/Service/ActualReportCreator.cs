@@ -19,6 +19,7 @@ namespace WpfReportCreator.Service
         {
             string sourceFile = @"Report\ProductTemplate.docx";
             CopyTemplate(sourceFile, fileName);
+            #region 生成部分
             using (DocX document = DocX.Load(fileName))
             {
                 document.ReplaceText("[Material]", target.Material ?? "");
@@ -31,79 +32,64 @@ namespace WpfReportCreator.Service
                 document.ReplaceText("[Density]", target.Density ?? "");
                 document.ReplaceText("[Resistance]", target.Resistance ?? "");
                 document.ReplaceText("[Remark]", target.Remark ?? "");
-
-                //填充尺寸表格
-                if (!string.IsNullOrEmpty(target.Dimension))
-                {
-                    string[] items = target.Dimension.Split(';');
-                    document.ReplaceText("[D1]", items[0]);
-                    document.ReplaceText("[D2]", items[1]);
-                    document.ReplaceText("[H1]", items[2]);
-                    document.ReplaceText("[H2]", items[3]);
-                    document.ReplaceText("[H3]", items[4]);
-                    document.ReplaceText("[H4]", items[5]);
-                }
-                else
-                {
-                    document.ReplaceText("[D1]", "");
-                    document.ReplaceText("[D2]", "");
-                    document.ReplaceText("[H1]", "");
-                    document.ReplaceText("[H2]", "");
-                    document.ReplaceText("[H3]", "");
-                    document.ReplaceText("[H4]", "");
-                }
-
+                document.ReplaceText("[Size]", target.Size ?? "");
+                document.ReplaceText("[Dimension]", target.Dimension ?? "");
 
 
                 //填充XRF表格
-                string xrfComposition = target.XRFComposition ?? "暂时没有成分数据";
-
-                string[] lines =xrfComposition.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-                int rowCount = lines.Count();
-                int columnCount = lines[0].Split(',').Count();
-                //判断行数，如果小于2，则说明没有成分数据，而是说明文本
-                if (rowCount > 2)
+                if (document.Tables[0] != null)
                 {
-                    if (document.Tables != null && document.Tables.Count > 0)
-                    {
-                        Table mainTable = document.Tables[0];
-                        Paragraph p = mainTable.Rows[9].Cells[0].Paragraphs[0];
-                        document.ReplaceText("[XRFRemark]", "以上成分存在测试偏差，仅供参考");
-
-
-                        Table xrfTable = document.AddTable(rowCount, columnCount);
-                        xrfTable.Design = TableDesign.TableGrid;
-                        xrfTable.Alignment = Alignment.center;
-                        xrfTable.AutoFit = AutoFit.Contents;
-
-
-                        for (int i = 0; i < lines.Count(); i++)
-                        {
-                            string[] items = lines[i].Split(',');
-                            for (int j = 0; j < items.Count(); j++)
-                            {
-                                xrfTable.Rows[i].Cells[j].Paragraphs[0].Append(items[j]);
-                            }
-                        }
-                        p.InsertTableAfterSelf(xrfTable);
-
-                    }
+                    Table mainTable = document.Tables[0];
+                    Paragraph p = mainTable.Rows[9].Cells[0].Paragraphs[0];
+                    InsertXrfTable(document, p, target.XRFComposition, "无测试结果");
                 }
-                else
-                {
-                    document.ReplaceText("[XRFRemark]", xrfComposition);
-                }
+
+
+
                 document.Save();
             }
 
-
+            #endregion
 
         }
+
+
+
         public static void CreateCOAReport(string fileName, Target target)
         {
+            string sourceFile = @"Report\COATemplate.docx";
+            CopyTemplate(sourceFile, fileName);
 
+            #region 生成部分
+            using (DocX document = DocX.Load(fileName))
+            {
+                document.ReplaceText("[Customer]", target.Customer ?? "");
+                document.ReplaceText("[Lot]", target.Lot ?? "");
+                document.ReplaceText("[PO]", target.PO ?? "");
+                document.ReplaceText("[COADate]", DateTime.Now.ToShortDateString());
+                document.ReplaceText("[Material]", target.Material ?? "");
+                document.ReplaceText("[Size]", target.Size ?? "");
+                document.ReplaceText("[Weight]", target.Weight ?? "");
+                document.ReplaceText("[Density]", target.Density ?? "");
+                document.ReplaceText("[Resistance]", target.Resistance ?? "");
+                document.ReplaceText("[Dimension]", target.Dimension ?? "");
+
+
+                //填充XRF表格
+                //填充XRF表格
+                if (document.Tables[1] != null)
+                {
+                    Table mainTable = document.Tables[1];
+                    Paragraph p = mainTable.Rows[5].Cells[0].Paragraphs[0];
+                    InsertXrfTable(document, p, target.XRFComposition, "No Composition Test Results");
+                }
+
+                document.Save();
+            }
+            #endregion
         }
+
+
         public static void CreateCOABridgeLineReport(string fileName, Target target)
         {
 
@@ -117,5 +103,46 @@ namespace WpfReportCreator.Service
             }
             File.Copy(sourceFile, targetFile);
         }
+
+        private static void InsertXrfTable(DocX document, Paragraph p, string xrfComposition, string noCompositionMessage)
+        {
+            if (!string.IsNullOrEmpty(xrfComposition))
+            {
+                string[] lines = xrfComposition.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                int rowCount = lines.Count();
+                int columnCount = lines[0].Split(',').Count();
+
+                if (rowCount < 2)
+                {
+                    p.InsertText(xrfComposition);
+                }
+                else
+                {
+                    Table xrfTable = document.AddTable(rowCount, columnCount);
+                    xrfTable.Design = TableDesign.TableGrid;
+                    xrfTable.Alignment = Alignment.center;
+                    xrfTable.AutoFit = AutoFit.Contents;
+
+                    for (int i = 0; i < lines.Count(); i++)
+                    {
+                        string[] items = lines[i].Split(',');
+                        for (int j = 0; j < items.Count(); j++)
+                        {
+                            xrfTable.Rows[i].Cells[j].Paragraphs[0].Append(items[j]);
+                        }
+                    }
+                    p.InsertTableAfterSelf(xrfTable);
+                }
+
+            }
+            else
+            {
+                p.InsertText(noCompositionMessage);
+            }
+        }
+
+
+
+
     }
 }

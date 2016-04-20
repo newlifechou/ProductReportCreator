@@ -51,7 +51,7 @@ namespace WpfReportCreator.ViewModel
                     filePath = GetFilePath(fileStr2);
                     break;
                 case 2:
-                    string fileStr3 = "COAReportBridgeLine" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".docx";
+                    string fileStr3 = "COAReportBridgeLine" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
                     filePath = GetFilePath(fileStr3);
                     break;
                 default:
