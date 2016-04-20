@@ -19,9 +19,9 @@ namespace WpfReportCreator.Service
         {
             string sourceFile = @"Report\ProductTemplate.docx";
             CopyTemplate(sourceFile, fileName);
-            using (DocX document=DocX.Load(fileName))
+            using (DocX document = DocX.Load(fileName))
             {
-                document.ReplaceText("[Material]", target.Material??"");
+                document.ReplaceText("[Material]", target.Material ?? "");
                 document.ReplaceText("[Customer]", target.Customer ?? "");
                 document.ReplaceText("[PO]", target.PO ?? "");
                 document.ReplaceText("[CreateDate]", target.CreateDate.ToShortDateString());
@@ -32,10 +32,28 @@ namespace WpfReportCreator.Service
                 document.ReplaceText("[Resistance]", target.Resistance ?? "");
                 document.ReplaceText("[Remark]", target.Remark ?? "");
 
+                //填充尺寸表格
                 if (!string.IsNullOrEmpty(target.Dimension))
                 {
-
+                    string[] items = target.Dimension.Split(';');
+                    document.ReplaceText("[D1]", items[0]);
+                    document.ReplaceText("[D2]", items[1]);
+                    document.ReplaceText("[H1]", items[2]);
+                    document.ReplaceText("[H2]", items[3]);
+                    document.ReplaceText("[H3]", items[4]);
+                    document.ReplaceText("[H4]", items[5]);
                 }
+                else
+                {
+                    document.ReplaceText("[D1]", "");
+                    document.ReplaceText("[D2]", "");
+                    document.ReplaceText("[H1]", "");
+                    document.ReplaceText("[H2]", "");
+                    document.ReplaceText("[H3]", "");
+                    document.ReplaceText("[H4]", "");
+                }
+
+
 
 
 
@@ -55,7 +73,7 @@ namespace WpfReportCreator.Service
 
         }
 
-        private static void CopyTemplate(string sourceFile,string targetFile)
+        private static void CopyTemplate(string sourceFile, string targetFile)
         {
             if (File.Exists(targetFile))
             {
