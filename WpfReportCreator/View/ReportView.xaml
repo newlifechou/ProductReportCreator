@@ -10,7 +10,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="3*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
@@ -20,7 +22,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource tbPageTitle}" Text="Report"/>
-        <Grid Grid.Row="1" Grid.ColumnSpan="2" DataContext="{Binding CurrentTarget}">
+        <TextBlock Text="You can edit the most following data before you click CreateReport button" Grid.Row="1"/>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" DataContext="{Binding CurrentTarget}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="2*"/>
@@ -58,19 +61,20 @@
             <control:BindableCSVTable Grid.Row="0" Grid.Column="2" Grid.RowSpan="9"  CSVContent="{Binding XRFComposition}" Margin="4"/>
 
         </Grid>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
             <Button Content="Browse File Path" Style="{StaticResource btnNormal}" Command="{Binding BrowseSavePathCommand}"/>
-            <TextBlock Text="{Binding SavePath}"/>
+            <TextBlock Text="{Binding SavePath}" Foreground="Blue"/>
         </StackPanel>
-        <ListBox x:Name="lstTempaltes" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ReportTemplates}" IsSynchronizedWithCurrentItem="True">
+        <TextBlock Grid.Row="4" Text="Choose the proper report template below"/>
+        <ListBox x:Name="lstTempaltes" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ReportTemplates}" IsSynchronizedWithCurrentItem="True">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding ReportTempateName}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Create  Report"
+        <Button  Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Create  Report"
                  Style="{StaticResource btnNormal}"  Command="{Binding ReportCommand}" 
-                 CommandParameter="{Binding ElementName=lstTempaltes,Path=SelectedItem}"/>
+                 CommandParameter="{Binding ElementName=lstTempaltes,Path=SelectedItem}" Padding="15"/>
     </Grid>
 </UserControl>
