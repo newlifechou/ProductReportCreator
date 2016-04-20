@@ -53,7 +53,41 @@ namespace WpfReportCreator.Service
                     document.ReplaceText("[H4]", "");
                 }
 
+                //填充XRF表格
+                if (document.Tables!=null&&document.Tables.Count>0)
+                {
+                    Table mainTable = document.Tables[0];
+                    Paragraph p = mainTable.Rows[9].Cells[0].Paragraphs[0];
+                    string[] lines=target.XRFComposition.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
+                    int rowCount = lines.Count();
+                    int columnCount = lines[0].Split(',').Count();
+                    //判断行数，如果小于2，则说明没有成分数据，而是测不出说明文本
+                    if (rowCount<2)
+                    {
+                        document.ReplaceText("[XRFRemark]", target.XRFComposition);
+                        return;
+                    }
+                    document.ReplaceText("[XRFRemark]", "以上成分存在测试偏差，仅供参考");
+
+
+                    Table xrfTable = document.AddTable(rowCount, columnCount);
+                    xrfTable.Design = TableDesign.TableGrid;
+                    xrfTable.Alignment = Alignment.center;
+                    xrfTable.AutoFit = AutoFit.Contents;
+
+
+                    for (int i = 0; i < lines.Count(); i++)
+                    {
+                        string[] items = lines[i].Split(',');
+                        for (int j = 0; j < items.Count(); j++)
+                        {
+                            xrfTable.Rows[i].Cells[j].Paragraphs[0].Append(items[j]);
+                        }
+                    }
+                    p.InsertTableAfterSelf(xrfTable);
+
+                }
 
 
 
