@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfReportCreator.ReportTemplate;
+using WpfReportCreator.Service;
 using WpfReportCreator.ServiceReferenceTargetReport;
 
 /*
@@ -15,40 +15,30 @@ using WpfReportCreator.ServiceReferenceTargetReport;
 */
 namespace WpfReportCreator.ViewModel
 {
-    public class ReportViewModel:ViewModelBase
+    public class ReportViewModel : ViewModelBase
     {
         public ReportViewModel()
         {
             savePath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            ProductReportCommand = new RelayCommand(ActionProductReport);
+            ReportTemplates = new ObservableCollection<ReportTemplate>(ReportTemplateFactory.GetReportTemlates());
+            ReportCommand = new RelayCommand<ReportTemplate>(ActionReport);
             BrowseSavePathCommand = new RelayCommand(BrowseSavePathExecute);
+
+
+
+        }
+
+        private void ActionReport(ReportTemplate obj)
+        {
+            obj.ReportCreator();
+            App.MainWindowService.ShowOKInfo($"Report is Created at {SavePath} ", obj.ReportTempateName);
         }
 
         private void BrowseSavePathExecute()
         {
-            SavePath=App.MainWindowService.ShowFolderSelectDialog();
+            SavePath = App.MainWindowService.ShowFolderSelectDialog();
         }
 
-        private void ActionCoaReport()
-        {
-            throw new NotImplementedException();
-        }
-
-       /// <summary>
-       /// 生成产品报告
-       /// </summary>
-        private void ActionProductReport()
-        {
-            if (CurrentTarget!=null)
-            {
-                string fileName = $"Lot#{CurrentTarget.Lot}-{CurrentTarget.Material}-{CurrentTarget.Customer}.docx".Replace('%',' ');
-                
-                string filePath = System.IO.Path.Combine(SavePath,fileName );
-
-
-                App.MainWindowService.ShowOKInfo($"Report is Created at {SavePath} ", "OK");
-            }
-        }
 
         private Target currentTarget;
         public Target CurrentTarget
@@ -63,16 +53,16 @@ namespace WpfReportCreator.ViewModel
             }
         }
 
-        private ObservableCollection<string> productReportTemplates;
-        public ObservableCollection<string> ProductReportTemplates
+        private ObservableCollection<ReportTemplate> reportTemplates;
+        public ObservableCollection<ReportTemplate> ReportTemplates
         {
-            get { return productReportTemplates; }
+            get { return reportTemplates; }
             set
             {
-                if (productReportTemplates == value)
+                if (reportTemplates == value)
                     return;
-                productReportTemplates = value;
-                RaisePropertyChanged(() => ProductReportTemplates);
+                reportTemplates = value;
+                RaisePropertyChanged(() => ReportTemplates);
             }
         }
 
@@ -91,7 +81,7 @@ namespace WpfReportCreator.ViewModel
         }
 
 
-        public RelayCommand ProductReportCommand { get; set; }
+        public RelayCommand<ReportTemplate> ReportCommand { get; set; }
         public RelayCommand BrowseSavePathCommand { get; set; }
     }
 }

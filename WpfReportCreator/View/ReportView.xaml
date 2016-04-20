@@ -58,7 +58,15 @@
             <Button Content="Browse File Path" Style="{StaticResource btnNormal}" Command="{Binding BrowseSavePathCommand}"/>
             <TextBlock Text="{Binding SavePath}"/>
         </StackPanel>
-        <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ReportTemplates}"/>
-        <Button  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Create  Report" Style="{StaticResource btnNormal}"  Command="{Binding ProductReportCommand}"/>
+        <ListBox x:Name="lstTempaltes" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ReportTemplates}" IsSynchronizedWithCurrentItem="True">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ReportTempateName}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Create  Report"
+                 Style="{StaticResource btnNormal}"  Command="{Binding ReportCommand}" 
+                 CommandParameter="{Binding ElementName=lstTempaltes,Path=SelectedItem}"/>
     </Grid>
 </UserControl>
