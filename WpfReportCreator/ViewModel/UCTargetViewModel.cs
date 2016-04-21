@@ -73,8 +73,7 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanDelete(Target t)
         {
-            //return CheckAuth();
-            return true;
+            return CheckAuth();
         }
 
         private void ActionDelete(Target t)
@@ -90,8 +89,7 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanEdit(Target t)
         {
-            //return CheckAuth();
-            return true;
+            return CheckAuth();
         }
 
         private void ActionEdit(Target t)
@@ -139,8 +137,7 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanAdd()
         {
-            //return CheckAuth();
-            return true;
+            return CheckAuth();
         }
 
         private void ActionAdd()

@@ -110,7 +110,7 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanDelete(Sample arg)
         {
-            return true;
+            return CheckAuth();
         }
 
         private void ExecuteEdit(Sample obj)
@@ -120,7 +120,7 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanEdit(Sample arg)
         {
-            return true;
+            return CheckAuth();
         }
 
         private void ExecuteAdd()
@@ -137,10 +137,13 @@ namespace WpfReportCreator.ViewModel
 
         private bool CanAdd()
         {
-            return true;
+            return CheckAuth();
         }
         #endregion
-
+        private bool CheckAuth()
+        {
+            return Service.Access.AccessState == Service.LogState.Pass;
+        }
         #region 属性区域
         private string searchLot;
         public string SearchLot

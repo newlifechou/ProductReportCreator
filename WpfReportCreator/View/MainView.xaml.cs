@@ -31,9 +31,18 @@ namespace WpfReportCreator.View
         #region 内容控件
         private LogInView logInView;
         #endregion
+        private bool CheckAuth()
+        {
+            return Service.Access.AccessState == Service.LogState.Pass;
+        }
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
+            if (CheckAuth())
+            {
+                MessageBox.Show("You have Logged in!");
+                return;
+            }
             logInView = new LogInView();
             logInView.ShowDialog();
         }

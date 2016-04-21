@@ -159,7 +159,7 @@ namespace WpfReportCreator.Service
                 document.ReplaceText("[CurrentDate]", DateTime.Now.ToString("MM/dd/yyyy"));
                 document.ReplaceText("[CurrentLot]", DateTime.Now.ToString("yyMMdd"));
                 document.ReplaceText("[Size]", target.Size ?? "");
-
+                document.ReplaceText("[MaterialAbbr]", target.MaterialAbbr ?? "");
                 document.Save();
             }
             #endregion
