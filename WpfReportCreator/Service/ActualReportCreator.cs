@@ -128,7 +128,9 @@ namespace WpfReportCreator.Service
                         string[] items = lines[i].Split(',');
                         for (int j = 0; j < items.Count(); j++)
                         {
-                            xrfTable.Rows[i].Cells[j].Paragraphs[0].Append(items[j]);
+                            Cell cell = xrfTable.Rows[i].Cells[j];
+                            cell.Width = 80;
+                            cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
                         }
                     }
                     p.InsertTableAfterSelf(xrfTable);
