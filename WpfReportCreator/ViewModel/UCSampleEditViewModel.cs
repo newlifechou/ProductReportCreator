@@ -29,7 +29,8 @@ namespace WpfReportCreator.ViewModel
                     Customer = gg.Customer,
                     PO = gg.PO,
                     Material = gg.ProductName,
-                    Lot = Common.GetProductLotNumber(gg.VHPDate, gg.VHPDevice)
+                    Lot = Common.GetProductLotNumber(gg.VHPDate, gg.VHPDevice),
+                    OrderDate=gg.OrderDate                 
                 };
                 CurrentSample = tmp;
                 RaisePropertyChanged(() => CurrentSample);
