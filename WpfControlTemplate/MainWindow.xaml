@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="29.333" Margin="28.667,19,0,0" VerticalAlignment="Top" Width="90" Style="{DynamicResource FlatButtonStyle}"/>
+        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Height="34.666" Margin="28.667,71.667,0,0" VerticalAlignment="Top" Width="90" Style="{DynamicResource ButtonStyle1}"/>
+
     </Grid>
 </Window>
