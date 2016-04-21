@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfReportCreator.View"
         mc:Ignorable="d" Style="{StaticResource win}"
+        Icon="pack://application:,,,/Resource/Images/task.png"
         Title="{StaticResource txtApplication}" Height="350" Width="525" WindowState="Maximized"
         WindowStartupLocation="CenterScreen" DataContext="{Binding Main,Source={StaticResource Locator}}">
     <Grid>
@@ -12,13 +13,13 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Border Grid.Row="0" Margin="3" Padding="3" CornerRadius="2" BorderThickness="2" BorderBrush="Orange">
+        <Border Grid.Row="0" Margin="3" Padding="3" CornerRadius="2" BorderThickness="2" BorderBrush="#FF5396C3">
             <StackPanel >
-                <Button x:Name="btnProductView" Content="Product View"  Style="{StaticResource btnMenu}"
+                <Button x:Name="btnProductView" Content="Product View"  Style="{StaticResource btnBig}"
                     Command="{Binding OpenUCTargetCommand}"/>
-                <Button x:Name="btnSampleView" Content="Sample View"   Style="{StaticResource btnMenu}"
+                <Button x:Name="btnSampleView" Content="Sample View"   Style="{StaticResource btnBig}"
                      Command="{Binding OpenUCSampleCommand}"/>
-                <Button x:Name="LogIn" Content="Log In" Style="{StaticResource btnMenu}" Click="LogIn_Click"/>
+                <Button x:Name="LogIn" Content="Log In" Style="{StaticResource btnBig}" Click="LogIn_Click"/>
             </StackPanel>
         </Border>
 

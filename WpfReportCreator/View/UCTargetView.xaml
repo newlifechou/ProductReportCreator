@@ -16,14 +16,14 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Target Information"  Style="{StaticResource tbPageTitle}"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Stretch" Background="Orange">
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Stretch" Background="#FF5396C3">
             <Button Content="Add" Style="{StaticResource btnNormal}" Command="{Binding AddCommand}" />
             <TextBlock Text="Lot" />
             <TextBox Text="{Binding SearchLot,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource txtNormal}"/>
             <TextBlock Text="Customer"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource txtNormal}"/>
             <Button Content="Search" Style="{StaticResource btnNormal}" Command="{Binding SearchCommand}"/>
-            <Button Content="GetAll" Style="{StaticResource btnNormal}" Command="{Binding GetAllCommand}"/>
+            <Button Content="Get All" Style="{StaticResource btnNormal}" Command="{Binding GetAllCommand}"/>
         </StackPanel>
         <DataGrid x:Name="mainGrid" Grid.Row="2" ItemsSource="{Binding Targets}">
             <DataGrid.Columns>
