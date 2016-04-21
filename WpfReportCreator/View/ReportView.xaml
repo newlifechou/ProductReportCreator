@@ -66,10 +66,23 @@
             <TextBlock Text="{Binding SavePath}" Foreground="Blue"/>
         </StackPanel>
         <TextBlock Grid.Row="4" Text="Choose the proper report template below"/>
-        <ListBox x:Name="lstTempaltes" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding ReportTemplates}" IsSynchronizedWithCurrentItem="True">
+        <ListBox x:Name="lstTempaltes" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch"
+                 ItemsSource="{Binding ReportTemplates}" IsSynchronizedWithCurrentItem="True">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" Value="DeepSkyBlue"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding ReportTempateName}"/>
+                    <Border Background="{Binding Path=Background,RelativeSource={RelativeSource 
+                        Mode=FindAncestor,AncestorType=ListBoxItem}}">
+                        <TextBlock Text="{Binding ReportTempateName}" />
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
