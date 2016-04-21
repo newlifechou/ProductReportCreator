@@ -75,6 +75,6 @@
         </ListBox>
         <Button  Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Create  Report"
                  Style="{StaticResource btnNormal}"  Command="{Binding ReportCommand}" 
-                 CommandParameter="{Binding ElementName=lstTempaltes,Path=SelectedItem}" Padding="15" FontSize="20"/>
+                 CommandParameter="{Binding ElementName=lstTempaltes,Path=SelectedItem}" Padding="10" FontSize="20"/>
     </Grid>
 </UserControl>
