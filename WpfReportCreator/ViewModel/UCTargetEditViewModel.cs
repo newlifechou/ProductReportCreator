@@ -39,7 +39,8 @@ namespace WpfReportCreator.ViewModel
                     Material = gg.ProductName,
                     MaterialAbbr=Common.GetMaterialAbbr(gg.ProductName),
                     Size = gg.Dimension,
-                    Lot = Common.GetProductLotNumber(gg.VHPDate, gg.VHPDevice)
+                    Lot = Common.GetProductLotNumber(gg.VHPDate, gg.VHPDevice),
+                    OrderDate=gg.OrderDate
                 };
                 CurrentTarget = tmp;
 
