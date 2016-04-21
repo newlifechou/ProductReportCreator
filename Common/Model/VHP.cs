@@ -20,5 +20,6 @@ namespace Common.Model
         public string ProductName { get; set; }
         public string PMIWorkingNumber { get; set; }
         public string Dimension { get; set; }
+        public DateTime OrderDate { get; set; }
     }
 }

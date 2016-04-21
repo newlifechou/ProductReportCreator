@@ -31,7 +31,8 @@ namespace OldVHP
                             PO = o.PO,
                             ProductName=o.ProductName,
                             PMIWorkingNumber=o.PMIWorkNumber,
-                            Dimension=o.Dimension
+                            Dimension=o.Dimension,
+                            OrderDate=o.OrderDate
                         };
             return query.Skip(skip).Take(take).ToList(); 
         }

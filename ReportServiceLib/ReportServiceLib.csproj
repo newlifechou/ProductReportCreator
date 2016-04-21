@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201604182329048_additems.Designer.cs">
       <DependentUpon>201604182329048_additems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604210103029_addorderdate.cs" />
+    <Compile Include="Migrations\201604210103029_addorderdate.Designer.cs">
+      <DependentUpon>201604210103029_addorderdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Target.cs" />
     <Compile Include="Model\Sample.cs" />
@@ -92,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604182329048_additems.resx">
       <DependentUpon>201604182329048_additems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604210103029_addorderdate.resx">
+      <DependentUpon>201604210103029_addorderdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

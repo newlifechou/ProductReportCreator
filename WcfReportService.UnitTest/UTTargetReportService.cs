@@ -24,6 +24,13 @@ namespace WcfReportService.UnitTest
             Assert.IsNotNull(targets);
         }
 
+        [TestMethod]
+        public void TestGetTargetsByConditions()
+        {
+            var targets = service.GetTargetsByCondition("", "", 0, 10);
+            Assert.IsTrue(targets.Count>0);
+        }
+
         //[TestMethod]
         //public void TestGetTargetsByConditions()
         //{

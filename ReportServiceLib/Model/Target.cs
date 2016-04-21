@@ -26,5 +26,7 @@ namespace ReportServiceLib.Model
         public string Remark { get; set; }
         public string Dimension { get; set; }
         public DateTime CreateDate { get; set; }
+        public DateTime OrderDate { get; set; }
+
     }
 }

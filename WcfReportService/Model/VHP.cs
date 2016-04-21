@@ -30,5 +30,7 @@ namespace WcfReportService.Model
         public string PMIWorkingNumber { get; set; }
         [DataMember]
         public string Dimension { get; set; }
+        [DataMember]
+        public DateTime OrderDate { get; set; }
     }
 }

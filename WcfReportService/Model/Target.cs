@@ -35,5 +35,7 @@ namespace WcfReportService.Model
         public string Dimension { get; set; }
         [DataMember]
         public DateTime CreateDate { get; set; }
+        [DataMember]
+        public DateTime OrderDate { get; set; }
     }
 }

@@ -32,6 +32,9 @@ namespace WpfReportCreator.ServiceReferenceVHP {
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime OrderDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMIWorkingNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -91,6 +94,19 @@ namespace WpfReportCreator.ServiceReferenceVHP {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime OrderDate {
+            get {
+                return this.OrderDateField;
+            }
+            set {
+                if ((this.OrderDateField.Equals(value) != true)) {
+                    this.OrderDateField = value;
+                    this.RaisePropertyChanged("OrderDate");
                 }
             }
         }

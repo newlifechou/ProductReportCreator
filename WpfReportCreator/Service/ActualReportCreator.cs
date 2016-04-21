@@ -66,14 +66,14 @@ namespace WpfReportCreator.Service
                 document.ReplaceText("[Customer]", target.Customer ?? "");
                 document.ReplaceText("[Lot]", target.Lot ?? "");
                 document.ReplaceText("[PO]", target.PO ?? "");
-                document.ReplaceText("[COADate]", DateTime.Now.ToShortDateString());
+                document.ReplaceText("[COADate]", DateTime.Now.ToString("MM-dd-yyyy"));
                 document.ReplaceText("[Material]", target.Material ?? "");
                 document.ReplaceText("[Size]", target.Size ?? "");
                 document.ReplaceText("[Weight]", target.Weight ?? "");
                 document.ReplaceText("[Density]", target.Density ?? "");
                 document.ReplaceText("[Resistance]", target.Resistance ?? "");
                 document.ReplaceText("[Dimension]", target.Dimension ?? "");
-
+                document.ReplaceText("[OrderDate]", target.OrderDate.ToString("MM-dd-yyyy"));
 
                 //填充XRF表格
                 //填充XRF表格

@@ -59,6 +59,7 @@ namespace WpfReportCreator.Service
                 tmp.CreateDate = t.CreateDate;
                 tmp.Dimension = t.Dimension;
                 tmp.Weight = t.Weight;
+                tmp.OrderDate = t.OrderDate;
             }
             return tmp;
         }
@@ -80,6 +81,7 @@ namespace WpfReportCreator.Service
                 tmp.Customer = s.Customer;
                 tmp.CreateDate = s.CreateDate;
                 tmp.Remark = s.Remark;
+                tmp.OrderDate = s.OrderDate;
             }
             return tmp;
         }

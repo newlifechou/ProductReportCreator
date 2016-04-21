@@ -41,6 +41,9 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
         private string MaterialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime OrderDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -142,6 +145,19 @@ namespace WpfReportCreator.ServiceReferenceSampleReport {
                 if ((object.ReferenceEquals(this.MaterialField, value) != true)) {
                     this.MaterialField = value;
                     this.RaisePropertyChanged("Material");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime OrderDate {
+            get {
+                return this.OrderDateField;
+            }
+            set {
+                if ((this.OrderDateField.Equals(value) != true)) {
+                    this.OrderDateField = value;
+                    this.RaisePropertyChanged("OrderDate");
                 }
             }
         }
