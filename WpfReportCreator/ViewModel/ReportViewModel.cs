@@ -54,6 +54,14 @@ namespace WpfReportCreator.ViewModel
                     string fileStr3 = "COAReportBridgeLine" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
                     filePath = GetFilePath(fileStr3);
                     break;
+                case 3:
+                    string fileStr4 = "Opticraft加工订单" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
+                    filePath = GetFilePath(fileStr4);
+                    break;
+                case 4:
+                    string fileStr5 = "440抛光订单" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
+                    filePath = GetFilePath(fileStr5);
+                    break;
                 default:
                     throw new Exception("File Name Not Right");
             }

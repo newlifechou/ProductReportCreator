@@ -15,6 +15,11 @@ namespace WpfReportCreator.Service
 {
     public static class ActualReportCreator
     {
+        /// <summary>
+        /// 产品报告
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="target"></param>
         public static void CreateProductReport(string fileName, Target target)
         {
             string sourceFile = @"Report\ProductTemplate.docx";
@@ -54,7 +59,11 @@ namespace WpfReportCreator.Service
         }
 
 
-
+        /// <summary>
+        /// COA报告
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="target"></param>
         public static void CreateCOAReport(string fileName, Target target)
         {
             string sourceFile = @"Report\COATemplate.docx";
@@ -75,7 +84,7 @@ namespace WpfReportCreator.Service
                 document.ReplaceText("[Resistance]", target.Resistance ?? "");
                 document.ReplaceText("[Dimension]", target.Dimension ?? "");
                 document.ReplaceText("[OrderDate]", target.OrderDate.ToString("MM/dd/yyyy"));
-
+                document.ReplaceText("[CreateDate]", target.CreateDate.ToString("MM/dd/yyyy"));
                 //填充XRF表格
                 //填充XRF表格
                 if (document.Tables[1] != null)
@@ -91,19 +100,92 @@ namespace WpfReportCreator.Service
         }
 
 
+        /// <summary>
+        /// COA韩国
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="target"></param>
         public static void CreateCOABridgeLineReport(string fileName, Target target)
         {
+            string sourceFile = @"Report\COATempalteBridgeLine.docx";
+            CopyTemplate(sourceFile, fileName);
+            #region 生成部分
+            using (DocX document = DocX.Load(fileName))
+            {
+                document.ReplaceText("[Customer]", target.Customer ?? "");
+                string lotNumber = (target.MaterialAbbr ?? "") + "-" + (target.Lot ?? "");
+                document.ReplaceText("[Lot]", lotNumber);
+                document.ReplaceText("[PO]", target.PO ?? "");
+                document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
+                document.ReplaceText("[Material]", target.Material ?? "");
+                document.ReplaceText("[Size]", target.Size ?? "");
+                document.ReplaceText("[Weight]", target.Weight ?? "");
+                document.ReplaceText("[Density]", target.Density ?? "");
+                document.ReplaceText("[Resistance]", target.Resistance ?? "");
+                document.ReplaceText("[Dimension]", target.Dimension ?? "");
+                document.ReplaceText("[OrderDate]", target.OrderDate.ToString("MM/dd/yyyy"));
+                document.ReplaceText("[CreateDate]", target.CreateDate.ToString("MM/dd/yyyy"));
+
+                //填充XRF表格
+                //填充XRF表格
+                if (document.Tables[1] != null)
+                {
+                    Table mainTable = document.Tables[1];
+                    Paragraph p = mainTable.Rows[6].Cells[0].Paragraphs[0];
+                    InsertXrfTable(document, p, target.XRFComposition, "No Composition Test Results");
+                }
+
+                document.Save();
+            }
+            #endregion
 
         }
 
+        /// <summary>
+        /// 绑定报告
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="target"></param>
         public static void CreateOpticraftReport(string fileName, Target target)
         {
+            string sourceFile = @"Report\GeAsSeElastomer440Blank.docx";
+            CopyTemplate(sourceFile, fileName);
+            #region 生成部分
+            using (DocX document = DocX.Load(fileName))
+            {
+                string lotNumber = (target.MaterialAbbr ?? "") + "-" + (target.Lot ?? "");
+                document.ReplaceText("[Lot]", lotNumber);
+                document.ReplaceText("[PO]", target.PO ?? "");
+                document.ReplaceText("[CurrentDate]", DateTime.Now.ToString("MM/dd/yyyy"));
+                document.ReplaceText("[CurrentLot]", DateTime.Now.ToString("yyMMdd"));
+                document.ReplaceText("[Size]", target.Size ?? "");
 
+                document.Save();
+            }
+            #endregion
         }
-
+        /// <summary>
+        /// 抛光报告
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="target"></param>
         public static void CreatePolishReport(string fileName, Target target)
         {
-
+            string sourceFile = @"Report\OpticraftGrindingSeAsGe.docx";
+            CopyTemplate(sourceFile, fileName);
+            #region 生成部分
+            using (DocX document = DocX.Load(fileName))
+            {
+                string lotNumber = (target.MaterialAbbr ?? "") + "-" + (target.Lot ?? "");
+                document.ReplaceText("[Lot]", lotNumber);
+                document.ReplaceText("[PO]", target.PO ?? "");
+                document.ReplaceText("[CurrentDate]", DateTime.Now.ToString("MM/dd/yyyy"));
+                document.ReplaceText("[CurrentLot]", DateTime.Now.ToString("yyMMdd"));
+                document.ReplaceText("[Size]", target.Size ?? "");
+                document.ReplaceText("[Dimension]", target.Dimension ?? "");
+                document.Save();
+            }
+            #endregion
         }
 
         private static void CopyTemplate(string sourceFile, string targetFile)

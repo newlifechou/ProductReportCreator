@@ -225,12 +225,18 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Report\COATempalteBridgeLine.docx" />
+    <None Include="Report\COATempalteBridgeLine.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Report\COATemplate.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Report\GeAsSeElastomer440Blank.docx" />
-    <None Include="Report\OpticraftGrindingSeAsGe.docx" />
+    <None Include="Report\GeAsSeElastomer440Blank.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\OpticraftGrindingSeAsGe.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Report\ProductTemplate.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
