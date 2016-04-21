@@ -18,20 +18,36 @@ namespace WpfReportCreator.Service
             templates.Add(new ReportTemplate()
             {
                 Id = 0,
-                ReportTempateName = "ProductReport 产品报告第一版",
+                ReportTempateName = "ProductReport 产品报告模版",
                 ReportCreator = ActualReportCreator.CreateProductReport
             });
+
             templates.Add(new ReportTemplate()
             {
                 Id = 1,
-                ReportTempateName = "COAReport COA报告普通版",
+                ReportTempateName = "COAReport COA报告普通模板",
                 ReportCreator = ActualReportCreator.CreateCOAReport
             });
+
             templates.Add(new ReportTemplate()
             {
                 Id = 2,
-                ReportTempateName = "COAReport COA报告BridgeLine专用版",
-                ReportCreator = ActualReportCreator.CreateCOAReport
+                ReportTempateName = "COAReport COA报告BridgeLine专用模板",
+                ReportCreator = ActualReportCreator.CreateCOABridgeLineReport
+            });
+
+            templates.Add(new ReportTemplate()
+            {
+                Id = 3,
+                ReportTempateName = "Opticraft加工订单模版",
+                ReportCreator = ActualReportCreator.CreateOpticraftReport
+            });
+
+            templates.Add(new ReportTemplate()
+            {
+                Id = 4,
+                ReportTempateName = "440抛光订单模板",
+                ReportCreator = ActualReportCreator.CreatePolishReport
             });
             return templates;
         }

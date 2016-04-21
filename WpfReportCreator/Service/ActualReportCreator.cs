@@ -96,6 +96,16 @@ namespace WpfReportCreator.Service
 
         }
 
+        public static void CreateOpticraftReport(string fileName, Target target)
+        {
+
+        }
+
+        public static void CreatePolishReport(string fileName, Target target)
+        {
+
+        }
+
         private static void CopyTemplate(string sourceFile, string targetFile)
         {
             if (File.Exists(targetFile))
