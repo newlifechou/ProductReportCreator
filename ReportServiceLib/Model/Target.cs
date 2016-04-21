@@ -15,6 +15,7 @@ namespace ReportServiceLib.Model
         public string Material { get; set; }
         [Required]
         public string Lot { get; set; }
+        public string MaterialAbbr { get; set; }
 
         public string Size { get; set; }
         public string Customer { get; set; }

@@ -16,6 +16,8 @@ namespace WcfReportService.Model
         [DataMember]
         public string Lot { get; set; }
         [DataMember]
+        public string MaterialAbbr { get; set; }
+        [DataMember]
         public string Size { get; set; }
         [DataMember]
         public string Customer { get; set; }

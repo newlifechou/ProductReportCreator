@@ -76,6 +76,7 @@ namespace ReportServiceLib
             destination.XRFComposition = source.XRFComposition;
             destination.Dimension = source.Dimension;
             destination.OrderDate = source.OrderDate;
+            destination.MaterialAbbr = source.MaterialAbbr;
         }
 
     }

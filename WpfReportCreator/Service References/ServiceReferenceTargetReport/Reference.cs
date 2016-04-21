@@ -44,6 +44,9 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
         private string MaterialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaterialAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime OrderDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -161,6 +164,19 @@ namespace WpfReportCreator.ServiceReferenceTargetReport {
                 if ((object.ReferenceEquals(this.MaterialField, value) != true)) {
                     this.MaterialField = value;
                     this.RaisePropertyChanged("Material");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaterialAbbr {
+            get {
+                return this.MaterialAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialAbbrField, value) != true)) {
+                    this.MaterialAbbrField = value;
+                    this.RaisePropertyChanged("MaterialAbbr");
                 }
             }
         }
