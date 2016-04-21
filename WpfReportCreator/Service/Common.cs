@@ -37,6 +37,20 @@ namespace WpfReportCreator.Service
         }
 
         /// <summary>
+        /// 创建材料不包含具体成分的缩写
+        /// </summary>
+        /// <param name="material"></param>
+        /// <returns></returns>
+        public static string  GetMaterialAbbr(string material)
+        {
+            string materialAbbr = string.Empty;
+            //利用正则表达式去除字符串当中的数字，at,(),%等字样，只留下元素符号
+            materialAbbr = System.Text.RegularExpressions.Regex.Replace(material, @"[\d\.\(\)\%]", "");
+            return materialAbbr;
+        }
+
+
+        /// <summary>
         /// 扩展方法
         /// </summary>
         /// <param name="target"></param>

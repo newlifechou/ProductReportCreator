@@ -64,7 +64,8 @@ namespace WpfReportCreator.Service
             using (DocX document = DocX.Load(fileName))
             {
                 document.ReplaceText("[Customer]", target.Customer ?? "");
-                document.ReplaceText("[Lot]", target.Lot ?? "");
+                string lotNumber = (target.MaterialAbbr ?? "") + "-" + (target.Lot ?? "");
+                document.ReplaceText("[Lot]", lotNumber);
                 document.ReplaceText("[PO]", target.PO ?? "");
                 document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
                 document.ReplaceText("[Material]", target.Material ?? "");

@@ -37,6 +37,7 @@ namespace WpfReportCreator.ViewModel
                     Customer = gg.Customer,
                     PO = gg.PO,
                     Material = gg.ProductName,
+                    MaterialAbbr=Common.GetMaterialAbbr(gg.ProductName),
                     Size = gg.Dimension,
                     Lot = Common.GetProductLotNumber(gg.VHPDate, gg.VHPDevice)
                 };
@@ -45,6 +46,9 @@ namespace WpfReportCreator.ViewModel
                 RaisePropertyChanged(() => CurrentTarget);
             });
         }
+
+        
+
 
         private void SaveAction()
         {
