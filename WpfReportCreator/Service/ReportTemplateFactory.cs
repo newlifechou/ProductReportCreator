@@ -39,14 +39,14 @@ namespace WpfReportCreator.Service
             templates.Add(new ReportTemplate()
             {
                 Id = 3,
-                ReportTempateName = "Opticraft加工订单模版",
+                ReportTempateName = "绑定加工订单模版",
                 ReportCreator = ActualReportCreator.CreateOpticraftReport
             });
 
             templates.Add(new ReportTemplate()
             {
                 Id = 4,
-                ReportTempateName = "440抛光订单模板",
+                ReportTempateName = "440抛光加工订单模板",
                 ReportCreator = ActualReportCreator.CreatePolishReport
             });
             return templates;

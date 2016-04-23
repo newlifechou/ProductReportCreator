@@ -47,19 +47,19 @@ namespace WpfReportCreator.ViewModel
                     filePath = GetFilePath(fileStr1);
                     break;
                 case 1:
-                    string fileStr2 = "COAReport" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".docx";
+                    string fileStr2 = $"COA-Lot#{CurrentTarget.Lot}-{CurrentTarget.Material}.docx";
                     filePath = GetFilePath(fileStr2);
                     break;
                 case 2:
-                    string fileStr3 = "COAReportBridgeLine" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
+                    string fileStr3 = $"COABridgeLine-Lot#{CurrentTarget.Lot}-{CurrentTarget.Material}.docx";
                     filePath = GetFilePath(fileStr3);
                     break;
                 case 3:
-                    string fileStr4 = "Opticraft加工订单" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
+                    string fileStr4 = "绑定加工订单" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
                     filePath = GetFilePath(fileStr4);
                     break;
                 case 4:
-                    string fileStr5 = "440抛光订单" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
+                    string fileStr5 = "440抛光加工订单" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".docx";
                     filePath = GetFilePath(fileStr5);
                     break;
                 default:
