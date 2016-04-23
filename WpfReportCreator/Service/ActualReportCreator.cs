@@ -85,13 +85,33 @@ namespace WpfReportCreator.Service
                 document.ReplaceText("[Dimension]", target.Dimension ?? "");
                 document.ReplaceText("[OrderDate]", target.OrderDate.ToString("MM/dd/yyyy"));
                 document.ReplaceText("[CreateDate]", target.CreateDate.ToString("MM/dd/yyyy"));
-                //填充XRF表格
+
                 //填充XRF表格
                 if (document.Tables[1] != null)
                 {
                     Table mainTable = document.Tables[1];
                     Paragraph p = mainTable.Rows[5].Cells[0].Paragraphs[0];
                     InsertXrfTable(document, p, target.XRFComposition, "No Composition Test Results");
+
+
+                    //填充标称的成分
+                    if (!string.IsNullOrEmpty(target.Material))
+                    {
+                        Paragraph elementNames = mainTable.Rows[4].Cells[0].Paragraphs[0];
+                        foreach (var name in GetCompositionNames(target.Material))
+                        {
+                            elementNames.Append(name + "\r\n").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                        }
+
+                        Paragraph elementValues = mainTable.Rows[4].Cells[1].Paragraphs[0];
+                        Paragraph units = mainTable.Rows[4].Cells[2].Paragraphs[0];
+                        foreach (var at in GetCompositionValues(target.Material))
+                        {
+                            elementValues.Append(at + "\r\n").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            units.Append("Atm%" + "\r\n").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                        }
+
+                    }
                 }
 
                 document.Save();
@@ -117,6 +137,7 @@ namespace WpfReportCreator.Service
                 document.ReplaceText("[Lot]", lotNumber);
                 document.ReplaceText("[PO]", target.PO ?? "");
                 document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
+
                 document.ReplaceText("[Material]", target.Material ?? "");
                 document.ReplaceText("[Size]", target.Size ?? "");
                 document.ReplaceText("[Weight]", target.Weight ?? "");
@@ -133,6 +154,28 @@ namespace WpfReportCreator.Service
                     Table mainTable = document.Tables[1];
                     Paragraph p = mainTable.Rows[6].Cells[0].Paragraphs[0];
                     InsertXrfTable(document, p, target.XRFComposition, "No Composition Test Results");
+
+
+                    //填充标称的成分
+                    if (!string.IsNullOrEmpty(target.Material))
+                    {
+                        Paragraph elementNames = mainTable.Rows[4].Cells[0].Paragraphs[0];
+                        foreach (var name in GetCompositionNames(target.Material))
+                        {
+                            elementNames.Append(name + "\r\n").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                        }
+
+                        Paragraph elementValues = mainTable.Rows[4].Cells[1].Paragraphs[0];
+                        Paragraph units = mainTable.Rows[4].Cells[2].Paragraphs[0];
+                        foreach (var at in GetCompositionValues(target.Material))
+                        {
+                            elementValues.Append(at + "\r\n").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            units.Append("Atm%" + "\r\n").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                        }
+
+                    }
+
+
                 }
 
                 document.Save();
@@ -236,8 +279,25 @@ namespace WpfReportCreator.Service
             }
         }
 
+        private static string[] GetMatchesString(string material, string pattern)
+        {
+            var matches = System.Text.RegularExpressions.Regex.Matches(material, pattern);
+            string[] compositionNames = new string[matches.Count];
+            for (int i = 0; i < matches.Count; i++)
+            {
+                compositionNames[i] = matches[i].Value;
+            }
+            return compositionNames;
+        }
 
+        private static string[] GetCompositionValues(string material)
+        {
+            return GetMatchesString(material, @"[\d\.]+");
+        }
 
-
+        private static string[] GetCompositionNames(string material)
+        {
+            return GetMatchesString(material, @"[A-Za-z]+");
+        }
     }
 }
